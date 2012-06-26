@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<link href="carton.css" rel="stylesheet" type="text/css">
+		<!--[if lt IE 8]><link href="ie7ie6_carton.css" rel="stylesheet" type="text/css"><![endif]-->
+		
+		<style>
+			body {
+				background-color: #404040
+			}
+			
+			.page_grid {
+				width: 600px;
+				height: 400px;
+			}
+			
+			.left {
+				width: 200px;
+				height: 400px
+			}
+			
+			.left_top {
+				width: 200px;
+				height: 200px
+			}
+			
+			.left_bottom { 
+				width: 200px; 
+				height: 200px
+			}
+			
+			.right { 
+				width: 400px;  
+				height: 400px
+			}
+
+			.page {
+				background-color: #A6A6A6;
+				color: #ffffff;
+				font-size: 12px;
+				margin-top: 20px
+			}
+			
+			.carton { 
+				background-color: #404040;  
+				padding: 20px 
+			}
+			
+			.disrupter {  
+				background-color: #404040;   
+				width: 150px; 
+				height: 50px; 
+				padding: 20px; 
+				top: -30px; 
+				left: -30px 
+			}
+			
+		</style>
+	</head>
+
+	<body class="_alignCenter">
+		
+		<div class="_slim page _showGrid _showCartons _showSticker">
+			<div class="_cell page_grid ">
+				<div class="_cell left">
+					<div class="_cell left_top">
+						<div class="_stretch carton">I am a carton stretched to my parent cell's <br> ( top_left ) width</div>
+					</div>
+					<div class="_cell left_bottom">
+						<div class="_sticker disrupter">I am a sticker</div>
+					</div>
+				</div>
+				<div class="_cell _alignLeft right">
+					
+					<div class="_slim carton _alignLeft">As <br> slim <br> cartons</div>
+					<div class="_slim carton _alignCenter">we <br> stand <br> in </div>
+					<div class="_slim carton _alignRight">a  <br> Line </div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

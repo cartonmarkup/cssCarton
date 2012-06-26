@@ -1,0 +1,55 @@
+/* CSS CARTON v1.0.0
+* Autor: Mathias Prinz
+*/
+
+._cell {
+	display: inline-block;
+	vertical-align: top;
+	letter-spacing: -4px;
+	position: relative
+}
+
+._slim {
+	display: inline-block;
+	vertical-align: top;
+	letter-spacing: normal
+}
+
+._stretch {
+	display: block;
+	vertical-align: top;
+	letter-spacing: normal
+}
+
+._sticker {
+	position: absolute;
+	display: block;
+	letter-spacing: normal
+}
+
+._alignRight {
+	text-align: right
+}
+
+._alignLeft {
+	text-align: left
+}
+
+._alignCenter {
+	text-align: center
+}
+
+._showGrid ._cell {
+	outline: 3px dashed #FF716C;
+	outline-offset: 1px
+}
+
+._showCartons ._slim, ._showCartons ._stretch {
+	outline: 6px dashed #FFFF9D;
+	outline-offset: 1px
+}
+
+._showSticker ._sticker {
+	outline: 6px double #9981FF;
+	outline-offset: 1px
+}
