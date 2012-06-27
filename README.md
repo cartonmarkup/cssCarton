@@ -22,19 +22,19 @@ they will build a grid for your layout. To start create a first Frame- or Parent
 <div class="_cell" style="width: 600px;"></div>
 
 +--Parent-600px--+<br>
-|                |
-+----------------+
+|&nbsp;                |
++----------------+<br>
 
 Now you will need the "like-words-in-a-sentence"-rule from above!
 The parentcell defines the length of the "lines" ( 600px ). To build columns 
 you can add as many cells to a "line" as you want. They will stand next to 
 each other as long as their width added together is the same as Parentcell ones.
 
-+--Parent-600px-------------+
-| +--A-300px--+--B-300px--+ |
-| |           |           | |
-| +-----------+-----------+ |
-+---------------------------+
++--Parent-600px-------------+<br>
+| +--A-300px--+--B-300px--+ |<br>
+| |           |           | |<br>
+| +-----------+-----------+ |<br>
++---------------------------+<br>
 
 <div class="_cell" style="width: 600px;">
 	<div class="_cell" style="width: 300px;">A</div>
@@ -44,13 +44,13 @@ each other as long as their width added together is the same as Parentcell ones.
 Else if the previous cells left not enough space a new added cell will break 
 into the next "line" and build a new row.
 
-+--Parent-600px-------------+
-| +--A-300px--+--B-300px--+ |
-| |           |           | |
-| +--C-600px--+-----------+ | 
-| |                       | |
-| +-----------------------+ |
-+---------------------------+
++--Parent-600px-------------+<br>
+| +--A-300px--+--B-300px--+ |<br>
+| |           |           | |<br>
+| +--C-600px--+-----------+ |<br>
+| |                       | |<br>
+| +-----------------------+ |<br>
++---------------------------+<br>
 
 <div class="_cell" style="width: 600px;">
 	<div class="_cell" style="width: 300px;">A</div>
@@ -60,28 +60,28 @@ into the next "line" and build a new row.
 
 Quite simple. But what if you wanna have two rows in the same "line" next to a column? 
 
-  +-----+
-  |  |  |
-? |--|  | ?
-  |  |  |
-  +-----+
+  +-----+<br>
+  |  |  |<br>
+? |--|  | ?<br>
+  |  |  |<br>
+  +-----+<br>
 
 That is no Problem at all. Every cell can be a parentcell, too. So first you will 
 need to define two cells that share the space of one line (As A and B in the sample do ). 
 Than add another pair of cells to one of them. If you provide each with the same width 
 as their parent, they will build the parallel rows together.
 
-+--Parent-600px------------------+
-| +--A-300px-------+--B-300px--+ |
-| | +--D-300-px--+ |           | |
-| | |            | |           | |
-| | +--E-300-px--+ |           | |
-| | |            | |           | |
-| | +------------+ |           | |
-| +--C-600px-------+-----------+ |
-| |                            | |
-| +----------------------------+ |
-+--------------------------------+
++--Parent-600px------------------+<br>
+| +--A-300px-------+--B-300px--+ |<br>
+| | +--D-300-px--+ |           | |<br>
+| | |            | |           | |<br>
+| | +--E-300-px--+ |           | |<br>
+| | |            | |           | |<br>
+| | +------------+ |           | |<br>
+| +--C-600px-------+-----------+ |<br>
+| |                            | |<br>
+| +----------------------------+ |<br>
++--------------------------------+<br>
 
 <div class="_cell" style="width: 600px;">
 	<div class="_cell" style="width: 300px;">
