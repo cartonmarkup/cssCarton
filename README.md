@@ -20,6 +20,8 @@ First you will need a bunch off cells or at least one. Because if you glue them 
 they will build a grid for your layout. To start create a first Frame- or Parentcell.
 
     <div class="_cell" style="width: 600px;"></div>
+    
+    Will give you a grid like this:
 
     +--Parent-600px--+
     |                |
@@ -30,20 +32,30 @@ The parentcell defines the length of the "lines" ( 600px ). To build columns
 you can add as many cells to a "line" as you want. They will stand next to 
 each other as long as their width added together is the same as Parentcell ones.
 
+    <div class="_cell" style="width: 600px;">
+    <div class="_cell" style="width: 300px;">A</div>
+    <div class="_cell" style="width: 300px;">B</div>
+    </div>
+
+    Will give you a grid like this:
+    
     +--Parent-600px-------------+
     | +--A-300px--+--B-300px--+ |
     | |           |           | |
     | +-----------+-----------+ |
     +---------------------------+
 
-    <div class="_cell" style="width: 600px;">
-    <div class="_cell" style="width: 300px;">A</div>
-    <div class="_cell" style="width: 300px;">B</div>
-    </div>
-
 Else if the previous cells left not enough space a new added cell will break 
 into the next "line" and build a new row.
 
+    <div class="_cell" style="width: 600px;">
+        <div class="_cell" style="width: 300px;">A</div>
+        <div class="_cell" style="width: 300px;">B</div>
+        <div class="_cell" style="width: 600px;">C</div>
+    </div>
+    
+    Will give you a grid like this:
+    
     +--Parent-600px-------------+
     | +--A-300px--+--B-300px--+ |
     | |           |           | |
@@ -52,11 +64,6 @@ into the next "line" and build a new row.
     | +-----------------------+ |
     +---------------------------+
 
-    <div class="_cell" style="width: 600px;">
-        <div class="_cell" style="width: 300px;">A</div>
-        <div class="_cell" style="width: 300px;">B</div>
-        <div class="_cell" style="width: 600px;">C</div>
-    </div>
 
 Quite simple. But what if you wanna have two rows in the same "line" next to a column? 
 
@@ -71,6 +78,19 @@ need to define two cells that share the space of one line (As A and B in the sam
 Than add another pair of cells to one of them. If you provide each with the same width 
 as their parent, they will build the parallel rows together.
 
+    
+    <div class="_cell" style="width: 600px;">
+        <div class="_cell" style="width: 300px;">
+            <!-- A is a parentcell -->`<br>
+            <div class="_cell" style="width: 300px;">D</div>
+            <div class="_cell" style="width: 300px;">E</div>
+        </div>
+        <div class="_cell" style="width: 300px;">B</div>
+        <div class="_cell" style="width: 600px;">C</div>
+    </div>
+
+    Will give you a grid like this:
+
     +--Parent-600px------------------+
     | +--A-300px-------+--B-300px--+ |
     | | +--D-300-px--+ |           | |
@@ -83,15 +103,6 @@ as their parent, they will build the parallel rows together.
     | +----------------------------+ |
     +--------------------------------+
 
-    <div class="_cell" style="width: 600px;">
-        <div class="_cell" style="width: 300px;">
-            <!-- A is a parentcell -->`<br>
-            <div class="_cell" style="width: 300px;">D</div>
-            <div class="_cell" style="width: 300px;">E</div>
-        </div>
-        <div class="_cell" style="width: 300px;">B</div>
-        <div class="_cell" style="width: 600px;">C</div>
-    </div>
 
 That's all you need to know about cells. 
 But wait there is on last thing. The mission of the cells is to provide the dimensions for your grid, 
@@ -102,10 +113,10 @@ use background if you have to, but you schouldn't. Why? I will tell you in the n
 # The cartons
 
 # slim ( _slim, <tag class="_slim"></tag> )
-<div class="_slim"></div>
+    <div class="_slim"></div>
 
 # stretch ( _stretch, <tag class="_stretch"></tag> )
-<div class="_stretch"></div>
+    <div class="_stretch"></div>
 
 # sticker ( _sticker )
 
