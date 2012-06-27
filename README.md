@@ -22,7 +22,7 @@ they will build a grid for your layout. To start create a first Frame- or Parent
 `<div class="_cell" style="width: 600px;"></div>`
 
 `+--Parent-600px--+`<br>
-`|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|`<br>
+`|`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`|`<br>
 `+----------------+`<br>
 
 Now you will need the "like-words-in-a-sentence"-rule from above!
@@ -85,7 +85,7 @@ as their parent, they will build the parallel rows together.
 
 `<div class="_cell" style="width: 600px;">`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<!-- A is a parentcell -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<!-- A is a parentcell -->`
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">D</div>`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">E</div>`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`</div>`<br>
