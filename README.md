@@ -21,9 +21,9 @@ they will build a grid for your layout. To start create a first Frame- or Parent
 
 `<div class="_cell" style="width: 600px;"></div>`
 
-+--Parent-600px--+<br>
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
-+----------------+<br>
+`+--Parent-600px--+`<br>
+`|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|`<br>
+`+----------------+`<br>
 
 Now you will need the "like-words-in-a-sentence"-rule from above!
 The parentcell defines the length of the "lines" ( 600px ). To build columns 
@@ -37,8 +37,8 @@ each other as long as their width added together is the same as Parentcell ones.
 +---------------------------+<br>
 
 `<div class="_cell" style="width: 600px;">`<br>
-`&nbsp;&nbsp;&nbsp;&nbsp;<div class="_cell" style="width: 300px;">A</div>`<br>
-`&nbsp;&nbsp;&nbsp;&nbsp;<div class="_cell" style="width: 300px;">B</div>`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">A</div>`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">B</div>`<br>
 `</div>`
 
 Else if the previous cells left not enough space a new added cell will break 
@@ -53,9 +53,9 @@ into the next "line" and build a new row.
 +---------------------------+<br>
 
 `<div class="_cell" style="width: 600px;">`<br>
-	`<div class="_cell" style="width: 300px;">A</div>`<br>
-	`<div class="_cell" style="width: 300px;">B</div>`<br>
-	`<div class="_cell" style="width: 600px;">C</div>`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">A</div>`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">B</div>`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 600px;">C</div>`<br>
 `</div>`
 
 Quite simple. But what if you wanna have two rows in the same "line" next to a column? 
@@ -83,15 +83,15 @@ as their parent, they will build the parallel rows together.
 | +----------------------------+ |<br>
 +--------------------------------+<br>
 
-`<div class="_cell" style="width: 600px;">
-	<div class="_cell" style="width: 300px;">
-		<!-- A is a parentcell -->
-		<div class="_cell" style="width: 300px;">D</div>
-		<div class="_cell" style="width: 300px;">E</div>
-	</div>
-	<div class="_cell" style="width: 300px;">B</div>
-	<div class="_cell" style="width: 600px;">C</div>
-</div>`
+`<div class="_cell" style="width: 600px;">`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<!-- A is a parentcell -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">D</div>`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">E</div>`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`</div>`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">B</div>`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 600px;">C</div>`<br>
+`</div>`<br>
 
 That's all you need to know about cells. 
 But wait there is on last thing. The mission of the cells is to provide the dimensions for your grid, 
