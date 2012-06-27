@@ -30,11 +30,11 @@ The parentcell defines the length of the "lines" ( 600px ). To build columns
 you can add as many cells to a "line" as you want. They will stand next to 
 each other as long as their width added together is the same as Parentcell ones.
 
-`+--Parent-600px-------------+`<br>
-`|`&nbsp;`+--A-300px--+--B-300px--+`&nbsp;`|`<br>
-`|`&nbsp;`|`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`|`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`|`&nbsp;`|`<br>
-`|`&nbsp;`+-----------+-----------+`&nbsp;`|`<br>
-`+---------------------------+`<br>
+    +--Parent-600px-------------+
+    | +--A-300px--+--B-300px--+ |
+    | |           |           | |
+    | +-----------+-----------+ |
+    +---------------------------+
 
 `<div class="_cell" style="width: 600px;">`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">A</div>`<br>
