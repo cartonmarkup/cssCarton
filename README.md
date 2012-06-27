@@ -21,7 +21,7 @@ they will build a grid for your layout. To start create a first Frame- or Parent
 
 <div class="_cell" style="width: 600px;"></div>
 
-+--Parent-600px--+
++--Parent-600px--+<br>
 |                |
 +----------------+
 
