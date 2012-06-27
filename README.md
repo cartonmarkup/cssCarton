@@ -22,7 +22,7 @@ they will build a grid for your layout. To start create a first Frame- or Parent
 `<div class="_cell" style="width: 600px;"></div>`
 
 `+--Parent-600px--+`<br>
-`|`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`|`<br>
+`|`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`|`<br>
 `+----------------+`<br>
 
 Now you will need the "like-words-in-a-sentence"-rule from above!
@@ -30,11 +30,11 @@ The parentcell defines the length of the "lines" ( 600px ). To build columns
 you can add as many cells to a "line" as you want. They will stand next to 
 each other as long as their width added together is the same as Parentcell ones.
 
-+--Parent-600px-------------+<br>
-|&nbsp;+--A-300px--+--B-300px--+&nbsp;|<br>
-|&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;|<br>
-|&nbsp;+-----------+-----------+&nbsp;|<br>
-+---------------------------+<br>
+`+--Parent-600px-------------+`<br>
+`|`&nbsp;`+--A-300px--+--B-300px--+`&nbsp;`|`<br>
+`|`&nbsp;`|`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`|`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`|`&nbsp;`|`<br>
+`|`&nbsp;`+-----------+-----------+`&nbsp;`|`<br>
+`+---------------------------+`<br>
 
 `<div class="_cell" style="width: 600px;">`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">A</div>`<br>
@@ -44,13 +44,13 @@ each other as long as their width added together is the same as Parentcell ones.
 Else if the previous cells left not enough space a new added cell will break 
 into the next "line" and build a new row.
 
-+--Parent-600px-------------+<br>
-| +--A-300px--+--B-300px--+ |<br>
-| |           |           | |<br>
-| +--C-600px--+-----------+ |<br>
-| |                       | |<br>
-| +-----------------------+ |<br>
-+---------------------------+<br>
+`+--Parent-600px-------------+`<br>
+`| +--A-300px--+--B-300px--+ |`<br>
+`| |           |           | |`<br>
+`| +--C-600px--+-----------+ |`<br>
+`| |           |           | |`<br>
+`| +-----------------------+ |`<br>
+`+---------------------------+`<br>
 
 `<div class="_cell" style="width: 600px;">`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">A</div>`<br>
@@ -71,21 +71,21 @@ need to define two cells that share the space of one line (As A and B in the sam
 Than add another pair of cells to one of them. If you provide each with the same width 
 as their parent, they will build the parallel rows together.
 
-+--Parent-600px------------------+<br>
-| +--A-300px-------+--B-300px--+ |<br>
-| | +--D-300-px--+ |           | |<br>
-| | |            | |           | |<br>
-| | +--E-300-px--+ |           | |<br>
-| | |            | |           | |<br>
-| | +------------+ |           | |<br>
-| +--C-600px-------+-----------+ |<br>
-| |                            | |<br>
-| +----------------------------+ |<br>
-+--------------------------------+<br>
+`+--Parent-600px------------------+`<br>
+`|`&nbsp;`+--A-300px-------+--B-300px--+`&nbsp;`|`<br>
+`|`&nbsp;`| +--D-300-px--+ |           |`&nbsp;`|`<br>
+`|`&nbsp;`| |            | |           |`&nbsp;`|`<br>
+`|`&nbsp;`| +--E-300-px--+ |           |`&nbsp;`|`<br>
+`|`&nbsp;`| |            | |           |`&nbsp;`|`<br>
+`|`&nbsp;`| +------------+ |           |`&nbsp;`|`<br>
+`|`&nbsp;`+--C-600px-------+-----------+`&nbsp;`|`<br>
+`|`&nbsp;`|                            |`&nbsp;`|`<br>
+`|`&nbsp;`+----------------------------+`&nbsp;`|`<br>
+`+--------------------------------+`<br>
 
 `<div class="_cell" style="width: 600px;">`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<!-- A is a parentcell -->`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<!-- A is a parentcell -->`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">D</div>`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">E</div>`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`</div>`<br>
