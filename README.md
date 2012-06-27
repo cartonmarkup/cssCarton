@@ -19,11 +19,11 @@ Enough Theory.
 First you will need a bunch off cells or at least one. Because if you glue them together,
 they will build a grid for your layout. To start create a first Frame- or Parentcell.
 
-`<div class="_cell" style="width: 600px;"></div>`
+    <div class="_cell" style="width: 600px;"></div>
 
-`+--Parent-600px--+`<br>
-`|`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`|`<br>
-`+----------------+`<br>
+    +--Parent-600px--+
+    |                |
+    +----------------+
 
 Now you will need the "like-words-in-a-sentence"-rule from above!
 The parentcell defines the length of the "lines" ( 600px ). To build columns 
@@ -36,62 +36,62 @@ each other as long as their width added together is the same as Parentcell ones.
     | +-----------+-----------+ |
     +---------------------------+
 
-`<div class="_cell" style="width: 600px;">`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">A</div>`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">B</div>`<br>
-`</div>`
+    <div class="_cell" style="width: 600px;">
+    <div class="_cell" style="width: 300px;">A</div>
+    <div class="_cell" style="width: 300px;">B</div>
+    </div>
 
 Else if the previous cells left not enough space a new added cell will break 
 into the next "line" and build a new row.
 
-`+--Parent-600px-------------+`<br>
-`| +--A-300px--+--B-300px--+ |`<br>
-`| |           |           | |`<br>
-`| +--C-600px--+-----------+ |`<br>
-`| |           |           | |`<br>
-`| +-----------------------+ |`<br>
-`+---------------------------+`<br>
+    +--Parent-600px-------------+
+    | +--A-300px--+--B-300px--+ |
+    | |           |           | |
+    | +--C-600px--+-----------+ |
+    | |           |           | |
+    | +-----------------------+ |
+    +---------------------------+
 
-`<div class="_cell" style="width: 600px;">`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">A</div>`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">B</div>`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 600px;">C</div>`<br>
-`</div>`
+    <div class="_cell" style="width: 600px;">
+        <div class="_cell" style="width: 300px;">A</div>
+        <div class="_cell" style="width: 300px;">B</div>
+        <div class="_cell" style="width: 600px;">C</div>
+    </div>
 
 Quite simple. But what if you wanna have two rows in the same "line" next to a column? 
 
-  +-----+<br>
-  |  |  |<br>
-? |--|  | ?<br>
-  |  |  |<br>
-  +-----+<br>
+      +-----+
+      |  |  |
+    ? |--|  | ?
+      |  |  |
+      +-----+
 
 That is no Problem at all. Every cell can be a parentcell, too. So first you will 
 need to define two cells that share the space of one line (As A and B in the sample do ). 
 Than add another pair of cells to one of them. If you provide each with the same width 
 as their parent, they will build the parallel rows together.
 
-`+--Parent-600px------------------+`<br>
-`|`&nbsp;`+--A-300px-------+--B-300px--+`&nbsp;`|`<br>
-`|`&nbsp;`| +--D-300-px--+ |           |`&nbsp;`|`<br>
-`|`&nbsp;`| |            | |           |`&nbsp;`|`<br>
-`|`&nbsp;`| +--E-300-px--+ |           |`&nbsp;`|`<br>
-`|`&nbsp;`| |            | |           |`&nbsp;`|`<br>
-`|`&nbsp;`| +------------+ |           |`&nbsp;`|`<br>
-`|`&nbsp;`+--C-600px-------+-----------+`&nbsp;`|`<br>
-`|`&nbsp;`|                            |`&nbsp;`|`<br>
-`|`&nbsp;`+----------------------------+`&nbsp;`|`<br>
-`+--------------------------------+`<br>
+    +--Parent-600px------------------+
+    | +--A-300px-------+--B-300px--+ |
+    | | +--D-300-px--+ |           | |
+    | | |            | |           | |
+    | | +--E-300-px--+ |           | |
+    | | |            | |           | |
+    | | +------------+ |           | |
+    | +--C-600px-------+-----------+ |
+    | |                            | |
+    | +----------------------------+ |
+    +--------------------------------+
 
-`<div class="_cell" style="width: 600px;">`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<!-- A is a parentcell -->`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">D</div>`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">E</div>`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;`</div>`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 300px;">B</div>`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;`<div class="_cell" style="width: 600px;">C</div>`<br>
-`</div>`<br>
+    <div class="_cell" style="width: 600px;">
+        <div class="_cell" style="width: 300px;">
+            <!-- A is a parentcell -->`<br>
+            <div class="_cell" style="width: 300px;">D</div>
+            <div class="_cell" style="width: 300px;">E</div>
+        </div>
+        <div class="_cell" style="width: 300px;">B</div>
+        <div class="_cell" style="width: 600px;">C</div>
+    </div>
 
 That's all you need to know about cells. 
 But wait there is on last thing. The mission of the cells is to provide the dimensions for your grid, 
