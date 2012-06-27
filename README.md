@@ -5,8 +5,8 @@ cssCarton is a lightweight framework that offers a simple way to transfer your p
 
 # The basics – Take it like words in a sentence
 
-If you wanna use CSS Carton to style some HTML, you need to realize that <tags> in
-HTML behave like words in a sentence. A <tag> will only break a sentence into a second line if it is
+If you wanna use CSS Carton to style some HTML, you need to realize that `<tags>` in
+HTML behave like words in a sentence. A `<tag>` will only break a sentence into a second line if it is
 eplicit told so, or there is not enough space left for it in its current line, to fit in.
 You get it? Great! Because if you understand this behaviour, it is all you need to create super
 simple page layouts with CSS Carton.
@@ -19,10 +19,10 @@ Enough Theory.
 First you will need a bunch off cells or at least one. Because if you glue them together,
 they will build a grid for your layout. To start create a first Frame- or Parentcell.
 
-<div class="_cell" style="width: 600px;"></div>
+`<div class="_cell" style="width: 600px;"></div>`
 
 +--Parent-600px--+<br>
-|&nbsp;                |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 +----------------+<br>
 
 Now you will need the "like-words-in-a-sentence"-rule from above!
@@ -36,10 +36,10 @@ each other as long as their width added together is the same as Parentcell ones.
 | +-----------+-----------+ |<br>
 +---------------------------+<br>
 
-<div class="_cell" style="width: 600px;">
+`<div class="_cell" style="width: 600px;">
 	<div class="_cell" style="width: 300px;">A</div>
 	<div class="_cell" style="width: 300px;">B</div>
-</div>
+</div>`
 
 Else if the previous cells left not enough space a new added cell will break 
 into the next "line" and build a new row.
