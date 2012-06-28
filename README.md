@@ -114,7 +114,7 @@ use background if you have to, but you shouldn't. Why? I will tell you in the ne
 Lets go back to theory just for a moment and talk about the promised reponsive part of the carton. 
 Today css has a brain or at least a choice:  [media querys](hhttp://www.w3.org/TR/css3-mediaqueries/)  
                  
-    +--Parent-600px------------------+   +--Parent-600px------+
+    +--Parent-600px------------------+   +--Parent-300px------+
     | +--A-300px-------+--B-300px--+ |   | +--A-300px-------+ |
     | | +--D-300-px--+ |           | |   | | +--D-300-px--+ | |
     | | |            | |           | |   | | |            | | |
