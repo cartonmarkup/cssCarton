@@ -12,7 +12,7 @@ Enough Theory.
 
 # Getting started
 
-# cell ( _cell, <tag class="_cell"></tag> )
+# cell ( _cell, `<tag class="_cell"></tag>` )
 
 First you will need a bunch off cells or at least one. Because if you glue them together,
 they will build a grid for your layout. To start create a first frame- or parentcell.
@@ -112,10 +112,10 @@ use background if you have to, but you shouldn't. Why? I will tell you in the ne
 
 # The cartons
 
-# slim ( _slim, <tag class="_slim"></tag> )
+# slim ( _slim, `<tag class="_slim"></tag>` )
     <div class="_slim"></div>
 
-# stretch ( _stretch, <tag class="_stretch"></tag> )
+# stretch ( _stretch, `<tag class="_stretch"></tag>` )
     <div class="_stretch"></div>
 
 # sticker ( _sticker )
