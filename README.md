@@ -10,9 +10,9 @@ Most importantly, that a `<tag>` in HTML most of the time behaves much like a wo
 To use an analogy, imagine your webpage as a set of cartons or cardboard boxes of different sizes stacked up and nested. That's just it!
 Enough Theory.
 
-# Getting started
+# The grid
 
-# cell ( _cell, `<tag class="_cell"></tag>` )
+### cell ( `<tag class="_cell"></tag>` )
 
 First you will need a bunch off cells or at least one. Because if you glue them together,
 they will build a grid for your layout. To start create a first frame- or parentcell.
@@ -110,17 +110,19 @@ nothing else. So it's inproper to use other styling than the dimension propertie
 height and min-height or the overflow attribute to handle a cells scrolling behaviour. Maybe you can also 
 use background if you have to, but you shouldn't. Why? I will tell you in the next section of this readme.
 
-# The cartons
+# The styleables
 
-# slim ( _slim, `<tag class="_slim"></tag>` )
-    <div class="_slim"></div>
 
-# stretch ( _stretch, `<tag class="_stretch"></tag>` )
-    <div class="_stretch"></div>
 
-# sticker ( _sticker )
+### slim ( `<tag class="_slim"></tag>` )
 
-# alignLeft, alignCenter alignRight ( _alignLeft, _alignCenter _alignRight )
+### stretch ( `<tag class="_stretch"></tag>` )
+
+### sticker ( `<tag class="_stretch"></tag>` )
+
+
+
+## alignLeft, alignCenter, alignRight ( _alignLeft, _alignCenter _alignRight )
 
 # tags
 It is always a good idea to setup some defaults
