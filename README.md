@@ -110,6 +110,24 @@ nothing else. So it's inproper to use other styling than the dimension propertie
 height and min-height or the overflow attribute to handle a cells scrolling behaviour. Maybe you can also 
 use background if you have to, but you shouldn't. Why? I will tell you in the next section of this readme.
 
+# Responsive design
+Lets go back to theory just for a moment and talk about the promised reponsive part of the carton. 
+Today css has a brain or at least a choice:  [media querys](hhttp://www.w3.org/TR/css3-mediaqueries/)  
+                 
+    +--Parent-600px------------------+   +--Parent-600px------+
+    | +--A-300px-------+--B-300px--+ |   | +--A-300px-------+ |
+    | | +--D-300-px--+ |           | |   | | +--D-300-px--+ | |
+    | | |            | |           | |   | | |            | | |
+    | | +--E-300-px--+ |           | |   | | +--E-300-px--+ | |
+    | | |            | |           | |   | | |            | | |
+    | | +------------+ |           | |   | | +------------+ | |
+    | +--C-600px-------+-----------+ |   | +--B-300px-------+ |
+    | |                            | |   | |                | |
+    | +----------------------------+ |   | +--C-100%--------+ |
+    +--------------------------------+   | |                | |
+                                         | +----------------+ |
+                                         +--------------------+
+
 # The styleables
 
 
