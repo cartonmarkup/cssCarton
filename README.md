@@ -111,8 +111,9 @@ height and min-height or the overflow attribute to handle a cells scrolling beha
 use background if you have to, but you shouldn't. Why? I will tell you in the next section of this readme.
 
 # Responsive design
-Lets go back to theory just for a moment and talk about the promised reponsive part of the carton. 
-Today css has a brain or at least a choice:  [media querys](hhttp://www.w3.org/TR/css3-mediaqueries/)  
+Lets go back to theory just for a moment and take look on the promised reponsive part of this framework. 
+Todays browsers give your sytlesheets some choices how they will handle your pagelayout in dempendencies l [media querys](hhttp://www.w3.org/TR/css3-mediaqueries/). They  
+Imagine what great opportionies where opened     
                  
     +--Parent-600px------------------+   +--Parent-300px------+
     | +--A-300px-------+--B-300px--+ |   | +--A-300px-------+ |
