@@ -33,8 +33,8 @@ you can add as many cells to a "line" as you want. They will stand next to
 each other as long as their width added together is the same or smaller as parentcell ones.
 
     <div class="_cell" style="width: 600px;">
-    <div class="_cell" style="width: 300px;">A</div>
-    <div class="_cell" style="width: 300px;">B</div>
+        <div class="_cell" style="width: 300px;">A</div>
+        <div class="_cell" style="width: 300px;">B</div>
     </div>
 
     Will give you a grid like this:
