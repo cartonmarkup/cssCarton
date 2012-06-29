@@ -113,8 +113,8 @@ use background if you have to, but you shouldn't. Why? I will tell you in the ne
 # Responsive design
 Lets go back to theory just for a moment and take look on the promised reponsive part of this framework. 
 Modern browsers allow you to give browser the choise how they will handle the styles of your page layout in consideration 
-of the device it is used on:  [media queries](hhttp://www.w3.org/TR/css3-mediaqueries/). They  
-Imagine what great opportionies where opened if you combine _cells with media queryies.       
+of the device it is used on. Yes, I talk about  [media queries](hhttp://www.w3.org/TR/css3-mediaqueries/). 
+Can you imagine what great opportionies where opened if you combine _cells with media queryies?
 
                  Desktop                         Mobile
                  
