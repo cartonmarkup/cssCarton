@@ -19,59 +19,59 @@ they will build a grid for your layout. To start create a first frame- or parent
 Please note that we don't care about the height of the cells here!
 This would be determined by the content within the cells or it could be manualy set.
 
-		<div class="_cell" style="width: 600px;"></div>
+    <div class="_cell" style="width: 600px;"></div>
 
-		Will give you a grid like this:
+    Will give you a grid like this:
 
-		+--Parent-600px--+
-		|                |
-		+----------------+
+    +--Parent-600px--+
+    |                |
+    +----------------+
 
 Now you will need the "like-words-in-a-sentence"-rule from above!
 The parentcell defines the length of the "lines" ( 600px ). To build columns 
 you can add as many cells to a "line" as you want. They will stand next to 
 each other as long as their width added together is the same or smaller as parentcell ones.
 
-		<div class="_cell" style="width: 600px;">
-				<div class="_cell" style="width: 300px;">A</div>
-				<div class="_cell" style="width: 300px;">B</div>
-		</div>
+    <div class="_cell" style="width: 600px;">
+        <div class="_cell" style="width: 300px;">A</div>
+        <div class="_cell" style="width: 300px;">B</div>
+    </div>
 
-		Will give you a grid like this:
+    Will give you a grid like this:
 
-		+--Parent-600px-------------+
-		| +--A-300px--+--B-300px--+ |
-		| |           |           | |
-		| +-----------+-----------+ |
-		+---------------------------+
+    +--Parent-600px-------------+
+    | +--A-300px--+--B-300px--+ |
+    | |           |           | |
+    | +-----------+-----------+ |
+    +---------------------------+
 
 If the previous cells left not enough space, a newly added cell will break 
 into the next "line" and start a new row.
 
-		<div class="_cell" style="width: 600px;">
-				<div class="_cell" style="width: 300px;">A</div>
-				<div class="_cell" style="width: 300px;">B</div>
-				<div class="_cell" style="width: 600px;">C</div>
-		</div>
+    <div class="_cell" style="width: 600px;">
+        <div class="_cell" style="width: 300px;">A</div>
+        <div class="_cell" style="width: 300px;">B</div>
+        <div class="_cell" style="width: 600px;">C</div>
+    </div>
 
-		Will give you a grid like this:
+    Will give you a grid like this:
 
-		+--Parent-600px-------------+
-		| +--A-300px--+--B-300px--+ |
-		| |           |           | |
-		| +--C-600px--+-----------+ |
-		| |           |           | |
-		| +-----------------------+ |
-		+---------------------------+
+    +--Parent-600px-------------+
+    | +--A-300px--+--B-300px--+ |
+    | |           |           | |
+    | +--C-600px--+-----------+ |
+    | |                       | |
+    | +-----------------------+ |
+    +---------------------------+
 
 
 Quite simple. But what if you want to have two columns, where one column has two cells on top of each other while the other column consits of just one cell? 
 
-			+-----+
-			|  |  |
-		? |--|  | ?
-			|  |  |
-			+-----+
+      +-----+
+      |  |  |
+    ? |--|  | ?
+      |  |  |
+      +-----+
 
 That is no problem at all. Every cell can be a parentcell, too. So first you will 
 need to define two cells that share the space of one line (as A and B in the sample below do). 
@@ -79,29 +79,29 @@ Than add another pair of cells to one of them. If you provide each with the same
 as their parent, they will break and hence stack up (as D and E in the sample below do).
 
 
-		<div class="_cell" style="width: 600px;">
-				<div class="_cell" style="width: 300px;">
-						<!-- A is a parentcell -->
-						<div class="_cell" style="width: 300px;">D</div>
-						<div class="_cell" style="width: 300px;">E</div>
-				</div>
-				<div class="_cell" style="width: 300px;">B</div>
-				<div class="_cell" style="width: 600px;">C</div>
-		</div>
+    <div class="_cell" style="width: 600px;">
+        <div class="_cell" style="width: 300px;">
+            <!-- A is a parentcell -->
+            <div class="_cell" style="width: 300px;">D</div>
+            <div class="_cell" style="width: 300px;">E</div>
+        </div>
+        <div class="_cell" style="width: 300px;">B</div>
+        <div class="_cell" style="width: 600px;">C</div>
+    </div>
 
-		Will give you a grid like this:
+    Will give you a grid like this:
 
-		+--Parent-600px------------------+
-		| +--A-300px-------+--B-300px--+ |
-		| | +--D-300-px--+ |           | |
-		| | |            | |           | |
-		| | +--E-300-px--+ |           | |
-		| | |            | |           | |
-		| | +------------+ |           | |
-		| +--C-600px-------+-----------+ |
-		| |                            | |
-		| +----------------------------+ |
-		+--------------------------------+
+    +--Parent-600px------------------+
+    | +--A-300px-------+--B-300px--+ |
+    | | +--D-300-px--+ |           | |
+    | | |            | |           | |
+    | | +--E-300-px--+ |           | |
+    | | |            | |           | |
+    | | +------------+ |           | |
+    | +--C-600px-------+-----------+ |
+    | |                            | |
+    | +----------------------------+ |
+    +--------------------------------+
 
 
 That's all you need to know about cells. 
@@ -112,40 +112,43 @@ use background if you have to, but you shouldn't. Why? I will tell you in the ne
 
 # Responsive design
 Lets go back to theory for a second and talk about the promised [reponsive](http://en.wikipedia.org/wiki/Responsive_Web_Design) 
-part of this framework. As you know, todays web content is watched on many extremly different divices 
-and screen resolutions. [media queries](http://www.w3.org/TR/css3-mediaqueries/)
-where added to css to let your page layout handle this affairs. Imagine what will happen if you combine a grid of cells (_cell)
-with media queries:  
+part of this framework. The many different screen resolution of modern divices force us to think different about what a page layout is.
+First get rid of the idear a webpage is a static layout with fixed dimensions like a page in a book, it can be flexible.
+Before I go to mutch into details, take a look on [media queries](http://www.w3.org/TR/css3-mediaqueries/). As you will see, they are simple 
+controls for your stylesheets to manage differnt behavior for all kind of divices. Can yo imagine a 
+combination of media queries with the grif of cells from above?
 
-		.Parent { width: 600px }           
+    .Parent { width: 600px }
 
-		@media ( max-width: 320px ) { 
-			.Parent { width: 300px } 
-		}
+    @media ( max-width: 320px ) { 
+      .Parent { width: 300px } 
+    }
+    
+The same grid on different device resolutions:
+    
+    Desktop                               Mobile
 
-		The same grid on different device resolutions:	
+    +--.Parent-600px-----------------+    +--.Parent-300px-----+
+    | +--A-300px-------+--B-300px--+ |    | +--A-300px-------+ |
+    | | +--D-300-px--+ |           | |    | | +--D-300-px--+ | |
+    | | |            | |           | |    | | |            | | |
+    | | +--E-300-px--+ |           | |    | | +--E-300-px--+ | |
+    | | |            | |           | |    | | |            | | |
+    | | +------------+ |           | |    | | +------------+ | |
+    | +--C-100%--------+-----------+ |    | +--B-300px-------+ |
+    | |                            | |    | |                | |
+    | +----------------------------+ |    | +--C-100%--------+ |
+    +--------------------------------+    | |                | |
+                                          | +----------------+ |
+                                          +--------------------+
 
-		Desktop															 Mobile
+Great isn't it? This sample illustrates how easy you can change the appearance of the whole grid
+only by reducing the size of the parentcell ( respectively changeing the way cells break ).
+Now, maybe you understand that it can be important for the flexibilty of a layout to keep
+styleing out of the cells and let other parts of this framework do the fancy stuff. 
+Still don't know why you shouldn't? Take a look on the next part.
 
-		+--.Parent-600px-----------------+   +--.Parent-300px-----+
-		| +--A-300px-------+--B-300px--+ |   | +--A-300px-------+ |
-		| | +--D-300-px--+ |           | |   | | +--D-300-px--+ | |
-		| | |            | |           | |   | | |            | | |
-		| | +--E-300-px--+ |           | |   | | +--E-300-px--+ | |
-		| | |            | |           | |   | | |            | | |
-		| | +------------+ |           | |   | | +------------+ | |
-		| +--C-100%--------+-----------+ |   | +--B-300px-------+ |
-		| |                            | |   | |                | |
-		| +----------------------------+ |   | +--C-100%--------+ |
-		+--------------------------------+   | |                | |
-																				 | +----------------+ |
-																				 +--------------------+
 
-Great isn't it? The sample above illustrates how easy you can change the appearance of the whole grid 
-only by changing the size of the parentcell ( respectively changeing the way the cells break ). 
-Now maybe you understand that it can be important for the flexibilty to keep 
-styleing of a grid as puristic as possible and let other parts of this framework do the fancy stuff. 
-If you don't take a look on the styleables in the next part.
 
 
 # The styleables
