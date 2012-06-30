@@ -116,15 +116,15 @@ part of this framework. As you know, todays web content is watched on many extre
 and screen resolutions. [media queries](http://www.w3.org/TR/css3-mediaqueries/)
 where added to css to let your page layout handle this affairs. Imagine what will happen if you combine a grid of cells (_cell)
 with media queries:  
-		
+
 		.Parent { width: 600px }           
-		
+
 		@media ( max-width: 320px ) { 
 			.Parent { width: 300px } 
 		}
-		
+
 		The same grid on different device resolutions:	
-		
+
 		Desktop															 Mobile
 
 		+--.Parent-600px-----------------+   +--.Parent-300px-----+
