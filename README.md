@@ -1,115 +1,166 @@
-cssCarton - framework for Responsive style sheet Design
+cssCarton - framework for responsive style sheet design
 ========================================================
 
-cssCarton is a lightweight framework that offers a simple way to transfer your page layout into CSS and HTML.
+cssCarton is a lightweight framework that offers a simple way to transfer your grid based page layout into CSS and HTML.
 
-# The basics – Take it like words in a sentence
+# The basics – like words in a sentence
 
-If you wanna use CSS Carton to style some HTML, you need to realize that <tags> in
-HTML behave like words in a sentence. A <tag> will only break a sentence into a second line if it is
-eplicit told so, or there is not enough space left for it in its current line, to fit in.
-You get it? Great! Because if you understand this behaviour, it is all you need to create super
-simple page layouts with CSS Carton.
+If you want to use CSS Carton to style your HTML page, you need to realize a few basics.
+Most importantly, that a `<tag>` in HTML most of the time behaves much like a word in a sentence. Unless there is a reason (e.g. no more room in the line, or a manual linebreak) adding a new word in a sentence will not cause a linebreak. With cssCarton this is the basis for creating layouts and grids. A new `<tag>` (i.e. a "cell" of your design) will also only break into a new "line" if there is not enough space left for it in its current line or if it is explicitly told to break. You get it? Great! Because if you understand this behaviour, it is all you need to make creating page layouts super easy with cssCarton.
+To use an analogy, imagine your webpage as a set of cartons or cardboard boxes of different sizes stacked up and nested. That's just it!
 Enough Theory.
 
-# Getting started
+# The grid
 
-# cell ( _cell, <tag class="_cell"></tag> )
+### cell ( `<tag class="_cell"></tag>` )
 
 First you will need a bunch off cells or at least one. Because if you glue them together,
-they will build a grid for your layout. To start create a first Frame- or Parentcell.
+they will build a grid for your layout. To start create a first frame- or parentcell.
+Please note that we don't care about the height of the cells here!
+This would be determined by the content within the cells or it could be manualy set.
 
-<div class="_cell" style="width: 600px;"></div>
+		<div class="_cell" style="width: 600px;"></div>
 
-+--Parent-600px--+
-|                |
-+----------------+
+		Will give you a grid like this:
+
+		+--Parent-600px--+
+		|                |
+		+----------------+
 
 Now you will need the "like-words-in-a-sentence"-rule from above!
 The parentcell defines the length of the "lines" ( 600px ). To build columns 
 you can add as many cells to a "line" as you want. They will stand next to 
-each other as long as their width added together is the same as Parentcell ones.
+each other as long as their width added together is the same or smaller as parentcell ones.
 
-+--Parent-600px-------------+
-| +--A-300px--+--B-300px--+ |
-| |           |           | |
-| +-----------+-----------+ |
-+---------------------------+
+		<div class="_cell" style="width: 600px;">
+				<div class="_cell" style="width: 300px;">A</div>
+				<div class="_cell" style="width: 300px;">B</div>
+		</div>
 
-<div class="_cell" style="width: 600px;">
-	<div class="_cell" style="width: 300px;">A</div>
-	<div class="_cell" style="width: 300px;">B</div>
-</div>
+		Will give you a grid like this:
 
-Else if the previous cells left not enough space a new added cell will break 
-into the next "line" and build a new row.
+		+--Parent-600px-------------+
+		| +--A-300px--+--B-300px--+ |
+		| |           |           | |
+		| +-----------+-----------+ |
+		+---------------------------+
 
-+--Parent-600px-------------+
-| +--A-300px--+--B-300px--+ |
-| |           |           | |
-| +--C-600px--+-----------+ | 
-| |                       | |
-| +-----------------------+ |
-+---------------------------+
+If the previous cells left not enough space, a newly added cell will break 
+into the next "line" and start a new row.
 
-<div class="_cell" style="width: 600px;">
-	<div class="_cell" style="width: 300px;">A</div>
-	<div class="_cell" style="width: 300px;">B</div>
-	<div class="_cell" style="width: 600px;">C</div>
-</div>
+		<div class="_cell" style="width: 600px;">
+				<div class="_cell" style="width: 300px;">A</div>
+				<div class="_cell" style="width: 300px;">B</div>
+				<div class="_cell" style="width: 600px;">C</div>
+		</div>
 
-Quite simple. But what if you wanna have two rows in the same "line" next to a column? 
+		Will give you a grid like this:
 
-  +-----+
-  |  |  |
-? |--|  | ?
-  |  |  |
-  +-----+
+		+--Parent-600px-------------+
+		| +--A-300px--+--B-300px--+ |
+		| |           |           | |
+		| +--C-600px--+-----------+ |
+		| |           |           | |
+		| +-----------------------+ |
+		+---------------------------+
 
-That is no Problem at all. Every cell can be a parentcell, too. So first you will 
-need to define two cells that share the space of one line (As A and B in the sample do ). 
+
+Quite simple. But what if you want to have two columns, where one column has two cells on top of each other while the other column consits of just one cell? 
+
+			+-----+
+			|  |  |
+		? |--|  | ?
+			|  |  |
+			+-----+
+
+That is no problem at all. Every cell can be a parentcell, too. So first you will 
+need to define two cells that share the space of one line (as A and B in the sample below do). 
 Than add another pair of cells to one of them. If you provide each with the same width 
-as their parent, they will build the parallel rows together.
+as their parent, they will break and hence stack up (as D and E in the sample below do).
 
-+--Parent-600px------------------+
-| +--A-300px-------+--B-300px--+ |
-| | +--D-300-px--+ |           | |
-| | |            | |           | |
-| | +--E-300-px--+ |           | |
-| | |            | |           | |
-| | +------------+ |           | |
-| +--C-600px-------+-----------+ |
-| |                            | |
-| +----------------------------+ |
-+--------------------------------+
 
-<div class="_cell" style="width: 600px;">
-	<div class="_cell" style="width: 300px;">
-		<!-- A is a parentcell -->
-		<div class="_cell" style="width: 300px;">D</div>
-		<div class="_cell" style="width: 300px;">E</div>
-	</div>
-	<div class="_cell" style="width: 300px;">B</div>
-	<div class="_cell" style="width: 600px;">C</div>
-</div>
+		<div class="_cell" style="width: 600px;">
+				<div class="_cell" style="width: 300px;">
+						<!-- A is a parentcell -->
+						<div class="_cell" style="width: 300px;">D</div>
+						<div class="_cell" style="width: 300px;">E</div>
+				</div>
+				<div class="_cell" style="width: 300px;">B</div>
+				<div class="_cell" style="width: 600px;">C</div>
+		</div>
+
+		Will give you a grid like this:
+
+		+--Parent-600px------------------+
+		| +--A-300px-------+--B-300px--+ |
+		| | +--D-300-px--+ |           | |
+		| | |            | |           | |
+		| | +--E-300-px--+ |           | |
+		| | |            | |           | |
+		| | +------------+ |           | |
+		| +--C-600px-------+-----------+ |
+		| |                            | |
+		| +----------------------------+ |
+		+--------------------------------+
+
 
 That's all you need to know about cells. 
 But wait there is on last thing. The mission of the cells is to provide the dimensions for your grid, 
 nothing else. So it's inproper to use other styling than the dimension properties width, min-width, 
 height and min-height or the overflow attribute to handle a cells scrolling behaviour. Maybe you can also 
-use background if you have to, but you schouldn't. Why? I will tell you in the next lines.
+use background if you have to, but you shouldn't. Why? I will tell you in the next section of this readme.
 
-# The cartons
+# Responsive design
+Lets go back to theory for a second and talk about the promised [reponsive](http://en.wikipedia.org/wiki/Responsive_Web_Design) 
+part of this framework. As you know, todays web content is watched on many extremly different divices 
+and screen resolutions. [media queries](http://www.w3.org/TR/css3-mediaqueries/)
+where added to css to let your page layout handle this affairs. Imagine what will happen if you combine a grid of cells (_cell)
+with media queries:  
+		
+		.Parent { width: 600px }           
+		
+		@media ( max-width: 320px ) { 
+			.Parent { width: 300px } 
+		}
+		
+		The same grid on different device resolutions:	
+		
+		Desktop															 Mobile
 
-# slim ( _slim, <tag class="_slim"></tag> )
-<div class="_slim"></div>
+		+--.Parent-600px-----------------+   +--.Parent-300px-----+
+		| +--A-300px-------+--B-300px--+ |   | +--A-300px-------+ |
+		| | +--D-300-px--+ |           | |   | | +--D-300-px--+ | |
+		| | |            | |           | |   | | |            | | |
+		| | +--E-300-px--+ |           | |   | | +--E-300-px--+ | |
+		| | |            | |           | |   | | |            | | |
+		| | +------------+ |           | |   | | +------------+ | |
+		| +--C-100%--------+-----------+ |   | +--B-300px-------+ |
+		| |                            | |   | |                | |
+		| +----------------------------+ |   | +--C-100%--------+ |
+		+--------------------------------+   | |                | |
+																				 | +----------------+ |
+																				 +--------------------+
 
-# stretch ( _stretch, <tag class="_stretch"></tag> )
-<div class="_stretch"></div>
+Great isn't it? The sample above illustrates how easy you can change the appearance of the whole grid 
+only by changing the size of the parentcell ( respectively changeing the way the cells break ). 
+Now maybe you understand that it can be important for the flexibilty to keep 
+styleing of a grid as puristic as possible and let other parts of this framework do the fancy stuff. 
+If you don't take a look on the styleables in the next part.
 
-# sticker ( _sticker )
 
-# alignLeft, alignCenter alignRight ( _alignLeft, _alignCenter _alignRight )
+# The styleables
+
+
+
+### slim ( `<tag class="_slim"></tag>` )
+
+### stretch ( `<tag class="_stretch"></tag>` )
+
+### sticker ( `<tag class="_stretch"></tag>` )
+
+
+
+## alignLeft, alignCenter, alignRight ( _alignLeft, _alignCenter _alignRight )
 
 # tags
 It is always a good idea to setup some defaults
