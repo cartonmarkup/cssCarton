@@ -1,5 +1,5 @@
 /* CSS CARTON v1.0.0
-* Autor: Mathias Prinz
+* Autor: Mathias Prinz, Tobias Schlömer
 */
 
 ._cell {
@@ -44,7 +44,7 @@
 	outline-offset: 1px
 }
 
-._showCartons ._slim, ._showCartons ._stretch {
+._showSlim ._slim, ._showStretch ._stretch {
 	outline: 6px dashed #FFFF9D;
 	outline-offset: 1px
 }
