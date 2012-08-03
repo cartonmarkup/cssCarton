@@ -300,7 +300,7 @@ Done! A sparkling example to show nested grids aren't useless is the definition 
 
 ## alignLeft, alignCenter, alignRight ( `<tag class="_alignLeft"></tag>`, `<tag class="_alignCenter"></tag>`, `<tag class="_alignRight"></tag>` )
 What is to know about the alignment classes? Not mutch. If an alignment class is added to an grid or an styleable all childrens of this element ( not the element itself ) will be
-aligned as told him from above until a new alignment is added on a deeper level. 
+aligned as told them from above until a new alignment is added on a deeper level. 
    
      -------------------------------+
      --+--_alignLeft-------------+ |
