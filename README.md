@@ -370,5 +370,8 @@ page layouts. Also I think it is alway a good idear to define some defaults for 
 By default I added Eric Meyer's [CSS reset](http://meyerweb.com/eric/tools/css/reset/) because I found it usefull to have a simple at the scratch, but cssCarton 
 doesn't necesary need this special reset file or any css reset file to work. It's also an extra. Feel free to remove or replace it with the reset you prefere. 
 
+# Licence
+???
+
 # Thanks allot
 Comments or ideas are welcome at @gradety!
