@@ -1,4 +1,4 @@
-/* CSS CARTON v1.0.0
+/* CSS CARTON v1.0.1
  * support file for internet explorer 6 and 7
  * Autor: Mathias Prinz, Tobias Schlömer
  */
@@ -7,7 +7,7 @@
 	zoom: 1;
 	display: inline;
 	vertical-align: top;
-	letter-spacing: -4px;
+	font-size: 0;
 	position: relative
 }
 
@@ -15,11 +15,11 @@
 	zoom: 1;
 	display: inline;
 	vertical-align: top;
-	letter-spacing: normal
+	font-size: medium
 }
 
 ._stretch {
 	display: block;
 	vertical-align: top;
-	letter-spacing: normal
+	font-size: medium
 }

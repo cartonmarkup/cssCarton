@@ -344,7 +344,13 @@ In the minfied version theese classes are not supported.
   *  _showGrid: red dashes outlines
   *  _showStretch, _showSlim : yellow dashes outlines
   *  _showSticker: lila double outlines
-  
+
+# inherited font-size 
+Normaly without the cssCarton you propably would define a default font-size into the body tag, but this won't workout 
+because of the _cells wich set the font-size to zero to prevent "whitespace-spots" between the Sytleables. Instead I sugest to 
+define the default font-size into _slim, _stretch and _sticker:
+      
+      ._slim, ._stretch, ._sticker { font-size: 12px; }      
   
 # "protected" css attributes
 Be aware if you use the following attributes in classes or in a style-attribute you wanna combine together with html elements that are defined as grids or styleables:
