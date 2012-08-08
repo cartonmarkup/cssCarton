@@ -167,8 +167,7 @@ Think of styleables as books in a shelf. Every book has it's own individual styl
 If you have a lot of books you start to stack them onto each other and fill the last empty space that's left on the shelf. 
 The same way cells where arranged to build a grid, styleables added to a cell follow each other and fit or 
 break into a new line depending on their type. But most importantly, styleables contain the content and finally,
-they are those elements that provide styling for your page layout. To color things up, attach every css attribute you wish  
-to the styleables and put them into the cells of your grid.    
+they are those elements that provide styling for your page layout. To color things up, attach every css attribute you wish to the styleables and put them into the cells of your grid.    
 
 ### stretch ( `<tag class="_stretch"></tag>` )
 For flexible usage, stretched stylebles are always as wide as their closest
