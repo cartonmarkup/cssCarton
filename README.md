@@ -4,11 +4,11 @@ cssCarton - framework for responsive style sheet design
 cssCarton is a lightweight framework that offers a simple way to transfer your grid based page layout into CSS and HTML.
 
 # I am a Pattern, I am a Framework
-If you take a look on cssCartons source code you will notice that this framework is – let's say – clearly.
-I like that very mutch. If you know a little about css it will be easy for you to figure out how the different 
-parts of this framework really works and than you will notice that cssCarton is more a kind of css pattern than 
-a tricky css hack. But even if it's source code isn't that big a deal cssCarton is a strong basement for all kind 
-of page layouts you can imagine building with html.
+If you take a look at the cssCartons source code you will notice that this framework is – let's say – clean and lean.
+I personally like that very much in any project. If you know a little about css it will be easy for you to figure out how the different 
+the different parts of this framework really work. In Turn, you will notice that cssCarton is more like a css pattern than 
+a tricky css hack. But even if it's clean and simple source code isn't that big a deal for you, cssCarton still provides a reliable base for all kind 
+of page layouts you might come up with.
  
 # Like words in a sentence
 
@@ -118,17 +118,18 @@ as their parent, they will break and hence stack up (as D and E in the sample be
 
 That's all you need to know about cells. 
 But wait there is on last thing. The mission of the cells is to provide the dimensions for your grid, 
-nothing else. So it's inproper to use other styling than the dimension properties width, min-width, 
-height and min-height or the overflow attribute to handle a cells scrolling behaviour. Maybe you can also 
-use background if you have to, but you shouldn't. Why? I will tell you in the next section of this readme.
+nothing else. So it's improper to use other styling than the dimension properties: width, min-width, 
+height and min-height or the overflow attribute - to handle a cells scrolling behaviour. You might also 
+use background if you have to, but really you shouldn't. 
+Why? I will tell you in the next section of this readme.
 
 # Responsive design
 Lets go back to theory for a second and talk about the promised [reponsive](http://en.wikipedia.org/wiki/Responsive_Web_Design) 
 part of this framework. The many different screen resolution of modern divices force us to think different about what a page layout is.
-First get rid of the idear a webpage is a static layout with fixed dimensions like a page in a book, it can be flexible.
-Before I go to mutch into details, take a look on [media queries](http://www.w3.org/TR/css3-mediaqueries/). As you will see, they are simple 
-controls for your stylesheets to manage differnt behavior for all kind of divices. Can yo imagine a 
-combination of media queries with a grid of cells?
+First get rid of the idea that a webpage is a static layout with fixed dimensions like a page in a book or newspaper. A Webpage can and should be flexible - to some extend at least.
+Before I go into too much detail, take a look at [media queries](http://www.w3.org/TR/css3-mediaqueries/). As you will see, they are a simple 
+way to control your stylesheets and to provide a differnt behavior for each kind of device. Can yo imagine a 
+combination of media queries with a grid of cells? I can ;-)
 
     .Parent { width: 600px }
 
@@ -136,7 +137,7 @@ combination of media queries with a grid of cells?
       .Parent { width: 300px } 
     }
     
-The same grid on different device resolutions:
+The same grid as rendered for different device resolutions:
     
     Desktop                               Mobile
 
@@ -154,20 +155,20 @@ The same grid on different device resolutions:
                                           | +----------------+ |
                                           +--------------------+
 
-Great isn't it? The sample illustrates how easy you can change the appearance of the whole grid
+Great isn't it? The sample illustrates how easily you can change the appearance of the whole grid
 only by reducing the size of the parentcell ( respectively changeing the way cells break ).
 Now, maybe you understand that it can be important for the flexibilty of a layout to keep
-styleing out of the cells and let other parts of the framework take care about the fancy stuff. 
-Still don't know why? Lets take a look on these other parts.
+styling out of the cells and let other parts of the framework take care of the fancy stuff. 
+Still with me? Lets take a look on these other parts.
 
 # The styleables
 
-Think of syleables as books in a shelf. Every book has it's own individual styled spine and size. 
-If you have a lot of books you start to stack them on each other and fill the last emty space the shelf left. 
-The same way syleables where arranged to a grid. Added to a cell they follow each other and fit or 
-break into a new line depending on their kind and type. Also important to say is, that these elements take care for 
-the content and finaly the part of styleing your page layout. To color things up, combine every css attribute you wish  
-to the styleables and put them into your grid.    
+Think of styleables as books in a shelf. Every book has it's own individual styled spine and size (determined by its content). 
+If you have a lot of books you start to stack them onto each other and fill the last empty space that's left on the shelf. 
+The same way cells where arranged to build a grid, styleables added to a cell follow each other and fit or 
+break into a new line depending on their type. But most importantly, styleables contain the content and finally,
+they are those elements that provide styling for your page layout. To color things up, attach every css attribute you wish  
+to the styleables and put them into the cells of your grid.    
 
 ### stretch ( `<tag class="_stretch"></tag>` )
 For flexible usage, stretched stylebles are always as wide as their closest
