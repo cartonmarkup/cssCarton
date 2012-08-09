@@ -6,7 +6,7 @@ cssCarton is a lightweight framework that offers a simple way to transfer your g
 # I am a Pattern, I am a Framework
 If you take a look at the cssCartons source code you will notice that this framework is – let's say – clean and lean.
 I personally like that very much in any project. If you know a little about css it will be easy for you to figure out how the different 
-the different parts of this framework really work. In Turn, you will notice that cssCarton is more like a css pattern than 
+parts of this framework really work. In Turn, you will notice that cssCarton is more like a css pattern than 
 a tricky css hack. But even if it's clean and simple source code isn't that big a deal for you, cssCarton still provides a reliable base for all kind 
 of page layouts you might come up with.
  
@@ -355,12 +355,12 @@ define the default font-size into _slim, _stretch and _sticker:
 # "protected" css attributes
 Be aware if you use the following attributes in classes or in a style-attribute you wanna combine together with html elements that are defined as grids or styleables:
 
-  * display 
-  * vertical-align 
-  * letter-spacing 
-  * position 
-  * text-align
-
+  * display  (_cell, _slim, _stretch, _sticker) 
+  * vertical-align (_cell, _slim, _stretch)
+  * position (_cell, _slim, _stretch, _sticker)
+  * text-align (_alignLeft, _alignCenter, _alignRight)
+  * font-size (_cell)
+  
 # Browser compatibility
 Every browser that can handle display: inline-block; or is an Internet Explorer newer than 5 ( the truth is I haven't tested below 6 ) should support this framework.
 To support older versions of Internet Explorer than 8 you  need to bind the extra file ie7ie6_carton.css to you documents head: 

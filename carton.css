@@ -1,4 +1,4 @@
-/* CSS CARTON v1.0.1
+/* CSS CARTON v1.0.2
 * Autor: Mathias Prinz, Tobias Schlömer
 */
 
@@ -12,13 +12,15 @@
 ._slim {
 	display: inline-block;
 	vertical-align: top;
-	font-size: medium
+	font-size: medium;
+	position: relative
 }
 
 ._stretch {
 	display: block;
 	vertical-align: top;
-	font-size: medium
+	font-size: medium;
+	position: relative
 }
 
 ._sticker {
