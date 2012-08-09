@@ -24,8 +24,7 @@ Enough Theory.
 
 # The grid
 
-### cell
-( `<tag class="_cell"></tag>` )
+### cell ( `<tag class="_cell"></tag>` )
 
 First you will need a bunch off cells or at least one. Because if you glue them together,
 they will build a grid for your layout. To start create a first frame- or parentcell.
@@ -170,8 +169,7 @@ The same way cells where arranged to build a grid, styleables added to a cell fo
 break into a new line depending on their type. But most importantly, styleables contain the content and 
 they are those elements that provide styling for your page layout. To color things up, attach every css attribute you wish to the styleables and put them into the cells of your grid.    
 
-### stretch
-( `<tag class="_stretch"></tag>` )
+### stretch ( `<tag class="_stretch"></tag>` )
 In order to gain flexibility, stretched styleables are always as wide as their closest
 wrappinng cell ( borders, margins and paddings will be substracted from the inherited width ).
 This is great, because if you want to use the same stretched styleable class in different cells there is 
@@ -199,8 +197,7 @@ than the length of the surrounding cell – What is by the way in my eyes no goo
       -+-------------------------------------+ |
 
 
-### slim
-( `<tag class="_slim"></tag>` )
+### slim ( `<tag class="_slim"></tag>` )
 If no static width is defined a slim styleable is always as wide as its content ( borders, margins and paddings will be added 
 to the width of the styleable ). Like grids they are placed next to each other, as long as their summed up width fits into 
 the same line ( which is determined by the wrapping cells width ) or no stretched styleable is in between them. A stretched styleable in between two slim styleables will break the line after the stretched styleable.I told you, the "like-words-in-a-sentence"-rule 
@@ -239,13 +236,12 @@ all styleables in the next line will be vertically aligned to the bottom of the 
       -+--------------------------------------+ |
 
 
-### sticker
-( `<tag class="_sticker"></tag>` )
-Stickers don't follow the "like-words-in-a-sentence"-rule instead they are positioned absolut to the bounds of the closest 
-grid that wraps arround. You can define their location with position styles ( top, left, right, bottom ) from the top or bottom and from 
-the left or right side of the grid. Even on document scrolling or an dynamic resize of the grid they will be glued absolute to the surrounding grid. 
-If position styles with negative values where added, a sticker can be placed outside of the grid, but keep in mind that if the wrapping 
-grid is set to an overflow other than visible, the grid will work like a mask and hide the parts that reach out of it.
+### sticker ( `<tag class="_sticker"></tag>` )
+Stickers don't follow the "like-words-in-a-sentence"-rule instead they are positioned relative to the bounds of the closest 
+cell that wraps around. You can define the location with position styles ( top, left, right, bottom ) from the top or bottom and from 
+the left or right side of the cell. Even when scrolling the page or after a dynamic resize of the grid the sticker will be glued in its position relative to the surrounding cell. 
+If position styles with negative values are added, a sticker can be placed outside of the cell, but keep in mind that if the wrapping 
+cell is set to an overflow other than visible, the cell will work like a rectangular mask and hide those parts of the sticker that reach out of it.
     
     ...
     <div class="_cell" style="width: 300px;">
@@ -302,8 +298,7 @@ Done! A sparkling example to show nested grids aren't useless is the definition 
     ==========================================
 
 
-## alignLeft, alignCenter, alignRight
-( `<tag class="_alignLeft"></tag>`, `<tag class="_alignCenter"></tag>`, `<tag class="_alignRight"></tag>` )
+## alignLeft, alignCenter, alignRight ( `<tag class="_alignLeft"></tag>`, `<tag class="_alignCenter"></tag>`, `<tag class="_alignRight"></tag>` )
 What is to know about the alignment classes? Not mutch. If an alignment class is added to an grid or an styleable all childrens of this element ( not the element itself ) will be
 aligned as told them from above until a new alignment is added on a deeper level. 
    
@@ -335,8 +330,7 @@ aligned as told them from above until a new alignment is added on a deeper level
        |                         | |
       
       
-### showGrid, showStretch, showSlim, showSticker
-( `<tag class="_showGrid"></tag>`, `<tag class="_showSlim"></tag>`, `<tag class="_showStretch"></tag>`, `<tag class="_showSticker"></tag>` )
+### showGrid, showStretch, showSlim, showSticker ( `<tag class="_showGrid"></tag>`, `<tag class="_showSlim"></tag>`, `<tag class="_showStretch"></tag>`, `<tag class="_showSticker"></tag>` )
 Theese help you to identify the different parts of cssCarton inside of your page layout by adding different outlines to each element. 
 In the minfied version theese classes are not supported.
 
