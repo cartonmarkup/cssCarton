@@ -24,7 +24,8 @@ Enough Theory.
 
 # The grid
 
-### cell ( `<tag class="_cell"></tag>` )
+### cell
+( `<tag class="_cell"></tag>` )
 
 First you will need a bunch off cells or at least one. Because if you glue them together,
 they will build a grid for your layout. To start create a first frame- or parentcell.
@@ -166,16 +167,17 @@ Still with me? Lets take a look on these other parts.
 Think of styleables as books in a shelf. Every book has it's own individual styled spine and size (determined by its content). 
 If you have a lot of books you start to stack them onto each other and fill the last empty space that's left on the shelf. 
 The same way cells where arranged to build a grid, styleables added to a cell follow each other and fit or 
-break into a new line depending on their type. But most importantly, styleables contain the content and finally,
+break into a new line depending on their type. But most importantly, styleables contain the content and 
 they are those elements that provide styling for your page layout. To color things up, attach every css attribute you wish to the styleables and put them into the cells of your grid.    
 
-### stretch ( `<tag class="_stretch"></tag>` )
-For flexible usage, stretched stylebles are always as wide as their closest
-wrappinng cell ( borders, margins and paddings will be substracted from the inherited wide ).
-This is great, because if you wanna use the same stretched styleable class in different cells their is 
-no need for extra styles to adjust. Also you don't need to adjust in future. Stretched styleables will still fit 
-after a dynamic update of the wrapping cells dimensions and also fit to cells you don't had a glue that you will need them when 
-you created the css class for the styleable. Before I forget, because it demands on enough space, a stretched styleable 
+### stretch
+( `<tag class="_stretch"></tag>` )
+In order to gain flexibility, stretched styleables are always as wide as their closest
+wrappinng cell ( borders, margins and paddings will be substracted from the inherited width ).
+This is great, because if you want to use the same stretched styleable class in different cells there is 
+no need for extra styles to adjust to different cell width. You won't need to adjust the stretch if you change the wrapping cell in future. Stretched styleables will also still fit 
+after a dynamic update of the wrapping cells dimensions. Even more so, they will also fit to cells that you didn't have a clue you would use when 
+you created the styleable. Before I forget, because it demands on enough space, a stretched styleable 
 will always break into a new custom line ( Even if you add a static width, that is much smaller 
 than the length of the surrounding cell – What is by the way in my eyes no good approach for this element ).  
     
@@ -197,12 +199,13 @@ than the length of the surrounding cell – What is by the way in my eyes no goo
       -+-------------------------------------+ |
 
 
-### slim ( `<tag class="_slim"></tag>` )
-If no static width is defined a slim styleable is as wide as it's content ( borders, margins and paddings will be added 
-to the wide of the styleable ). Like grids they stand next to each other, as long as their width added together fit into 
-the same line ( the wrapping cells width ) or no stretched styleable is in between them. I told you, the "like-words-in-a-sentence"-rule 
-is everywhere in this framework. Also you should know, that even when the slim syleables in one line have a different height
-all syleables in the next line will be aligned to the bottom of the heighest styleable in the previous one.    
+### slim
+( `<tag class="_slim"></tag>` )
+If no static width is defined a slim styleable is always as wide as its content ( borders, margins and paddings will be added 
+to the width of the styleable ). Like grids they are placed next to each other, as long as their summed up width fits into 
+the same line ( which is determined by the wrapping cells width ) or no stretched styleable is in between them. A stretched styleable in between two slim styleables will break the line after the stretched styleable.I told you, the "like-words-in-a-sentence"-rule 
+is everywhere in this framework. But you should know that if the slim styleables in one line have different heights
+all styleables in the next line will be vertically aligned to the bottom of the tallest styleable in this previous line.    
      
      ...
      <div class="_cell" style="width: 300px;">
@@ -236,7 +239,8 @@ all syleables in the next line will be aligned to the bottom of the heighest sty
       -+--------------------------------------+ |
 
 
-### sticker ( `<tag class="_sticker"></tag>` )
+### sticker
+( `<tag class="_sticker"></tag>` )
 Stickers don't follow the "like-words-in-a-sentence"-rule instead they are positioned absolut to the bounds of the closest 
 grid that wraps arround. You can define their location with position styles ( top, left, right, bottom ) from the top or bottom and from 
 the left or right side of the grid. Even on document scrolling or an dynamic resize of the grid they will be glued absolute to the surrounding grid. 
@@ -298,7 +302,8 @@ Done! A sparkling example to show nested grids aren't useless is the definition 
     ==========================================
 
 
-## alignLeft, alignCenter, alignRight ( `<tag class="_alignLeft"></tag>`, `<tag class="_alignCenter"></tag>`, `<tag class="_alignRight"></tag>` )
+## alignLeft, alignCenter, alignRight
+( `<tag class="_alignLeft"></tag>`, `<tag class="_alignCenter"></tag>`, `<tag class="_alignRight"></tag>` )
 What is to know about the alignment classes? Not mutch. If an alignment class is added to an grid or an styleable all childrens of this element ( not the element itself ) will be
 aligned as told them from above until a new alignment is added on a deeper level. 
    
@@ -330,7 +335,8 @@ aligned as told them from above until a new alignment is added on a deeper level
        |                         | |
       
       
-### showGrid, showStretch, showSlim, showSticker ( `<tag class="_showGrid"></tag>`, `<tag class="_showSlim"></tag>`, `<tag class="_showStretch"></tag>`, `<tag class="_showSticker"></tag>` )
+### showGrid, showStretch, showSlim, showSticker
+( `<tag class="_showGrid"></tag>`, `<tag class="_showSlim"></tag>`, `<tag class="_showStretch"></tag>`, `<tag class="_showSticker"></tag>` )
 Theese help you to identify the different parts of cssCarton inside of your page layout by adding different outlines to each element. 
 In the minfied version theese classes are not supported.
 
