@@ -175,9 +175,7 @@ wrappinng cell ( borders, margins and paddings will be substracted from the inhe
 This is great, because if you want to use the same stretched styleable class in different cells there is 
 no need for extra styles to adjust to different cell width. You won't need to adjust the stretch if you change the wrapping cell in future. Stretched styleables will also still fit 
 after a dynamic update of the wrapping cells dimensions. Even more so, they will also fit to cells that you didn't have a clue you would use when 
-you created the styleable. Before I forget, because it demands on enough space, a stretched styleable 
-will always break into a new custom line ( Even if you add a static width, that is much smaller 
-than the length of the surrounding cell – What is by the way in my eyes no good approach for this element ).  
+you created the styleable. One important thing to note though is that a stretched styleable will always cause a linebreak.  
     
      ...
      <div class="_cell" style="width: 300px;">
@@ -198,11 +196,11 @@ than the length of the surrounding cell – What is by the way in my eyes no goo
 
 
 ### slim ( `<tag class="_slim"></tag>` )
-If no static width is defined a slim styleable is always as wide as its content ( borders, margins and paddings will be added 
+If no width is defined a slim styleable is always as wide as its content ( borders, margins and paddings will be added 
 to the width of the styleable ). Like grids they are placed next to each other, as long as their summed up width fits into 
-the same line ( which is determined by the wrapping cells width ) or no stretched styleable is in between them. A stretched styleable in between two slim styleables will break the line after the stretched styleable.I told you, the "like-words-in-a-sentence"-rule 
+the same line ( which is determined by the wrapping cells width ) or no stretched styleable is in between them. A stretched styleable in between two slim styleables will break the line. I told you, the "like-words-in-a-sentence"-rule 
 is everywhere in this framework. But you should know that if the slim styleables in one line have different heights
-all styleables in the next line will be vertically aligned to the bottom of the tallest styleable in this previous line.    
+all styleables in the next line will be vertically aligned to the bottom of the tallest styleable in the previous line.    
      
      ...
      <div class="_cell" style="width: 300px;">
@@ -237,11 +235,11 @@ all styleables in the next line will be vertically aligned to the bottom of the 
 
 
 ### sticker ( `<tag class="_sticker"></tag>` )
-Stickers don't follow the "like-words-in-a-sentence"-rule instead they are positioned relative to the bounds of the closest 
+Stickers don't follow the "like-words-in-a-sentence"-rule instead they are positioned relative to the edge of its wrapping 
 cell that wraps around. You can define the location with position styles ( top, left, right, bottom ) from the top or bottom and from 
-the left or right side of the cell. Even when scrolling the page or after a dynamic resize of the grid the sticker will be glued in its position relative to the surrounding cell. 
-If position styles with negative values are added, a sticker can be placed outside of the cell, but keep in mind that if the wrapping 
-cell is set to an overflow other than visible, the cell will work like a rectangular mask and hide those parts of the sticker that reach out of it.
+the left or right edge of the sticker. Even when scrolling the page or after a dynamic resize of the grid the sticker will be glued in its position relative to the wrapping cell. 
+If position styles with negative values are used, a sticker can be placed outside of the wrapping cell, but keep in mind that if the wrapping 
+cell is set to an overflow other than visible, the wrapping cell will work like a rectangular mask and hide those parts of the sticker that are not overlapping with it.
     
     ...
     <div class="_cell" style="width: 300px;">
@@ -264,11 +262,11 @@ cell is set to an overflow other than visible, the cell will work like a rectang
 
 
 ### Nested grids
-Grids can be placed inside a styleable. Why? Because above I baned styleing the grid!
-You can use the wrapping styleable like a nice frame to decorate and place your grid inside an document. 
-If you abdicate the use of dimension styles ( fixed width or height ), the "frame" will always float arround the grid.
-But it is also possible to scroll the grid inside the styleable – add a fixed height that is much lower than the grid and set overflow to auto or scroll. 
-Done! A sparkling example to show nested grids aren't useless is the definition of a page element like every page layout has, that centers the main content inside of the body.   
+Grids can be placed inside a styleable. Why? Well, technically because we can and logically because - as stated above - I banned styling the grid!
+You can use the wrapping styleable like a nice "frame" to decorate and place your grid inside an document. 
+If you abdicate using dimension styles ( fixed width or height ), this "frame" will always float arround the grid.
+It is also possible to scroll the grid inside the styleable – add a fixed height that is much lower than the grid and set overflow on the "frame" to auto or scroll. 
+Done! A sparkling example to show how useful nested grids are, is the task of defining an element, that centers the main content on the page.   
     
     <body class="_alignCenter">
       <!-- page -->
@@ -279,7 +277,7 @@ Done! A sparkling example to show nested grids aren't useless is the definition 
       </div>
     </body>
     
-    Will place a sytleable like this inside the browser window/body:
+    Will place a sytleable ( with a grid ) inside the browser window/body:
     
     ==========================================
             
@@ -299,8 +297,8 @@ Done! A sparkling example to show nested grids aren't useless is the definition 
 
 
 ## alignLeft, alignCenter, alignRight ( `<tag class="_alignLeft"></tag>`, `<tag class="_alignCenter"></tag>`, `<tag class="_alignRight"></tag>` )
-What is to know about the alignment classes? Not mutch. If an alignment class is added to an grid or an styleable all childrens of this element ( not the element itself ) will be
-aligned as told them from above until a new alignment is added on a deeper level. 
+What is to know about the alignment classes? Not mutch. If an alignment class is added to a grid or a styleable all children of this element ( not the element itself ) will be
+aligned as specified by the alignment class of this parent element until a new alignment is added on a deeper level. 
    
      -------------------------------+
      --+--_alignLeft-------------+ |
@@ -341,19 +339,19 @@ In the minfied version theese classes are not supported.
       This will outline all grids and styleables inside the body  
       
       
-  *  _showGrid: red dashes outlines
-  *  _showStretch, _showSlim : yellow dashes outlines
-  *  _showSticker: lila double outlines
+  *  _showGrid: red dashed outlines
+  *  _showStretch, _showSlim : yellow dashed outlines
+  *  _showSticker: purple double outlines
 
 # inherited font-size 
-Normaly without the cssCarton you propably would define a default font-size into the body tag, but this won't workout 
-because of the _cells wich set the font-size to zero to prevent "whitespace-spots" between the Sytleables. Instead I sugest to 
-define the default font-size into _slim, _stretch and _sticker:
+Without cssCarton you propably would define a default font-size in the body tag, but this won't do any good while using cssCarton. 
+This is due to the specific of _cells wich set the font-size to zero to prevent "whitespace-spots" between the Sytleables. Instead I suggest to 
+define the default font-size in _slim, _stretch and _sticker:
       
       ._slim, ._stretch, ._sticker { font-size: 12px; }      
   
 # "protected" css attributes
-Be aware if you use the following attributes in classes or in a style-attribute you wanna combine together with html elements that are defined as grids or styleables:
+Be aware if you use the following attributes in classes or in a style-attribute you want to combine together with html elements that are defined as grids or styleables:
 
   * display  (_cell, _slim, _stretch, _sticker) 
   * vertical-align (_cell, _slim, _stretch)
@@ -362,19 +360,19 @@ Be aware if you use the following attributes in classes or in a style-attribute 
   * font-size (_cell)
   
 # Browser compatibility
-Every browser that can handle display: inline-block; or is an Internet Explorer newer than 5 ( the truth is I haven't tested below 6 ) should support this framework.
-To support older versions of Internet Explorer than 8 you  need to bind the extra file ie7ie6_carton.css to you documents head: 
+Every browser that can handle display: inline-block; or is an Internet Explorer more recent than version 5 ( the truth is I haven't tested below 6 ) should support this framework.
+To support older versions of Internet Explorer than 8 you have to link to the extra file ie7ie6_carton.css to you documents head: 
 
     <link href="carton.css" rel="stylesheet"  type="text/css">
     <!--[if lt IE 8]><link href="ie7ie6_carton.css" rel="stylesheet" type="text/css"><![endif]-->
     
 # tags.css
-In this file you can ( hopefully ) find all Tags modern browsers support and a discription what they are used to be. I hope that will support you on building symantic
-page layouts. Also I think it is alway a good idear to define some defaults for your design and this is a good place to start.  
+In this file you can ( hopefully ) find all Tags modern browsers support and a description what they are used for. I hope this will help you with building symantic
+page layouts. In addition, I think it is alway a good idea to define some defaults for your design and this is a good place to start.  
 
 # Reset
-By default I added Eric Meyer's [CSS reset](http://meyerweb.com/eric/tools/css/reset/) because I found it usefull to have a simple at the scratch, but cssCarton 
-doesn't necesary need this special reset file or any css reset file to work. It's also an extra. Feel free to remove or replace it with the reset you prefere. 
+By default I added Eric Meyer's [CSS reset](http://meyerweb.com/eric/tools/css/reset/) because I found it useful to have a clean start, but cssCarton 
+doesn't necessarily need this reset or any other css reset in order to work. Feel free to remove or replace it with the reset you prefer. 
 
 # Licence
 ???
