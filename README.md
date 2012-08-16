@@ -235,8 +235,8 @@ all styleables in the next line will be vertically aligned to the bottom of the 
 
 
 ### sticker ( `<tag class="_sticker"></tag>` )
-Stickers don't follow the "like-words-in-a-sentence"-rule instead they are positioned relative to the edge of its wrapping 
-cell that wraps around. You can define the location with position styles ( top, left, right, bottom ) from the top or bottom and from 
+Stickers don't follow the "like-words-in-a-sentence"-rule instead they are positioned absolute in relation to the edge of its wrapping 
+cell. You can define the location with position styles ( top, left, right, bottom ) from the top or bottom and from 
 the left or right edge of the sticker. Even when scrolling the page or after a dynamic resize of the grid the sticker will be glued in its position relative to the wrapping cell. 
 If position styles with negative values are used, a sticker can be placed outside of the wrapping cell, but keep in mind that if the wrapping 
 cell is set to an overflow other than visible, the wrapping cell will work like a rectangular mask and hide those parts of the sticker that are not overlapping with it.
@@ -378,4 +378,4 @@ doesn't necessarily need this reset or any other css reset in order to work. Fee
 ???
 
 # Thanks allot
-Comments or ideas are welcome at @gradety!
+Comments or ideas are welcome at support@littleweblab.com!
