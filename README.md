@@ -378,4 +378,4 @@ doesn't necessarily need this reset or any other css reset in order to work. Fee
 ???
 
 # Thanks allot
-Comments or ideas are welcome at @gradety!
+Comments or ideas are welcome at support@littleweblab.com!
