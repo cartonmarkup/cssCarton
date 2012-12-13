@@ -377,5 +377,5 @@ doesn't necessarily need this reset or any other css reset in order to work. Fee
 # Licence
 ???
 
-# Thanks allot
+# Thanks a lot
 Comments or ideas are welcome at support@littleweblab.com!
