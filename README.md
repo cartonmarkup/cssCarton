@@ -10,11 +10,11 @@ parts of this framework really work. In Turn, you will notice that cssCarton is 
 a tricky css hack. But even if it's clean and simple source code isn't that big a deal for you, cssCarton still provides a reliable base for all kind 
 of page layouts you might come up with.
  
-# Like words in a sentence
+# Like words in a chopped
 
 If you want to use CSS Carton to style your HTML page, you need to realize a few basics.
-Most importantly, that a `<tag>` in HTML most of the time behaves much like a word in a sentence. Unless there is a reason 
-(e.g. no more room in the line, or a manual linebreak) adding a new word in a sentence will not cause a linebreak. With cssCarton this is the 
+Most importantly, that a `<tag>` in HTML most of the time behaves much like a word in a chopped. Unless there is a reason 
+(e.g. no more room in the line, or a manual linebreak) adding a new word in a chopped will not cause a linebreak. With cssCarton this is the 
 basis for creating layouts and grids. A new `<tag>` (i.e. a "cell" of your design) will also only break into a new "line" if there is not
 enough space left for it in its current line or if it is explicitly told to break. You get it? Great! Because if you understand this behaviour, 
 it is all you need to make creating page layouts super easy with cssCarton.
@@ -39,7 +39,7 @@ This would be determined by the content within the cells or it could be manualy 
     |                |
     +----------------+
 
-Now you will need the "like-words-in-a-sentence"-rule from above!
+Now you will need the "like-words-in-a-chopped"-rule from above!
 The parentcell defines the length of the "lines" ( 600px ). To build columns 
 you can add as many cells to a "line" as you want. They will stand next to 
 each other as long as their width added together is the same or smaller as parentcell ones.
@@ -198,7 +198,7 @@ you created the styleable. One important thing to note though is that a stretche
 ### slim ( `<tag class="_slim"></tag>` )
 If no width is defined a slim styleable is always as wide as its content ( borders, margins and paddings will be added 
 to the width of the styleable ). Like grids they are placed next to each other, as long as their summed up width fits into 
-the same line ( which is determined by the wrapping cells width ) or no stretched styleable is in between them. A stretched styleable in between two slim styleables will break the line. I told you, the "like-words-in-a-sentence"-rule 
+the same line ( which is determined by the wrapping cells width ) or no stretched styleable is in between them. A stretched styleable in between two slim styleables will break the line. I told you, the "like-words-in-a-chopped"-rule 
 is everywhere in this framework. But you should know that if the slim styleables in one line have different heights
 all styleables in the next line will be vertically aligned to the bottom of the tallest styleable in the previous line.    
      
@@ -233,9 +233,38 @@ all styleables in the next line will be vertically aligned to the bottom of the 
        | ..............  .........            | |
       -+--------------------------------------+ |
 
+###  ( `<tag class="_chopped"></tag>` )
+Unlike the slim styleable which, if no space has left, breaks completely into the next line, the chopped element will 
+fit as much of it's content as possible into the current line and than break what has left into the next line.
+That means chopped sytleables can exist in more than one line. To accomplish this behavior chopped styleables use 
+the display:inline; attribute what makes them kind of tricky to use. You should notice that chopped styleables are 
+always as wide as their content, even if you set an explicit width. Also just setting an explicit height won't work. 
+Instead you need to use line-height like this: margin-top + padding-top + font-size + padding-bottom + margin-bottom 
+ 
+    ...
+    <div class="_cell" style="width: 300px;">
+      <!-- B is the wrapping cell -->
+      <div class="_chopped">
+        As a chopped style able I can exist on more than only one line
+      </div>
+    </div> 
+    ... 
+    
+    Will place a style able in the grid like this:
+    
+    ---------------------------------------------+                                  
+    --+--B-300px-------------------------------+ |
+      | ...................................... | |
+      | . As a chopped style able I can exist | |
+      | ...................................... | |
+      | ............................           | |
+      | on more than only one line .           | |
+      | ............................           | |
+     -+----------------------------------------+ |
+
 
 ### sticker ( `<tag class="_sticker"></tag>` )
-Stickers don't follow the "like-words-in-a-sentence"-rule instead they are positioned absolute in relation to the edge of its wrapping cell. 
+Stickers don't follow the "like-words-in-a-chopped"-rule instead they are positioned absolute in relation to the edge of its wrapping cell. 
 You can define the location with position styles ( top, left, right, bottom ) from the top or bottom and from 
 the left or right edge of the sticker. Even when scrolling the page or after a dynamic resize of the grid the sticker will be glued in its position relative to the wrapping cell. 
 If position styles with negative values are used, a sticker can be placed outside of the wrapping cell, but keep in mind that if the wrapping 
@@ -259,6 +288,11 @@ cell is set to an overflow other than visible, the wrapping cell will work like 
     ....................           | |
         |                          | |
        -+--------------------------+ |
+
+### fixed ( `<tag class="_fixed"></tag>` )
+Like the sticker a fixed styleables don't follow the "like-words-in-a-chopped"-rule but different than the sticker the fixed styleable is positioned in relation to to 
+the edge of the browser-window, no matter in which cell you will place it. You can define the location with position styles ( top, left, right, bottom ) from the top or bottom and from 
+the left or right edge of the fixed element.
 
 
 ### Nested grids
@@ -326,13 +360,12 @@ aligned as specified by the alignment class of this parent element until a new a
        |     . aligned left    . | |
        |     ................... | |
        |                         | |
-      
-      
-### showGrid, showStretch, showSlim, showSticker ( `<tag class="_showGrid"></tag>`, `<tag class="_showSlim"></tag>`, `<tag class="_showStretch"></tag>`, `<tag class="_showSticker"></tag>` )
+
+### showGrid, showStretch, showSlim, showChopped, showSticker, showFixed ( `<tag class="_showGrid"></tag>`, `<tag class="_showSlim"></tag>`, `<tag class="_showChopped"></tag>`, `<tag class="_showStretch"></tag>`, `<tag class="_showSticker"></tag>`, `<tag class="_showFixed"></tag>` )
 Theese help you to identify the different parts of cssCarton inside of your page layout by adding different outlines to each element. 
 In the minfied version theese classes are not supported.
 
-     <body class="_showGrid _showStretch _showSlim _showSticker">
+     <body class="_showGrid _showStretch  _showChopped _showSlim _showSticker">
        ...
      </body>
       
@@ -340,32 +373,37 @@ In the minfied version theese classes are not supported.
       
       
   *  _showGrid: red dashed outlines
-  *  _showStretch, _showSlim : yellow dashed outlines
+  *  _showStretch, _showSlim: yellow dashed outlines
+  *  _showChopped: green dashed outlines
   *  _showSticker: purple double outlines
+  *  _showFixed: pink double outlines
 
 # inherited font-size 
 Without cssCarton you propably would define a default font-size in the body tag, but this won't do any good while using cssCarton. 
 This is due to the specific of _cells wich set the font-size to zero to prevent "whitespace-spots" between the Sytleables. Instead I suggest to 
 define the default font-size in _slim, _stretch and _sticker:
       
-      ._slim, ._stretch, ._sticker { font-size: 12px; }      
+      ._slim, ._stretch, ._chopped, ._sticker, _fixed { font-size: 12px; }      
   
 # "protected" css attributes
 Be aware if you use the following attributes in classes or in a style-attribute you want to combine together with html elements that are defined as grids or styleables:
 
-  * display  (_cell, _slim, _stretch, _sticker) 
+  * display  (_cell, _slim, _chopped, _stretch, _sticker, _fixed) 
   * vertical-align (_cell, _slim, _stretch)
-  * position (_cell, _slim, _stretch, _sticker)
+  * position (_cell, _slim, _chopped, _stretch, _sticker, _fixed)
   * text-align (_alignLeft, _alignCenter, _alignRight)
   * font-size (_cell)
   
 # Browser compatibility
 Every browser that can handle display: inline-block; or is an Internet Explorer more recent than version 5 ( the truth is I haven't tested below 6 ) should support this framework.
-To support older versions of Internet Explorer than 8 you have to link to the extra file ie7ie6_carton.css to you documents head: 
+ To support older versions of Internet Explorer than 8 you have to link to the extra file ie7ie6_carton.css to you documents head: 
 
     <link href="carton.css" rel="stylesheet"  type="text/css">
     <!--[if lt IE 8]><link href="ie7ie6_carton.css" rel="stylesheet" type="text/css"><![endif]-->
-    
+
+Be aware that also with the extra stylesheet the fixed styleable only works in Browsers that support the position: fixed; attribute ( Which Internet Explorer 6 does not ! ). 
+Also the "show" classes won't work in Internet Explorer 6 because it doesn't support the outline attribute.
+
 # tags.css
 In this file you can ( hopefully ) find all Tags modern browsers support and a description what they are used for. I hope this will help you with building symantic
 page layouts. In addition, I think it is alway a good idea to define some defaults for your design and this is a good place to start.  
@@ -375,7 +413,7 @@ By default I added Eric Meyer's [CSS reset](http://meyerweb.com/eric/tools/css/r
 doesn't necessarily need this reset or any other css reset in order to work. Feel free to remove or replace it with the reset you prefer. 
 
 # Licence
-???
+CssCarton is released under the [MIT License](http://www.opensource.org/licenses/MIT).
 
 # Thanks allot
-Comments or ideas are welcome at support@littleweblab.com!
+Comments or ideas are welcome at mathias_prinz@me.com!

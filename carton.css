@@ -1,57 +1,80 @@
-/* CSS CARTON v1.0.2
+/* CSS CARTON v1.0.3
 * Autor: Mathias Prinz, Tobias Schlömer
 */
 
 ._cell {
-	display: inline-block;
-	vertical-align: top;
-	font-size: 0;
-	position: relative
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0
 }
 
 ._slim {
-	display: inline-block;
-	vertical-align: top;
-	font-size: medium;
-	position: relative
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  font-size: medium
 }
 
 ._stretch {
-	display: block;
-	vertical-align: top;
-	font-size: medium;
-	position: relative
+  position: relative;
+  display: block;
+  vertical-align: top;
+  font-size: medium
+}
+
+._chopped {
+  position: relative;
+  display: inline;
+  vertical-align: top;
+  font-size: medium
 }
 
 ._sticker {
-	position: absolute;
-	display: block;
-	font-size: medium
+  position: absolute;
+  display: block;
+  font-size: medium
+}
+
+._fixed {
+  position: fixed;
+  display: block;
+  font-size: medium
 }
 
 ._alignRight {
-	text-align: right
+  text-align: right
 }
 
 ._alignLeft {
-	text-align: left
+  text-align: left
 }
 
 ._alignCenter {
-	text-align: center
+  text-align: center
 }
 
 ._showGrid ._cell {
-	outline: 3px dashed #FF716C;
-	outline-offset: 1px
+  outline: 3px dashed #FF716C;
+  outline-offset: 1px
 }
 
 ._showSlim ._slim, ._showStretch ._stretch {
-	outline: 6px dashed #FFFF9D;
-	outline-offset: 1px
+  outline: 6px dashed #FFFF9D;
+  outline-offset: 1px
+}
+
+._showChopped ._chopped {
+  outline: 3px dashed #99fccb;
+  outline-offset: 1px
 }
 
 ._showSticker ._sticker {
-	outline: 6px double #9981FF;
-	outline-offset: 1px
+  outline: 6px double #9981FF;
+  outline-offset: 1px
+}
+
+._showFixed ._fixed {
+  outline: 6px double #ff97d7;
+  outline-offset: 1px
 }
