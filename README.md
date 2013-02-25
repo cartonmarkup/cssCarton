@@ -12,9 +12,9 @@ of page layouts you might come up with.
  
 # Like words in a chopped
 
-If you want to use CSS Carton to style your HTML page, you need to realize a few basics.
-Most importantly, that a `<tag>` in HTML most of the time behaves much like a word in a chopped. Unless there is a reason 
-(e.g. no more room in the line, or a manual linebreak) adding a new word in a chopped will not cause a linebreak. With cssCarton this is the 
+If you want to use cssCarton to style your HTML page, you need to realize a few basics.
+Most importantly, that a `<tag>` in HTML most of the time behaves much like a word in a sentence. Unless there is a reason 
+(e.g. no more room in the line, or a manual linebreak) adding a new word in a sentence will not cause a linebreak. With cssCarton this is the 
 basis for creating layouts and grids. A new `<tag>` (i.e. a "cell" of your design) will also only break into a new "line" if there is not
 enough space left for it in its current line or if it is explicitly told to break. You get it? Great! Because if you understand this behaviour, 
 it is all you need to make creating page layouts super easy with cssCarton.
@@ -127,7 +127,7 @@ Why? I will tell you in the next section of this readme.
 Lets go back to theory for a second and talk about the promised [reponsive](http://en.wikipedia.org/wiki/Responsive_Web_Design) 
 part of this framework. The many different screen resolution of modern divices force us to think different about what a page layout is.
 First get rid of the idea that a webpage is a static layout with fixed dimensions like a page in a book or newspaper. A Webpage can and should be flexible - to some extend at least.
-Before I go into too much detail, take a look at [media queries](http://www.w3.org/TR/css3-mediaqueries/). As you will see, they are a simple 
+Before I go into too much detail, take a look at [media queries](http://www.w3.org/TR/css3-mediaqueries/). As you will see, there is a simple 
 way to control your stylesheets and to provide a differnt behavior for each kind of device. Can yo imagine a 
 combination of media queries with a grid of cells? I can ;-)
 
@@ -331,7 +331,7 @@ Done! A sparkling example to show how useful nested grids are, is the task of de
 
 
 ## alignLeft, alignCenter, alignRight ( `<tag class="_alignLeft"></tag>`, `<tag class="_alignCenter"></tag>`, `<tag class="_alignRight"></tag>` )
-What is to know about the alignment classes? Not mutch. If an alignment class is added to a grid or a styleable all children of this element ( not the element itself ) will be
+What is to know about the alignment classes? Not much. If an alignment class is added to a grid or a styleable all children of this element ( not the element itself ) will be
 aligned as specified by the alignment class of this parent element until a new alignment is added on a deeper level. 
    
      -------------------------------+
@@ -417,3 +417,4 @@ CssCarton is released under the [MIT License](http://www.opensource.org/licenses
 
 # Thanks allot
 Comments or ideas are welcome at mathias_prinz@me.com!
+
