@@ -10,7 +10,7 @@ parts of this framework really work. In Turn, you will notice that cssCarton is 
 a tricky css hack. But even if it's clean and simple source code isn't that big a deal for you, cssCarton still provides a reliable base for all kind 
 of page layouts you might come up with.
  
-# Like words in a chopped
+# Like words in a sentence
 
 If you want to use cssCarton to style your HTML page, you need to realize a few basics.
 Most importantly, that a `<tag>` in HTML most of the time behaves much like a word in a sentence. Unless there is a reason 
@@ -39,7 +39,7 @@ This would be determined by the content within the cells or it could be manualy 
     |                |
     +----------------+
 
-Now you will need the "like-words-in-a-chopped"-rule from above!
+Now you will need the "like-words-in-a-sentence"-rule from above!
 The parentcell defines the length of the "lines" ( 600px ). To build columns 
 you can add as many cells to a "line" as you want. They will stand next to 
 each other as long as their width added together is the same or smaller as parentcell ones.
@@ -198,7 +198,7 @@ you created the styleable. One important thing to note though is that a stretche
 ### slim ( `<tag class="_slim"></tag>` )
 If no width is defined a slim styleable is always as wide as its content ( borders, margins and paddings will be added 
 to the width of the styleable ). Like grids they are placed next to each other, as long as their summed up width fits into 
-the same line ( which is determined by the wrapping cells width ) or no stretched styleable is in between them. A stretched styleable in between two slim styleables will break the line. I told you, the "like-words-in-a-chopped"-rule 
+the same line ( which is determined by the wrapping cells width ) or no stretched styleable is in between them. A stretched styleable in between two slim styleables will break the line. I told you, the "like-words-in-a-sentence"-rule 
 is everywhere in this framework. But you should know that if the slim styleables in one line have different heights
 all styleables in the next line will be vertically aligned to the bottom of the tallest styleable in the previous line.    
      
@@ -264,7 +264,7 @@ Instead you need to use line-height like this: margin-top + padding-top + font-s
 
 
 ### sticker ( `<tag class="_sticker"></tag>` )
-Stickers don't follow the "like-words-in-a-chopped"-rule instead they are positioned absolute in relation to the edge of its wrapping cell. 
+Stickers don't follow the "like-words-in-a-sentence"-rule instead they are positioned absolute in relation to the edge of its wrapping cell. 
 You can define the location with position styles ( top, left, right, bottom ) from the top or bottom and from 
 the left or right edge of the sticker. Even when scrolling the page or after a dynamic resize of the grid the sticker will be glued in its position relative to the wrapping cell. 
 If position styles with negative values are used, a sticker can be placed outside of the wrapping cell, but keep in mind that if the wrapping 
@@ -290,7 +290,7 @@ cell is set to an overflow other than visible, the wrapping cell will work like 
        -+--------------------------+ |
 
 ### fixed ( `<tag class="_fixed"></tag>` )
-Like the sticker a fixed styleables don't follow the "like-words-in-a-chopped"-rule but different than the sticker the fixed styleable is positioned in relation to to 
+Like the sticker a fixed styleables don't follow the "like-words-in-a-sentence"-rule but different than the sticker the fixed styleable is positioned in relation to to 
 the edge of the browser-window, no matter in which cell you will place it. You can define the location with position styles ( top, left, right, bottom ) from the top or bottom and from 
 the left or right edge of the fixed element.
 
@@ -378,7 +378,7 @@ In the minfied version theese classes are not supported.
   *  _showSticker: purple double outlines
   *  _showFixed: pink double outlines
 
-# inherited font-size 
+# Inherited font-size 
 Without cssCarton you propably would define a default font-size in the body tag, but this won't do any good while using cssCarton. 
 This is due to the specific of _cells wich set the font-size to zero to prevent "whitespace-spots" between the Sytleables. Instead I suggest to 
 define the default font-size in _slim, _stretch and _sticker:
