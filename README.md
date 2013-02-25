@@ -233,7 +233,7 @@ all styleables in the next line will be vertically aligned to the bottom of the 
        | ..............  .........            | |
       -+--------------------------------------+ |
 
-###  ( `<tag class="_chopped"></tag>` )
+### chopped ( `<tag class="_chopped"></tag>` )
 Unlike the slim styleable which, if no space has left, breaks completely into the next line, the chopped element will 
 fit as much of it's content as possible into the current line and than break what has left into the next line.
 That means chopped sytleables can exist in more than one line. To accomplish this behavior chopped styleables use 
@@ -255,7 +255,7 @@ Instead you need to use line-height like this: margin-top + padding-top + font-s
     ---------------------------------------------+                                  
     --+--B-300px-------------------------------+ |
       | ...................................... | |
-      | . As a chopped style able I can exist | |
+      | . As a chopped style able I can exist  | |
       | ...................................... | |
       | ............................           | |
       | on more than only one line .           | |
@@ -365,7 +365,7 @@ aligned as specified by the alignment class of this parent element until a new a
 Theese help you to identify the different parts of cssCarton inside of your page layout by adding different outlines to each element. 
 In the minfied version theese classes are not supported.
 
-     <body class="_showGrid _showStretch  _showChopped _showSlim _showSticker">
+     <body class="_showGrid _showStretch _showChopped _showSlim _showSticker">
        ...
      </body>
       
@@ -389,7 +389,7 @@ define the default font-size in _slim, _stretch and _sticker:
 Be aware if you use the following attributes in classes or in a style-attribute you want to combine together with html elements that are defined as grids or styleables:
 
   * display  (_cell, _slim, _chopped, _stretch, _sticker, _fixed) 
-  * vertical-align (_cell, _slim, _stretch)
+  * vertical-align (_cell, _chopped, _slim, _stretch)
   * position (_cell, _slim, _chopped, _stretch, _sticker, _fixed)
   * text-align (_alignLeft, _alignCenter, _alignRight)
   * font-size (_cell)
