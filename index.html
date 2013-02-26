@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>cssCarton - sample</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link href="carton.css" rel="stylesheet"  type="text/css">
     <!--[if lt IE 8]><link href="ie7ie6_carton.css" rel="stylesheet" type="text/css"><![endif]-->
-
     <style>
       body {
         background-color: #404040
       }
 
-      ._slim, ._stretch, ._sticker, ._chopped, ._fixed {
+      .slim_, .stretch_, .sticker_, .chopped_, .fixed_ {
         color: #ffffff;
         font-size: 12px;
-      } 
+      }
 
       .page_grid {
         width: 600px;
@@ -78,7 +79,7 @@
         padding: 20px;
         bottom: 15px;
         left: 50%;
-        margin-left: -160px
+        margin-left: -180px
       }
 
       @media ( max-width: 320px ) {
@@ -89,25 +90,25 @@
     </style>
   </head>
 
-  <body class="_alignCenter">
-    <div class="_slim page _showGrid _showStretch  _showSticker _showSlim _showChopped _showFixed">
-      <div class="_cell page_grid">
-        <div class="_cell left">
-          <div class="_cell left_top ">
-            <div class="_stretch carton">I am a carton stretched to my parent cells <br> ( top_left ) width</div>
+  <body class="alignCenter_">
+    <div class="slim_ page showGrid_ showStretch_  showSticker_ showSlim_ showChopped_ showFixed_">
+      <div class="cell_ page_grid">
+        <div class="cell_ left">
+          <div class="cell_ left_top ">
+            <div class="stretch_ carton">I am a carton stretched to my parent cells <br> ( top_left ) width</div>
           </div>
-          <div class="_cell left_bottom  _noWrap">
-            <div class="_sticker disrupter_following">I am a sticker</div>
-            <div class="_fixed disrupter_not_following">I am fixed ( I am not working in Internet Explorer lower than 7 )</div>
+          <div class="cell_ left_bottom">
+            <div class="sticker_ disrupter_following">I am a sticker</div>
+            <div class="fixed_ disrupter_not_following">I am fixed ( I am not working in Internet Explorer lower than 7 )</div>
           </div>
         </div>
-        <div class="_cell _alignLeft right">
-          <div class="_slim carton _alignLeft">As <br> slim <br> cartons</div>
-          <div class="_slim carton _alignCenter">we <br> stand <br> in </div>
-          <div class="_slim carton _alignRight">a  <br> Line </div>
-          <div class="_chopped twoLines">As a chopped styleable I can exist on more than one line</div>
+        <div class="cell_ alignLeft_ right">
+          <div class="slim_ carton alignLeft_">As <br> slim <br> cartons</div>
+          <div class="slim_ carton alignCenter_">we <br> stand <br> in </div>
+          <div class="slim_ carton alignRight_">a  <br> Line </div>
+          <div class="chopped_ twoLines">As a chopped styleable I can exist on more than one line</div>
         </div>
-        <div class="_cell  foot _alignCenter"></div>
+        <div class="cell_ foot"></div>
       </div>
     </div>
   </body>

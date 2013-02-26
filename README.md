@@ -413,7 +413,7 @@ By default I added Eric Meyer's [CSS reset](http://meyerweb.com/eric/tools/css/r
 doesn't necessarily need this reset or any other css reset in order to work. Feel free to remove or replace it with the reset you prefer. 
 
 # Licence
-CssCarton is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+cssCarton is released under the [MIT License](http://www.opensource.org/licenses/MIT).
 
 # Thanks allot
 Comments or ideas are welcome at mathias_prinz@me.com!

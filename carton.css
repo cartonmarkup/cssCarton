@@ -2,79 +2,79 @@
 * Autor: Mathias Prinz, Tobias Schlömer
 */
 
-._cell {
+.cell_ {
   position: relative;
   display: inline-block;
   vertical-align: top;
   font-size: 0
 }
 
-._slim {
+.slim_ {
   position: relative;
   display: inline-block;
   vertical-align: top;
   font-size: medium
 }
 
-._stretch {
+.stretch_ {
   position: relative;
   display: block;
   vertical-align: top;
   font-size: medium
 }
 
-._chopped {
+.chopped_ {
   position: relative;
   display: inline;
   vertical-align: top;
   font-size: medium
 }
 
-._sticker {
+.sticker_ {
   position: absolute;
   display: block;
   font-size: medium
 }
 
-._fixed {
+.fixed_ {
   position: fixed;
   display: block;
   font-size: medium
 }
 
-._alignRight {
+.alignRight_ {
   text-align: right
 }
 
-._alignLeft {
+.alignLeft_ {
   text-align: left
 }
 
-._alignCenter {
+.alignCenter_ {
   text-align: center
 }
 
-._showGrid ._cell {
+.showGrid_ .cell_ {
   outline: 3px dashed #FF716C;
-  outline-offset: 1px
+  outline-offset: 0px
 }
 
-._showSlim ._slim, ._showStretch ._stretch {
+.showSlim_ .slim_, .showStretch_ .stretch_ {
   outline: 6px dashed #FFFF9D;
   outline-offset: 1px
 }
 
-._showChopped ._chopped {
+.showChopped_ .chopped_ {
   outline: 3px dashed #99fccb;
   outline-offset: 1px
 }
 
-._showSticker ._sticker {
+.showSticker_ .sticker_ {
   outline: 6px double #9981FF;
   outline-offset: 1px
 }
 
-._showFixed ._fixed {
+.showFixed_ .fixed_ {
   outline: 6px double #ff97d7;
   outline-offset: 1px
 }
