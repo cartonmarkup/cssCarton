@@ -24,7 +24,7 @@ Enough Theory.
 
 # The grid
 
-### cell ( `<tag class="_cell"></tag>` )
+### cell ( `<tag class="cell_"></tag>` )
 
 First you will need a bunch of cells or at least one. Because if you glue them together,
 they will form a grid for your layout. To get started create a first frame- or parentcell.
