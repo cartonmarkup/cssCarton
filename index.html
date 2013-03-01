@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link href="carton.css" rel="stylesheet"  type="text/css">
+    <link href="ie6_unsupported_carton.css" rel="stylesheet"  type="text/css">
     <!--[if lt IE 8]><link href="ie7ie6_carton.css" rel="stylesheet" type="text/css"><![endif]-->
     <style>
       body {
         background-color: #404040
       }
 
-      .slim_, .stretch_, .sticker_, .chopped_, .fixed_ {
+      .slim_, .stretch_, .sticker_, .chopped_, .fixed_, .fitToCell_ {
         color: #ffffff;
         font-size: 12px;
       }
@@ -81,7 +82,13 @@
         left: 50%;
         margin-left: -180px
       }
-
+      
+      .fitter { 
+        background-color: #404040;
+        padding: 20px;
+        margin: 5px;
+      }
+    
       @media ( max-width: 320px ) {
         .page_grid {
           width: 300px
@@ -91,7 +98,7 @@
   </head>
 
   <body class="alignCenter_">
-    <div class="slim_ page showGrid_ showStretch_  showSticker_ showSlim_ showChopped_ showFixed_">
+    <div class="slim_ page showGrid_ showStretch_  showSticker_ showSlim_ showChopped_ showFixed_  showFitToCell_">
       <div class="cell_ page_grid">
         <div class="cell_ left">
           <div class="cell_ left_top ">
@@ -99,7 +106,7 @@
           </div>
           <div class="cell_ left_bottom">
             <div class="sticker_ disrupter_following">I am a sticker</div>
-            <div class="fixed_ disrupter_not_following">I am fixed ( I am not working in Internet Explorer lower than 7 )</div>
+            <div class="fixed_ disrupter_not_following">I am fixed <br> ( I am not working in Internet Explorer lower than 7 )</div>
           </div>
         </div>
         <div class="cell_ alignLeft_ right">
@@ -107,8 +114,11 @@
           <div class="slim_ carton alignCenter_">we <br> stand <br> in </div>
           <div class="slim_ carton alignRight_">a  <br> Line </div>
           <div class="chopped_ twoLines">As a chopped styleable I can exist on more than one line</div>
+          
         </div>
-        <div class="cell_ foot"></div>
+        <div class="cell_ foot">
+         <div class="fitToCell_ fitter">I am a fitToCell styleable. <br> I am always fitting to my parent cell <br>  ( I am not working in Internet Explorer lower than 7 ) </div>
+        </div>
       </div>
     </div>
   </body>

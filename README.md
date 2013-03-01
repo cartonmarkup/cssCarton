@@ -294,6 +294,7 @@ Like the sticker a fixed styleables don't follow the "like-words-in-a-sentence"-
 the edge of the browser-window, no matter in which cell you will place it. You can define the location with position styles ( top, left, right, bottom ) from the top or bottom and from 
 the left or right edge of the fixed element.
 
+### fitToCell ( `<tag class="_fitToCell"></tag>` )
 
 ### Nested grids
 Grids can be placed inside a styleable. Why? Well, technically because we can and logically because - as stated above - I banned styling the grid!
@@ -383,17 +384,18 @@ Without cssCarton you propably would define a default font-size in the body tag,
 This is due to the specific of _cells wich set the font-size to zero to prevent "whitespace-spots" between the Sytleables. Instead I suggest to 
 define the default font-size in _slim, _stretch and _sticker:
       
-      ._slim, ._stretch, ._chopped, ._sticker, _fixed { font-size: 12px; }      
+      ._slim, ._stretch, ._chopped, ._sticker, _fixed, _fitToCell { font-size: 12px; }      
   
 # "protected" css attributes
 Be aware if you use the following attributes in classes or in a style-attribute you want to combine together with html elements that are defined as grids or styleables:
 
-  * display  (_cell, _slim, _chopped, _stretch, _sticker, _fixed) 
+  * display  (_cell, _slim, _chopped, _stretch, _sticker, _fixed, _fitToCell) 
   * vertical-align (_cell, _chopped, _slim, _stretch)
-  * position (_cell, _slim, _chopped, _stretch, _sticker, _fixed)
+  * position (_cell, _slim, _chopped, _stretch, _sticker, _fixed, _fitToCell)
   * text-align (_alignLeft, _alignCenter, _alignRight)
   * font-size (_cell)
-  
+  * top,right,left,bottom ( _fitToCell )
+
 # Browser compatibility
 Every browser that can handle display: inline-block; or is an Internet Explorer more recent than version 5 ( the truth is I haven't tested below 6 ) should support this framework.
  To support older versions of Internet Explorer than 8 you have to link to the extra file ie7ie6_carton.css to you documents head: 

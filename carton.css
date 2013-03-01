@@ -36,12 +36,6 @@
   font-size: medium
 }
 
-.fixed_ {
-  position: fixed;
-  display: block;
-  font-size: medium
-}
-
 .alignRight_ {
   text-align: right
 }
@@ -71,10 +65,5 @@
 
 .showSticker_ .sticker_ {
   outline: 6px double #9981FF;
-  outline-offset: 1px
-}
-
-.showFixed_ .fixed_ {
-  outline: 6px double #ff97d7;
   outline-offset: 1px
 }
