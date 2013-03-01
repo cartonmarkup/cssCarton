@@ -6,7 +6,7 @@ cssCarton is a lightweight framework that offers a simple way to transfer your g
 # I am a Pattern, I am a Framework
 If you take a look at the cssCartons source code you will notice that this framework is – let's say – clean and lean.
 I personally like that very much in any project. If you know a little about css it will be easy for you to figure out how the different 
-parts of this framework really work. In Turn, you will notice that cssCarton is more like a css pattern than 
+parts of this framework really work. In turn, you will notice that cssCarton is more like a css pattern than 
 a tricky css hack. But even if it's clean and simple source code isn't that big a deal for you, cssCarton still provides a reliable base for all kind 
 of page layouts you might come up with.
  
@@ -26,10 +26,10 @@ Enough Theory.
 
 ### cell ( `<tag class="_cell"></tag>` )
 
-First you will need a bunch off cells or at least one. Because if you glue them together,
-they will build a grid for your layout. To start create a first frame- or parentcell.
-Please note that we don't care about the height of the cells here!
-This would be determined by the content within the cells or it could be manualy set.
+First you will need a bunch of cells or at least one. Because if you glue them together,
+they will form a grid for your layout. To get started create a first frame- or parentcell.
+Please note that we don't care about the height of the cells at this point!
+The height will be determined by the content within the cells or it can be set manualy.
 
     <div class="_cell" style="width: 600px;"></div>
 
@@ -42,7 +42,7 @@ This would be determined by the content within the cells or it could be manualy 
 Now you will need the "like-words-in-a-sentence"-rule from above!
 The parentcell defines the length of the "lines" ( 600px ). To build columns 
 you can add as many cells to a "line" as you want. They will stand next to 
-each other as long as their width added together is the same or smaller as parentcell ones.
+each other as long as their summed up width is the same or smaller as that of the parentcell.
 
     <div class="_cell" style="width: 600px;">
         <div class="_cell" style="width: 300px;">A</div>
@@ -57,7 +57,7 @@ each other as long as their width added together is the same or smaller as paren
     | +-----------+-----------+ |
     +---------------------------+
 
-If the previous cells left not enough space, a newly added cell will break 
+If the previous cells didn't leave enough space, a newly added cell will break 
 into the next "line" and start a new row.
 
     <div class="_cell" style="width: 600px;">
