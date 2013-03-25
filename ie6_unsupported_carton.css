@@ -1,4 +1,4 @@
-/* CSS CARTON v1.0.3
+/* CSS CARTON v1.0.4
 * Carton styleables for modern browsers only 
 * Autor: Mathias Prinz, Tobias Schlömer
 */
@@ -9,7 +9,7 @@
 	font-size: medium
 }
 
-.fitToCell_ {
+.fit_ {
 	position: absolute;
 	display: block;
 	font-size: medium;
@@ -24,7 +24,7 @@
 	outline-offset: 1px
 }
 
-.showFitToCell_ .fitToCell_  {
+.showFitToCell_ .fit_  {
 	outline: 3px dashed lightblue;
 	outline-offset: 1px
 }

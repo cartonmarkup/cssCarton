@@ -292,9 +292,29 @@ cell is set to an overflow other than visible, the wrapping cell will work like 
 ### fixed ( `<tag class="_fixed"></tag>` )
 Like the sticker a fixed styleables don't follow the "like-words-in-a-sentence"-rule but different than the sticker the fixed styleable is positioned in relation to to 
 the edge of the browser-window, no matter in which cell you will place it. You can define the location with position styles ( top, left, right, bottom ) from the top or bottom and from 
-the left or right edge of the fixed element.
+the left or right edge of the fixed element. Sadly this element doesn't work in Internet Explorer 6
 
-### fitToCell ( `<tag class="_fitToCell"></tag>` )
+### fit ( `<tag class="_fit"></tag>` )
+It's sad that this styleable doesn't work in Internet Explorer 6 because it is rely useful. As the name already indicates this element will fit with it's dimensions into the width and height of it's parent cell.
+Paddings, margins and border will be subtracted.   
+
+    ...
+    <div class="_cell" style="width: 100%;">
+      <!-- C is the wrapping cell -->
+      <div class="_fit"> I am fit </div>
+    </div> 
+    ...
+    
+    Will place a styleable in the grid like this:
+    
+    | +--C-100%--------+-----------+ | 
+    | |............................| |
+    | |. I am fit                 .| |    
+    | |.                          .| |
+    | |............................| |
+    | +----------------------------+ | 
+    +--------------------------------+ 
+
 
 ### Nested grids
 Grids can be placed inside a styleable. Why? Well, technically because we can and logically because - as stated above - I banned styling the grid!
@@ -378,23 +398,24 @@ In the minfied version theese classes are not supported.
   *  _showChopped: green dashed outlines
   *  _showSticker: purple double outlines
   *  _showFixed: pink double outlines
+  *  _showFit: lightblue dashed outlines
 
 # Inherited font-size 
 Without cssCarton you propably would define a default font-size in the body tag, but this won't do any good while using cssCarton. 
 This is due to the specific of _cells wich set the font-size to zero to prevent "whitespace-spots" between the Sytleables. Instead I suggest to 
 define the default font-size in _slim, _stretch and _sticker:
       
-      ._slim, ._stretch, ._chopped, ._sticker, _fixed, _fitToCell { font-size: 12px; }      
+      ._slim, ._stretch, ._chopped, ._sticker, _fixed, _fit { font-size: 12px; }      
   
 # "protected" css attributes
 Be aware if you use the following attributes in classes or in a style-attribute you want to combine together with html elements that are defined as grids or styleables:
 
-  * display  (_cell, _slim, _chopped, _stretch, _sticker, _fixed, _fitToCell) 
+  * display  (_cell, _slim, _chopped, _stretch, _sticker, _fixed, _fit) 
   * vertical-align (_cell, _chopped, _slim, _stretch)
-  * position (_cell, _slim, _chopped, _stretch, _sticker, _fixed, _fitToCell)
+  * position (_cell, _slim, _chopped, _stretch, _sticker, _fixed, _fit)
   * text-align (_alignLeft, _alignCenter, _alignRight)
   * font-size (_cell)
-  * top,right,left,bottom ( _fitToCell )
+  * top,right,left,bottom ( _fit )
 
 # Browser compatibility
 Every browser that can handle display: inline-block; or is an Internet Explorer more recent than version 5 ( the truth is I haven't tested below 6 ) should support this framework.
@@ -403,7 +424,8 @@ Every browser that can handle display: inline-block; or is an Internet Explorer 
     <link href="carton.css" rel="stylesheet"  type="text/css">
     <!--[if lt IE 8]><link href="ie7ie6_carton.css" rel="stylesheet" type="text/css"><![endif]-->
 
-Be aware that also with the extra stylesheet the fixed styleable only works in Browsers that support the position: fixed; attribute ( Which Internet Explorer 6 does not ! ). 
+Be aware that also with the extra stylesheet some elements aren't supported by the Internet Explorer 6 ( To be fair we should mention that most browser of that age can not handle this framework. But they arn't as besseting as the IE 6   ) 
+For clearness we have located elements that aren't suppoerted by Internet Explorer 6 in an extra stylesheet ie6_unsupported_carton.css 
 Also the "show" classes won't work in Internet Explorer 6 because it doesn't support the outline attribute.
 
 # tags.css
