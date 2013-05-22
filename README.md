@@ -1,4 +1,4 @@
-cssCarton - framework for responsive style sheet design
+cssCarton - framework for responsive stylesheet design
 ========================================================
 
 cssCarton is a lightweight framework that offers a simple way to transfer your grid based page layout into CSS and HTML.
@@ -207,7 +207,7 @@ Unlike the slim styleable which, if no space has left, breaks completely into th
     ---------------------------------------------+                                  
     --+--B-300px-------------------------------+ |
       | ...................................... | |
-      | . As a chopped styleable I can exist  | |
+      | . As a chopped styleable I can exist . | |
       | ...................................... | |
       | ............................           | |
       | on more than only one line .           | |
