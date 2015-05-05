@@ -1,0 +1,94 @@
+// generates a new multitype-class
+// which shows a different type beahaviour
+// based on which brekpoint form the @breakPoints
+// list has triggered
+// you can combine all types from
+// @types OR from @alignment together
+
+.breakTypes( @types ) {
+
+	._breakTypes();
+
+	// loop through @types list
+	// builds selector-string based on the
+	// list ( type1_type2_type3_ )
+	// builds an class for each type in the
+	// list with the gnerated
+	// string as class selector
+	// which is triggerd by media-queries based on
+	// @breakPoints
+
+	._breakTypes( @i: 1, @savedSelector: ~'' ) when ( @i <= length( @types ) ) {
+
+		@ext: extract( @types, @i );
+		@selector: ~'@{savedSelector}@{ext}_';
+
+
+
+		& when (  @i = length( @types ) ) {
+			._def( @selector );
+
+			& when ( @responsiveEnabled ) {
+
+
+				._max( @selector );
+				._min( @selector );
+
+		}
+	}
+		._breakTypes( @i + 1, @selector );
+	}
+
+	// creates class with the generated selector
+	// adds type specific sytles to the default breakpoint
+	// media-query free to trigger in ie > 9
+
+	._def( @selector;  @i: 0 ) when ( @i <= length( @breakPoints ) )  {
+
+		@type: extract( @types, @defaultBreakPoint );
+
+		.@{selector} {
+
+			._typeStyles( @type );
+		}
+	}
+
+	// sets media-queries in reversed order
+	// for all breakpoints in @breakPoints,
+	// but only before @defaultBreakpoint
+	// inside the list.
+
+	._max ( @selector, @i: @defaultBreakPoint - 1 ) when ( @i >= 1   ) {
+
+		._mq( @selector, @i, max-width );
+		._max( @selector, @i - 1 );
+	}
+
+	// set media-queries for all
+	// breakpoints after the default breakpoint
+	// in default order
+
+	._min( @selector, @i: @defaultBreakPoint + 1 ) when ( @i <= length( @breakPoints )  )  {
+
+		._mq( @selector, @i, min-width );
+		._min( @selector, @i + 1 );
+	}
+
+	// builds media-query to trigger breakpoint
+	// creates class with the generated selector
+	// adds type specific sytles to the breakpoint
+
+	._mq( @selector, @i, @key ) {
+
+		@breakPoint: extract( @breakPoints, @i );
+		@type: extract( @types, @i );
+
+		@media ( ~'@{key}: @{breakPoint}' )  {
+
+			.@{selector} {
+
+				._typeStyles( @type );
+			}
+		}
+	}
+}

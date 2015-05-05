@@ -1,0 +1,49 @@
+.responsive_ {
+
+	// fallback for media-query free
+	// browsers
+
+	position: relative;
+	.displayInline();
+	vertical-align: top;
+	font-size: 0;
+	._showOutline( responsive );
+
+	width: extract( @breakPoints, @defaultBreakPoint );
+
+	& when ( @responsiveEnabled ) {
+		// loop through @breakPoints and build
+		// .responsive_ classes
+
+		._mq();
+		._mq( @i: 1 ) when ( @i <= length( @breakPoints ) ) {
+
+			@breakPoint: extract( @breakPoints, @i );
+			@val: extract( @breakPoints, @i );
+
+			// width of the responsive_ wrapper
+			// is equal to window width.
+
+			& when ( @i <= @defaultBreakPoint ) {
+
+				@media ( max-width: @breakPoint )  {
+
+					width: auto;
+					display: block;
+				}
+			}
+
+			// take width from @breakPoint
+
+			& when (  @i > @defaultBreakPoint ) {
+
+				@media ( min-width: @breakPoint )  {
+
+					width: @val;
+				}
+			}
+
+			._mq( @i + 1 );
+		}
+	}
+}

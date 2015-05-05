@@ -1,0 +1,10 @@
+.rem(  @property, @value ) {
+
+	// fallback for browser without rem support
+
+	@{property}: unit( @value, px );
+
+	// rem value based on 63% font-size
+
+	@{property}: unit( ( @value * 0.1 ), rem );
+}

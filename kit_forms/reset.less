@@ -1,0 +1,30 @@
+input, button, textarea, select  {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background-color: transparent;
+	appearance: normal;
+}
+
+select {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+	height: auto;
+}
+
+select::-ms-expand {
+    display: none;	
+}
+
+input::-ms-clear, input::-ms-reveal {
+   display: none;
+}
+
+input:focus,
+select:focus,
+option:focus,
+textarea:focus,
+button:focus {
+	outline: none;
+}

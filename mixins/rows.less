@@ -1,0 +1,57 @@
+//  height or line-height / padding north / padding sourth / margin north / margin sourth / value to substtract from heightKey to compensate border sizes
+	
+.rows ( @heightKey, @h, @pN: 0, @pS: 0, @mN: 0, @mS: 0, @subtract: 0 ) {
+	.rem(@heightKey, (@row * @h)-@subtract );
+	
+	& when ( @pN > 0 ) {
+
+		.rem(padding-top, @row*@pN );
+	}
+
+	& when ( @pS > 0 ) {
+
+		.rem(padding-bottom, @row*@pS );
+	}
+
+	& when ( @mN > 0 ) {
+
+		.rem(margin-top, @row*@mN );
+	}
+
+	& when ( @mS > 0 ) {
+
+		.rem(margin-bottom, @row*@mS );
+	}
+
+	& when ( @showRowsLabel ) {
+		@sumRows: @h +  @pN + @pS + @mN + @mS;
+		@sumResult: @sumRows * @row;
+		
+		&:after {
+			content: 'H @{sumRows} x @{row} = @{sumResult}px/rem | @{h}, @{pN}, @{pS}, @{mN}, @{mS}, -@subtract';
+			white-space: nowrap;
+			font-size: 11px;
+			line-height: 12px;
+			height: 12px;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			margin-top: -6px;
+			background-color: pink;
+			color: #000;
+		}
+	}
+	
+	
+	& when ( @showRowsEnd ) {
+		&:before {
+			content: ' ';
+			height: 1px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background-color: pink;
+		}
+	}
+}

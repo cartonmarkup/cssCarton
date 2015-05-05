@@ -1,0 +1,202 @@
+.themeDefault {
+	
+	@fontFamily: 'Arial', sans-serif;
+	@color100: #5C5955;
+	@color80:  #7D7B77;
+	@color60:  #9E9C99;
+	@color40:  #BEBDBB;
+	@color20:  #DFDEDD;
+	@color10:  #EFEFEE;
+	@color5:   #F7F7F7;
+	@color0:   #ffffff;
+	
+	@backgroundColorDanger:;
+	@backgroundColorWarning:;
+	@backgroundColorNeutral:;
+	@backgroundColorGood:;
+	
+	@fontColorDanger:;
+	@fontColorWarning:;
+	@fontColorNeutral:;
+	@fontColorGood:;
+	
+		
+	@borderColorDanger:;
+	@borderColorWarning:;
+	@borderColorNeutral:;
+	@borderColorGood:;
+
+///////////////////
+// BASIC CLASSES //
+///////////////////
+	
+	// background shades
+
+	.bg100 { background-color: @color100; }
+	.bg80 { background-color: @color80; }
+	.bg60 { background-color: @color60; }
+	.bg40 { background-color: @color40; }
+	.bg20 { background-color: @color20; }
+	.bg10 { background-color: @color10; }
+	.bg5 { background-color: @color5; }
+	.bg0 { background-color: @color0; }
+	
+	.bgDanger { background-color: @backgroundColorDanger; }
+	.bgWarning { background-color: @backgroundColorWarning; }
+	.bgNeutral { background-color: @backgroundColorNeutral; }
+	.bgGood { background-color: @backgroundColorGood; } 
+	
+	// border shades
+
+	.border100 { border-color: @color100; }
+	.border80 { border-color: @color80; }
+	.border60 { border-color: @color60; }
+	.border40 { border-color: @color40; }
+	.border20 { border-color: @color20; }
+	.border10 { border-color: @color10; }
+	.border5 { border-color: @color5; }
+	.border0 { border-color: @color0; }
+	
+	.borderDanger { background-color: @borderColorDanger; }
+	.borderWarning { background-color: @borderColorWarning; }
+	.borderNeutral { background-color: @borderColorNeutral; }
+	.borderGood { background-color: @borderColorGood; }
+	
+
+	// color shades
+
+	.color100 { color: @color100; }
+	.color80 { color: @color80; }
+	.color60 { color: @color60; }
+	.color40 { color: @color40; }
+	.color20 { color: @color20; }
+	.color10 { color: @color10; }
+	.color5 { color: @color5; }
+	.color0 { color: @color0; }
+	
+	.colorDanger { color: @fontColorDanger; }
+	.colorWarning { color: @fontColorWarning; }
+	.colorNeutral { color: @fontColorNeutral; }
+	.colorGood { color: @fontColorGood; }
+
+	// shadows
+
+	.shadow, .interface_shadow {
+		-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.25); // iOS <4.3 & Android <4.1
+		box-shadow: 0 1px 3px rgba(0,0,0,.25);
+	}
+	
+	.innerShadow {
+		-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.25); // iOS <4.3 & Android <4.1
+		box-shadow: 0 1px 3px rgba(0,0,0,.25);
+	}
+
+	.disabled { opacity: 0.2; }
+
+//////////////
+// UI Parts //
+//////////////
+
+	// toolbar
+	
+	.toolbar {}
+	.toolbar-item {}
+	.toolbar-item--active {}
+	.toolbar-item--primary {}
+	.toolbar-item--disabled {}
+
+	// btn
+
+	.btn {}
+	.btn--primary {}
+	.btn--disabled {}
+	
+	.btn--danger {}
+	.btn--warning {}
+	.btn--good {}
+	
+	.btn--primary--danger {}
+	.btn--primary--warning {}
+	.btn--primary--good {}
+    
+	.btn--disabled--danger {}
+	.btn--disabled--warning {}
+	.btn--disabled--good {}
+	
+	.btnMultiline {}
+	.btnMultiline--primary {}
+	.btnMultiline--disabled {}
+	
+	.btnMultiline--danger {}
+	.btnMultiline--warning {}
+	.btnMultiline--good {}
+	
+	.btnMultiline--primary--danger {}
+	.btnMultiline--primary--warning {}
+	.btnMultiline--primary--good {}
+    
+	.btnMultiline--disabled--danger {}
+	.btnMultiline--disabled--warning {}
+	.btnMultiline--disabled--good {}
+
+	// divider
+	
+	.dividerVertical {}
+	.dividerHorizontal {}
+		
+	// group
+
+	.group {}
+	.group-verticalDivider {}
+	.group-horizontalDivider {}
+
+	.group-btn {}
+	.group-btn--active {}
+	.group-btn--primary {}
+	.group-btn--disabled {}
+
+	// divider
+
+	.group-verticalDivider {}
+	.group-horizontalDivider {}
+
+	// content
+
+	.paragraph {}
+	.headline {}
+	.list {}
+	.listSorted {}
+	.link {}
+
+	// form
+		
+	.label_ {}
+	.label_.input_ {&:before {}}
+	.label_.checkbox_ {&:before {}}
+	.label_.radio_ {&:before {}}
+	.label_.dropdown_ {&:before {}}
+	.label_.file_ {&:before {}}
+	.label_.label_ {&:before {}}
+	
+	.formMessanger {}
+	.formMessanger--danger {}
+	.formMessanger--warning {}
+	.formMessanger--good {}
+	
+	.formMessanger--danger--highlight {}
+	.formMessanger--warning--highlight {}
+	.formMessanger--good--highlight {}
+	
+	// images
+
+	.thumbnail1x {}
+	.thumbnail2x {}
+	.thumbnail3x {}
+
+	// tables
+	
+	.table {}
+	.table-row {}
+	.table-cell {}
+	.table-cell--highlight {}
+}

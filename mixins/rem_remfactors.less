@@ -1,0 +1,33 @@
+.remFactors( @factors: @remFontFactor ) {
+
+		// 63% means 1.2 rem ~ 12px;
+
+		font-size: 62%;
+
+	& when ( @responsiveEnabled ) {
+		._max();
+		._min();
+
+		._mq( @i, @key ) {
+			@breakPoint: extract( @breakPoints, @i );
+			//@key: extract( @breakPointKeys, @i );
+			@factor: extract( @factors, @i );
+
+			@media ( ~'@{key}: @{breakPoint}' )  {
+				/*bla*/
+				font-size: unit( 63 / @fontSize * @fontSize * @factor, % );
+			}
+		}
+
+		._max ( @i: @defaultBreakPoint - 1 ) when ( @i >= 1   ) {
+			._mq( @i, max-width );
+			._max( @i - 1 );
+		}
+
+		._min( @i: @defaultBreakPoint + 1 ) when ( @i <= length( @breakPoints )  )  {
+			._mq( @i, min-width );
+			._min( @i + 1 );
+		}
+	}
+
+}

@@ -1,0 +1,16 @@
+
+
+	// generate type based default classes
+
+
+	._types( @list, @i: 1 ) when ( @i <= length( @types ) ) {
+
+		@type: extract( @list, @i );
+
+		.@{type}_ {
+
+			._typeStyles( @type );
+		}
+
+		._types( @list, @i + 1 );
+	}

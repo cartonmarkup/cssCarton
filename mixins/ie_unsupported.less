@@ -1,0 +1,17 @@
+// mark item wich are not supported
+._unsuported( @type) {
+	& when ( @parseIe6And7Optimized = true ) {
+		&:after {
+			position: absolute;
+			text-align: center;
+			content: '@{type} is not supported for IE 6 & 7';
+			font-size: 11px;
+			background-color: red;
+			top: 0;
+			width: auto;
+			padding: 2px;
+			right: 0;
+			color: #fff;
+		}
+	}
+}

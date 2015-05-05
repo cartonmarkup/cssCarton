@@ -1,0 +1,30 @@
+._generateColumns( @cn, @cs, @i: 1 ) when ( @i =< length( @cn ) ) {
+	@mobileBreak: extract( @breakPoints, 1 );
+	@name: extract( @cn, @i );
+	@size: extract( @cs, @i );
+
+	.cell_.@{name}_,.slim_.@{name}_  {
+
+		width: extract( @cs, @i );
+	}
+
+	// set cell_ to width 100% when window width
+	// smaller than @mobileBreak
+
+	& when (@mobileGridBreak = true) and  ( @responsiveEnabled = true ){
+
+		@media ( max-width: @mobileBreak ) {
+
+			.cell_.@{name}_,.slim_.@{name}_ {
+
+				width: 100%;
+			}
+		}
+
+	}
+
+
+	._generateColumns( @cn, @cs, ( @i + 1 ) );
+}
+
+._generateColumns( @columnNames, @columnSize );

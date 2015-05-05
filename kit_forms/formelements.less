@@ -1,0 +1,65 @@
+
+    .label_ {
+		.rem( font-size, @fontSize );
+	}
+
+	.input_, .textarea_, button.btn_, input[type=button].btn_, .select_  {
+		.rem( font-size, @fontSize );
+		box-sizing: border-box;
+		text-align: inherit;
+		font-family: @fontFamily;
+	}
+	
+	.textarea_ {
+		overflow: auto;
+		resize: none;
+	}
+	
+	.input_:not([size]), .textarea_:not([cols]) {
+		width: 100%;
+	}
+	
+	.btn_ {
+		cursor: pointer;
+	}
+	
+	.select_ {
+	}
+	
+	// TODO: How to combine this with breaktypes?
+	button.btn_.stretch_, .select_.stretch_, input[type=button].btn_.stretch_ {
+		width :100%;
+	}
+	
+	input.checkbox_, input.radio_, input.file_ {
+		display: none;
+	}
+	
+	.label_.checkbox_ , .label_.radio_  {
+		&:before {
+			font-size: inherit;
+			position: absolute;
+			content: ' ';
+			cursor: pointer;
+			top: 0;
+			bottom: 0;
+			left: 0;
+		}
+	}
+		
+	input.checkbox_[type=checkbox]:checked + .label_.checkbox_:before,
+	input.checkbox_[type=checkbox][checked=true] + .label_.checkbox_:before  // for javascript to support browsers below IE9
+	{
+		content: "\2713";
+	}
+	
+	input.radio_[type=radio]:checked + .label_.radio_:before,
+	input.radio_[type=radio][checked=true] + .label_.radio_:before  // for javascript to support browsers below IE9
+	{
+		content: "\2022";
+	}
+	
+	.label_.file_:before {
+		content: "Datei Wählen";
+		cursor: pointer;
+	}

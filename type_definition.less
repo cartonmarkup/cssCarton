@@ -1,0 +1,167 @@
+
+
+
+	._types( @alignment );
+	._types( @types );
+	._types( @extraTypes );
+
+	// places type based styles inside a class
+
+	._typeStyles( @type ) {
+
+		//////////
+		// grid //
+		//////////
+
+		& when ( @type = cell ) {
+
+			position: relative;
+			.displayInline();
+			vertical-align: top;
+			font-size: 0;
+			._showOutline( cell );
+		}
+
+		////////////////
+		// STYLEABLES //
+		////////////////
+
+		& when ( @type = slim ) {
+			.rem( font-size, @fontSize );
+
+			position: relative;
+			.displayInline();
+			vertical-align: top;
+			letter-spacing: normal;
+			._showOutline( slim );
+		}
+
+		& when ( @type = stretch ) {
+			.rem( font-size, @fontSize );
+
+			position: relative;
+			display: block;
+			vertical-align: top;
+			letter-spacing: normal;
+			._showOutline( stretch );
+		}
+
+		& when ( @type = chopped ) {
+			.rem( font-size, @fontSize );
+
+			position: relative;
+			display: inline;
+			vertical-align: top;
+			._showOutline( chopped );
+		}
+
+		& when ( @type = sticker ) {
+			.rem( font-size, @fontSize );
+
+			position: absolute;
+			display: block;
+			._showOutline( sticker );
+		}
+
+		& when ( @type = fixed ) {
+			.rem( font-size, @fontSize );
+
+			position: fixed;
+			display: block;
+			._showOutline( fixed );
+
+			._unsuported( fixed );
+
+		}
+
+		& when ( @type = fit ) {
+			.rem( font-size, @fontSize );
+
+			position: absolute;
+			display: block;
+			font-size: medium;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			._showOutline( fit );
+			._unsuported( fit );
+
+		}
+
+		///////////////
+		// alignment //
+		///////////////
+
+		& when ( @type = alignLeft ) {
+
+			text-align: left;
+		}
+
+		& when ( @type = alignCenter ) {
+
+			text-align: center;
+		}
+
+		& when ( @type = alignRight ) {
+
+			text-align: right;
+		}
+
+		/////////////////
+		// extra types //
+		/////////////////
+
+		// no guaranties for IE 6 & 7
+
+		& when ( @type = hidden ) {
+
+			display: none !important;
+		}
+
+		// enable linebreaks
+
+		& when ( @type = wrap ) {
+
+			white-space: normal;
+		}
+
+		// prevent linebreaks
+
+		& when ( @type = noWrap ) {
+
+			white-space: nowrap;
+		}
+
+		// Text is not selectable
+
+		& when ( @type = unselectable ) {
+
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		
+		& when ( @type = selectable ) {
+
+			-webkit-touch-callout:default;
+			-webkit-user-select: text;
+			-khtml-user-select: text;
+			-moz-user-select: text;
+			-ms-user-select: text;
+			user-select: text;
+		}
+		
+		// text | all
+
+		& when ( @type = unclickable ) {
+			pointer-events: none;
+		}
+
+		& when ( @type = clickable ) {
+			pointer-events: auto;
+		}
+}

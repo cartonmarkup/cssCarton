@@ -1,0 +1,11 @@
+.displayInline () {
+
+	& when ( @parseIe6And7Optimized = true) {
+		zoom: 1;
+		display: inline;
+	}
+
+	& when not ( @parseIe6And7Optimized = true) {
+		display: inline-block;
+	}
+}
