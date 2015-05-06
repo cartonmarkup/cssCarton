@@ -25,13 +25,13 @@
 }
 
 .label_.checkbox_ , .label_.radio_  {
-	.rem(text-indent, 2*@row );
+	.rem(text-indent, 2.5*@row );
 	&:before {
-		.rows( height, 1, 0.5, 0.5 ); // line-height + rem doesn't work in IE because of an bug https://connect.microsoft.com/IE/Feedback/Details/776744
+		.rows( height, 1.5, 0.5, 0.5 ); // line-height + rem doesn't work in IE because of an bug https://connect.microsoft.com/IE/Feedback/Details/776744
 		.rem(border-radius, @row/4 );
-		text-indent: 0;
-		.rem(width, 2*@row );
+		.rem(width, 2.5*@row );
 		background-color: #404040;
+		text-indent: 0;
 		color: #ccc;
 		left: 0;
 	}	
@@ -39,13 +39,13 @@
 
 .label_.radio_  {
 	&:before { 
-		.rem(border-radius, @row );
+		border-radius: 50%;
 	}
 }
 
 .label_.file_  {
 	&:before {
-		.rows( height, 1, 0.5, 0.5 ); // line-height + rem doesn't work in IE because of an bug https://connect.microsoft.com/IE/Feedback/Details/776744
+		.rows( height, 1.5, 0.5, 0.5 ); // line-height + rem doesn't work in IE because of an bug https://connect.microsoft.com/IE/Feedback/Details/776744
 		.rem(border-radius, @row/4 );
 		.rem(padding-right, 0.5 * @row);  
 		.rem(padding-left, 0.5 * @row);  
@@ -57,12 +57,19 @@
 	}	
 }
 
-.input_.size1x, .label_.size1x, .textarea_.size1x, .btn_.size1x, .select_.size1x, .checkbox_.size1x, .radio_.size1x, .file_.size1x { 
+.input_.size1x, .label_.size1x, .textarea_.size1x, .btn_.size1x,  .checkbox_.size1x, .radio_.size1x, .file_.size1x { 
 	.rem(font-size, @fontSize ); 
-	.rows( line-height, 1, 0.5, 0.5, 0, 0.5 );  
+	.rows( line-height, 1.5, 0.5, 0.5, 0, 0.5 );  
 	.rem(padding-right, 0.5 * @row);  
 	.rem(padding-left, 0.5 * @row);  
 } 
+.select_.size1x {
+	.rows( height, 2.5, 0, 0, 0, 0.5 ); 
+	.rows( line-height,2.5 );  
+	.rem(font-size, @fontSize ); 
+	.rem(padding-right, 0.5 * @row);  
+	.rem(padding-left, 0.5 * @row);  
+}
 
 .input_.size2x {}
 .input_.size3x {}
