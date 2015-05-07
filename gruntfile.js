@@ -1,5 +1,15 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
+		connect: {
+			server: {
+				options: {
+					livereload: false,
+					port: 9001,
+					base: '../cssCarton'
+				}
+			}
+		},
+		
 		less: {
 			development: {
 				options: {
@@ -22,8 +32,8 @@ module.exports = function(grunt) {
 			}
 		}
 	});
-
+	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('default',['less', 'connect:server', 'watch' ]);
 };
