@@ -1,5 +1,5 @@
 
-!! Outdatedspo
+!! Outdated
 ========================================================
 
 cssCarton - framework for responsive stylesheet design
