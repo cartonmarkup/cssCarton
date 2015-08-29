@@ -5,9 +5,9 @@
 // you can combine all types from
 // @types OR from @alignment together
 
-.breakTypes( @types ) {
+.responsiveTypes( @types ) {
 
-	._breakTypes();
+	._responsiveTypes();
 
 	// loop through @types list
 	// builds selector-string based on the
@@ -18,7 +18,7 @@
 	// which is triggerd by media-queries based on
 	// @breakPoints
 
-	._breakTypes( @i: 1, @savedSelector: ~'' ) when ( @i <= length( @types ) ) {
+	._responsiveTypes( @i: 1, @savedSelector: ~'' ) when ( @i <= length( @types ) ) {
 
 		@ext: extract( @types, @i );
 		@selector: ~'@{savedSelector}@{ext}_';
@@ -36,7 +36,7 @@
 
 		}
 	}
-		._breakTypes( @i + 1, @selector );
+		._responsiveTypes( @i + 1, @selector );
 	}
 
 	// creates class with the generated selector

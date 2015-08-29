@@ -14,26 +14,34 @@
 	.rem(border-radius, @row/4 );
 }
 
-// TODO: select is heigher than defined in FF; TEstimg for IE
+// TODO: select is heigher than defined in FF; Testing for IE
 .select_ {
 	background-color: #fcfcfc;
 	color: #404040;
-	.rem(border-radius, @row/4 );
-	.rem(border-left-width, 3*@row );
 	border-color:#404040;
 	border-style:  solid;
+	.rem(
+		border-radius @row/4, 
+		border-left-width 3*@row 
+	);
 }
 
 .label_.checkbox_ , .label_.radio_  {
 	.rem(text-indent, 2.5*@row );
 	&:before {
-		.rows( height, 1.5, 0.5, 0.5 ); // line-height + rem doesn't work in IE because of an bug https://connect.microsoft.com/IE/Feedback/Details/776744
-		.rem(border-radius, @row/4 );
-		.rem(width, 2.5*@row );
 		background-color: #404040;
 		text-indent: 0;
 		color: #ccc;
 		left: 0;
+		.rows( 
+			height 1.5; // line-height + rem doesn't work in IE because of an bug https://connect.microsoft.com/IE/Feedback/Details/776744
+			padding-top 0.5; 
+			padding-bottom 0.5
+		); 
+		.rem(
+			border-radius @row/4; 
+			width 2.5*@row 
+		);
 	}	
 }
 
@@ -45,31 +53,51 @@
 
 .label_.file_  {
 	&:before {
-		.rows( height, 1.5, 0.5, 0.5 ); // line-height + rem doesn't work in IE because of an bug https://connect.microsoft.com/IE/Feedback/Details/776744
-		.rem(border-radius, @row/4 );
-		.rem(padding-right, 0.5 * @row);  
-		.rem(padding-left, 0.5 * @row);  
 		background-color: #404040;
 		color: #ccc;
+		.rows( 
+			height 1.5;  // line-height + rem doesn't work in IE because of an bug https://connect.microsoft.com/IE/Feedback/Details/776744
+			padding-top 0.5;
+			padding-bottom 0.5
+		);
+		.rem(
+			border-radius, @row/4; 
+			padding-right, 0.5 * @row;
+			padding-left, 0.5 * @row
+		);  
 		.slim_;
-		.rem(margin-right, 0.5 * @row);  
-		.rem(margin-top, (@row* 0.5)*-1)
+		.rem(
+			margin-right, 0.5 * @row;
+			margin-top, (@row* 0.5)*-1
+		)
 	}	
 }
 
 .input_.size1x, .label_.size1x, .textarea_.size1x, .btn_.size1x,  .checkbox_.size1x, .radio_.size1x, .file_.size1x { 
-	.rem(font-size, @fontSize ); 
-	.rows( line-height, 1.5, 0.5, 0.5, 0, 0.5 );  
-	.rem(padding-right, 0.5 * @row);  
-	.rem(padding-left, 0.5 * @row);  
+	.rows( 
+		line-height 1.5; 
+		padding-top 0.5; 
+		padding-bottom 0.5; 
+		margin-bottom 0.5
+	);  
+	.rem(
+		font-size, @fontSize;
+		padding-right, 0.5 * @row;
+		padding-left, 0.5 * @row
+	);  
 } 
 .select_.size1x {
-	.rows( height, 2.5, 0, 0, 0, 0.5 ); 
-	.rows( line-height,2.5 );  
-	.rem(font-size, @fontSize ); 
-	.rem(padding-right, 0.5 * @row);  
-	.rem(padding-left, 0.5 * @row);  
+	.rows( 
+		height 2.5; 
+		margin-bottom 0.5; 
+		line-height 2.5 
+	);  
+	.rem(
+		font-size, @fontSize; 
+		padding-right, 0.5 * @row; 
+		padding-left, 0.5 * @row
+	);  
 }
-
+// TODO: Add different sizes
+.input_.size05x {}
 .input_.size2x {}
-.input_.size3x {}

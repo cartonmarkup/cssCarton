@@ -1,4 +1,4 @@
-// CSS CARTON v1.0.5
+// CSS CARTON v1.0.6
 // Autor: Mathias Prinz, Tobias Schlömer
 
 @import ( less ) "settings.less";
@@ -9,15 +9,17 @@
 @import ( less ) "mixins/ie_unsupported.less";
 @import ( less ) "mixins/rem.less";
 @import ( less ) "mixins/rem_remfactors.less";
-@import ( less ) "mixins/responsive.less";
+@import ( less ) "mixins/responsive.class.less";
+@import ( less ) "mixins/responsive.mixin.less";
 @import ( less ) "mixins/rows.less";
 @import ( less ) "mixins/types.less";
-@import ( less ) "mixins/types_breakingtypes.less";
+@import ( less ) "mixins/responsive.types.less";
 @import ( less ) "mixins/grid.less";
+
 
 @import ( less ) "type_definition.less";
 @import ( less ) "kit_forms/forms.less";
-@import ( less ) "kit_interface/interface.less";
+//@import ( less ) "kit_interface/interface.less";
 
 html { .remFactors(); }
 

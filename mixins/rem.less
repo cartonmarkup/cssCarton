@@ -1,10 +1,32 @@
-.rem(  @property, @value ) {
+.rem(...) {
+	@isSingleArgument:  length( extract( @arguments, 1 ) );
+	
+	& when ( @isSingleArgument = 1 ) {
+		._rem(@arguments);
+	}
+	
+	& when ( @isSingleArgument > 1 ) {
+		._loopRemArgs(@arguments);
+	}
+	
+	._loopRemArgs( @args, @i: 1 ) when ( @i <= length( @args ) )  {
+		
+		@singleArgument: extract( @args, @i);
+		._rem(@singleArgument);
+		._loopRemArgs(@args,@i+1);	
+	}
+	
+	._rem(@singleArgument) {
+		@property: extract( @singleArgument, 1);
+		@value: extract( @singleArgument, 2);
+		test: @value;
+		
+		// fallback for browsers without rem support
 
-	// fallback for browser without rem support
+		@{property}: unit( @value, px );
 
-	@{property}: unit( @value, px );
+		// rem value based on 63% font-size
 
-	// rem value based on 63% font-size
-
-	@{property}: unit( ( @value * 0.1 ), rem );
+		@{property}: unit( ( @value * 0.1 ), rem );
+	}
 }

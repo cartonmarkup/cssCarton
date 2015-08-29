@@ -10,11 +10,10 @@
 
 		._mq( @i, @key ) {
 			@breakPoint: extract( @breakPoints, @i );
-			//@key: extract( @breakPointKeys, @i );
 			@factor: extract( @factors, @i );
 
 			@media ( ~'@{key}: @{breakPoint}' )  {
-				/*bla*/
+				
 				font-size: unit( 63 / @fontSize * @fontSize * @factor, % );
 			}
 		}
@@ -29,5 +28,4 @@
 			._min( @i + 1 );
 		}
 	}
-
 }
