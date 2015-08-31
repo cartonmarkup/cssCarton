@@ -1,0 +1,136 @@
+html {
+	font-family: @fontFamily;
+	font-weight: normal;
+	color: @grey100;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	width: 100%;
+}
+
+body {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-color: @grey5;
+	.rem(
+		padding-top @row*2, 
+		padding-bottom @row*2
+	);	
+};
+
+.head {
+	border-bottom: 1px @grey20 solid;
+	.rows( 
+		height 4 1; 
+		margin-bottom 1 
+	);
+	
+}
+
+
+.htftoLogo {
+	width: 300px;
+	text-transform: uppercase;
+	.rem(
+	  font-size 17; 
+	  letter-spacing 1;
+	  padding-left 5* @row; 
+	);
+	
+	.rows( 
+	   line-height 1;
+	);
+	
+	strong { 
+		font-family: FONT-BOLD;
+	}
+	
+	&:first-line {
+		word-spacing: 1.5px;
+	}
+}
+
+.head-htftoLogo {
+   left: 0;
+   top: 0;
+   .rows( 
+	   padding-top 1 
+   );	
+}
+
+.head-burgerMenu {
+	cursor: pointer;
+	.rem( 
+		width 2*@row; 
+		height 2*@row; 
+		top 1.5 *@row;
+		right 0.5*@row;
+	);
+	
+	&:hover { 
+		background-color: @grey10;
+	}
+}
+
+
+.head-burgerMenu-topBread, 
+.head-burgerMenu-meat, 
+.head-burgerMenu-bottomBread {
+	background-color: @grey100;
+	.rem(
+		height 2;
+		width 24;
+		border-radius 4;
+		left 12;
+	);	
+}
+
+
+.head-burgerMenu-topBread { .rem(top 19);  } 
+.head-burgerMenu-meat { .rem(top 23);} 
+.head-burgerMenu-bottomBread { .rem(top 27);}
+
+
+
+
+
+
+.brickTxt {
+	.responsive(
+		rem margin-left; 
+			1* @row 
+			1* @row 
+			5* @row 
+			5* @row;
+			
+		rem margin-right; 24 24 246 246;	
+	);
+}
+
+.formatedText {
+	h1 {
+		.rem( font-size 36; letter-spacing 0.5 );
+		.rows( line-height 2)
+	}
+	
+	p {
+		.rem( 
+			letter-spacing 0.25;
+			font-size @fontSize;
+		);
+		
+		.rows(padding-bottom 1, line-height 1  );
+	}
+	
+	strong {
+		font-family: FONT-BOLD;
+	}
+	
+	em {
+		color: @grey80;
+		font-style: italic;
+	}
+	
+	a {
+		text-decoration: underline;
+	}
+}
