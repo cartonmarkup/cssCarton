@@ -59,8 +59,17 @@
 			 & when (  extract(  @key, 1 ) = rem ) {
 				@remKey: extract(  @key, 2 );
 				
-				.rem( @remKey, @val );
-		 	}
+				// if @val is explicit written with px, % or em unit it will ignore the rem call in the key. 
+				
+				& when ( ispercentage(@val) = true ),( ispixel(@val) = true ),( isem(@val) = true ) {
+					 
+					 @{remKey}: @val;
+				}
+				
+				& when not ( ispercentage(@val) = true ) and not (ispixel(@val) = true) and not (isem(@val) = true) {
+					.rem( @remKey, @val );
+				}
+			}
 			 
 			& when (  extract(  @key, 1 ) = rows ) { 
 				@rowKey: extract(  @key, 2 );
