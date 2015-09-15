@@ -1,0 +1,185 @@
+
+.animateToClose.burgerMenu-topBread{ 
+	animation-name: topBreadToCross;
+    animation-duration: 0.6s;
+	 animation-fill-mode: forwards;
+}
+
+.animateToClose.burgerMenu-meat{ 
+	background-color: transparent; 
+	animation-name: meatToSquare;
+    animation-duration: 0.3s;
+	border: 2px solid @grey100;
+	 animation-fill-mode: forwards;
+}
+
+.animateToClose.burgerMenu-bottomBread{
+	animation-name: bottomBreadToCross;
+    animation-duration: 0.6s;
+	animation-fill-mode: forwards;
+	
+}
+
+
+@keyframes topBreadToCross {
+    0% { 
+		background-color: @grey60;
+		.rem(top 23); 
+		transform: rotate(0);
+	}
+    100% { 
+		background-color: @grey60;
+		.rem(top 23); 
+		transform: rotate(-45deg);
+	}
+}
+
+@keyframes bottomBreadToCross {
+    0% { 
+		background-color: @grey60;
+		.rem(top 23); 
+		transform: rotate(0);
+	}
+    100% { 
+		background-color: @grey60;
+		.rem(top 23); 
+		transform: rotate(45deg);
+	}
+}
+
+@keyframes meatToSquare{
+    0% { 
+		border: 2px solid @grey60;
+		transform: rotate(-45deg);
+		.rem(
+			height 2;
+			width 24;
+			top 23;
+			left 12
+		); 
+	}
+    100% { 
+		border: 2px solid @grey60;
+		transform: rotate(0);
+		.rem(
+			top 0; 
+			left 0;
+			width 44; 
+			height 44
+		);
+	}
+}
+
+
+.animateToBurger.burgerMenu-topBread{ 
+	animation-name: topBreadToBurger;
+    animation-duration: 0.15s;
+	animation-delay: 0.1s;
+	animation-fill-mode: forwards;
+}
+
+.animateToBurger.burgerMenu-meat{ 
+	border: 2px solid @grey100;
+	border: 2px solid @grey60;
+	background-color: transparent; 
+	.rem(
+		top 0; 
+		left 0;
+		width 44; 
+		height 44
+	);
+	animation-name: meatToBurger;
+   	animation-duration: 0.2s;
+	animation-fill-mode: forwards;
+}
+
+.animateToBurger.burgerMenu-bottomBread{
+	animation-name: bottomBreadToBurger;
+    animation-duration: 0.15s;
+	animation-delay: 0.1s;
+	animation-fill-mode: forwards;
+}
+
+
+
+@keyframes topBreadToBurger {
+    0% { 
+		background-color: @grey100;
+		.rem(top 23); 
+		transform: rotate(-45deg);
+		
+	}
+    100% { 
+		background-color: @grey100;
+		.rem(top 19); 
+		transform: rotate(0);
+	}
+}
+
+
+
+@keyframes meatToBurger{
+    0% { 
+		 transform: rotate(45deg);
+		.rem(
+			top 0; 
+			left 0;
+			width 44; 
+			height 44
+		);
+	}
+	
+	50% {
+		border: 2px solid @grey80;
+		background-color: transparent; 
+	}
+	
+    100% { 
+		 transform: rotate(0);
+		 border: 0;
+		 background-color: @grey100;
+		.rem(
+			height 2;
+			width 24;
+			top 23;
+			border-size 0;
+			left 12
+		); 
+	}
+}
+
+@keyframes bottomBreadToBurger {
+    0% { 
+		background-color: @grey100;
+		.rem(top 23); 
+		transform: rotate(-45deg);
+		
+	}
+    100% { 
+		background-color: @grey100;
+		.rem(top 27); 
+		transform: rotate(0);
+	}
+}
+
+.animateShow.navigation{ 
+	animation-name: showNavigation;
+    animation-duration: 0.4s;
+	animation-fill-mode: forward;
+}
+
+.animateHide.navigation{ 
+	animation-name: hideNavigation;
+    animation-duration:0.1s;
+	animation-fill-mode: forward;
+}
+
+@keyframes showNavigation {
+	0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes hideNavigation {
+    0%	 { opacity: 1; }
+    100% { opacity: 0; }
+}

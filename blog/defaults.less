@@ -17,3 +17,16 @@
     src: local(SourceSansPro-regular);
 }
 
+.cssSprite( @spriteVals ) {
+	width: extract( @spriteVals, 1 );
+	height: extract( @spriteVals, 2 );
+	background-repeat: no-repeat;
+	background-image: e(%('url(%s)', extract( @spriteVals, 3 ) ) );
+	background-position: extract( @spriteVals, 4 ) extract( @spriteVals, 5 );
+}
+
+@bg-h-t-f-t-o-sprite-path: 'bg-h-t-f-t-o-sprite.svg';
+@bg-h-t-f-t-o-sprite-glassLight: 56px 70px @bg-h-t-f-t-o-sprite-path -56px 0px;
+@bg-h-t-f-t-o-sprite-glassDark: 56px 70px @bg-h-t-f-t-o-sprite-path 0px 0px;
+
+
