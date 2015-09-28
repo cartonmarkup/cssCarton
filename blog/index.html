@@ -10,7 +10,7 @@
 </head>
 
 <body class="cell_ full_ alignCenter_ bg">
- 
+
   <div class="fit_ navigation hidden_">
      <div class="responsive_ ">
        <div class="stretch_ alignCenter_ brickTableOfContent defaultTypo defaultTypo--dark">
@@ -28,8 +28,8 @@
        </div>
      </div>
   </div>
-  
-  
+
+
  <div class="responsive_">
     <div class="sticker_ burgerMenu">
       <span class="sticker_ burgerMenu-topBread"></span>
@@ -50,8 +50,8 @@
             </div>
           </div>
         </div>
-        
-        <div class="browsebar" style="overflow:hidden;">
+
+        <div class="browsebar" style="margin-top: 800px;">
           <div class="cell_ full_ articleList smooth">
           <div class="cell_ full_ alignLeft_ articlePreview">
             <div class="cell_ eighth_ alignLeft_"></div>
@@ -59,12 +59,12 @@
               <div class="stretch_  defaultTypo">
                 <p><strong>1 Steal what you want.</strong><br><em>Design in core is taking as mutch decissions from your future user as possible, Design in core is taking as mutch decissions from your future user as possible,Design in core is taking as mutch decissions from your future user as possible, Design in core is taking as mutch decissions from your future user as possible, Design in core is taking as mutch decissions from your future user as possible,Design in core is taking as mutch decissions from your future user as possible,Design in core is taking as mutch decissions from your future user as possible, Design in core is taking as mutch decissions from your future user as possible,Design in core is taking as mutch decissions from your future user as possible,<strong class="noWrap_">form May 2015</strong></em></p>      </div>
             </div>
-            <div class="cell_ twoEighth_ alignRight_"> 
+            <div class="cell_ twoEighth_ alignRight_">
               <div class="slim_ btn">Next</div>
             </div>
           </div>
-          
-          
+
+
           <div class="cell_ full_ alignLeft_ articlePreview">
             <div class="cell_ eighth_ alignLeft_">
               <div class="slim_ btn">Back</div>
@@ -76,7 +76,8 @@
             </div>
             <div class="cell_ twoEighth_ alignRight_"></div>
           </div>
-                    <div class="cell_ full_ alignLeft_ articlePreview">
+          
+          <div class="cell_ full_ alignLeft_ articlePreview">
             <div class="cell_ eighth_ alignLeft_">
               <div class="slim_ btn">Back</div>
             </div>
@@ -87,11 +88,13 @@
             </div>
             <div class="cell_ twoEighth_ alignRight_"></div>
           </div>
-       
+          
+          
+
        </div>
         </div>
-        
-        
+
+
         <div class="stretch_ alignLeft_ brickTxt defaultTypo">
           <h1>The long road to perfection.</h1>
           <p><em>Design in core is taking as mutch decissions from your future user as possible,<br><strong>form May 2015</strong></em></p>
@@ -109,12 +112,26 @@
             taste and of course that he cares. He must ban his insecurity and find his own balance between excitement and
             frustration, details and entirety, exploration and organization, time and claim, to get satisfaction based on
             his output. </p>
+               <p>The first time I thought I had written something great I went to my father to approve – He didn’t. I still hear
+            him saying <strong>„Who would want to read that“</strong>. To be honest I don’t remember what it was he should read, but for sure
+            he was right about the quality. As kids our parents always treated us like adults. Punching us their opinion
+            unfiltered in our face wasn’t meant to hurt. They thought it would be the best way to enable us to improve. They
+            frustrated me allot. From the perspective of an sensitive boy it felt kind of harsh to be rated this way. Today,
+            I think without intension they implanted the <a href="dna">DNA</a> of an designer inside my personality.</p>
+          <p>Designing like every creative process needs honesty and the power of endurance. A great designer is able to take
+            stick and transform it into improvement. He should be his hardest critic himself. Every aspect of his work must
+            keep up the criticism or has to be improved in another iteration to get one step closer to perfection. Perfection
+            is meant to be as the best result the designer can archive, based on his current talents, experience and the
+            given circumstances. The output a designer generates always represents the strength of his personality, his intelligence,
+            taste and of course that he cares. He must ban his insecurity and find his own balance between excitement and
+            frustration, details and entirety, exploration and organization, time and claim, to get satisfaction based on
+            his output. </p>
         </div>
-        
+
         <div class="stretch_ footer defaultTypo alignLeft_">
-          <p><em>Content copyright © 2015 <a>Mathias Prinz.</a></em><br>                                                                          
+          <p><em>Content copyright © 2015 <a>Mathias Prinz.</a></em><br>
           <a>Imprint</a> | <a>About the author</a></p>
-          
+
         </div>
       </div>
     </div>
@@ -126,251 +143,208 @@
   var burgerParts = document.querySelectorAll('.burgerMenu-topBread, .burgerMenu-meat, .burgerMenu-bottomBread');
   var navigation = document.querySelector('.navigation');
   var open = false;
-  
+
   function triggerAtCssAnimationEnd ( el, cb ) {
      var x = function (e) { 
-        cb(e); 
+        cb(e);
         el.removeEventListener('animationend',x);
     }
-     
+
      el.addEventListener( 'animationend', x);
   }
-  
-  
-  
- 
-  
+
+
+
+
+
   burger.addEventListener( 'click', function () {
-  
+
     if ( !open ) {
       navigation.classList.remove( 'hidden_' );
       navigation.classList.add( 'animateShow' );
-      
+
       Array.prototype.forEach.call(burgerParts, function(el, i){
         el.classList.remove('animateToBurger');
         el.classList.add('animateToClose');
         el.classList.add(el.classList[1]+'--close');
       });
-      
+
       open = true;
-    } 
-  
+    }
+
     else {
       navigation.classList.add('hidden_');
       navigation.classList.remove('animateHide');
-    
+
       Array.prototype.forEach.call(burgerParts, function(el, i){
         el.classList.remove('animateToClose');
         el.classList.add('animateToBurger');
         el.classList.remove(el.classList[1]+'--close');
       });
-       
+
       open = false;
    }
   });
-  
+
   })();
 
-  
 
 
 
-  
+
+
 var bar = document.querySelector('.browsebar');
 var articleList =  document.querySelector('.articleList');
 var article =  document.querySelectorAll('.articlePreview');
-
-
-bar.style.height = px(outerHeight(article[0]));//article[0].offsetHeight + 'px'; 
-
-
-var maximalTopMinus = getMaximalTopMinus(article);
-var minimalTopMinus = outerHeight(article[0]);
-
-
-//var current = 0;
+//var maximalTopMinus = getMaximalTopMinus(article);
+//var minimalTopMinus = outerHeight(article[0]);
 
 
 
+// What wenn no scrolling
+// waht when no cssAnimation/tarnsition
 
 
-
-function findCurrent ( marginTop ) {
-   var sum = 0;
-   var before;
-   var after;  
-   var axis = [];
-   Array.prototype.forEach.call(article, function(el, i){
-    //console.log( i, sum, marginTop  )
-    
-     sum = sum + outerHeight(el);
-     axis.push(sum)
-      console.log( marginTop , sum )
-   
-     //if( marginTop < sum ) return;
-     //counter++;
-     //
-     
-     
-   });
-   console.log( '>', axis  );
-   //return counter;
-}
-
-function getMaximalTopMinus (list) {
-  var sum = 0;
-  
-  Array.prototype.forEach.call(article, function (el, i) {
-    if ( i  === list.length-2) return;
-    
-    sum = sum + outerHeight(el);
-  });
-  
-  return sum;
-}
-
-var timeOut;
-var interval;
-
-function move(val, direction) {
-  articleList.style.marginTop = px( val*-1 );
-  
-  findCurrent(val)
-  
-  //clearTimeout( timeOut );
- // clearInterval()
-
-    
-      //   findCurrent( val ); 
-      /*
-      moveTo(
-        direction === 'down' ? 
-        findCurrent( val) +1 : 
-        findCurrent( val )-1 
-      );*/
-      
-  //}, 50 );
-}
-
-
-function moveTo (c) {
-  var i = 0;
-  var sum = 0;
-  Array.prototype.forEach.call(article, function (el, i) {
-    if( i >= c) return;
-    sum = sum + outerHeight(el);
-  });
-  
-  articleList.style.marginTop = px( sum*-1 );
-  
-}
-
-
-
-/*
-function next() {
-  if ( current ===  article.length-1 ) return;
-  current++;
-  
-  console.log( current );
-}
-
-function back() {
-  if ( current === 0 ) return;
-  current--;
-  console.log( current);
-}*/
-
-
-// What wenn no scrolling 
-
-var scrollYPast = 0;
-window.addEventListener('scroll', function () {
-  return;
-  var factor = ( window.scrollY  ) * 4;
-  var direction = window.scrollY > scrollYPast ? 'down': 'up';
-  
-  scrollYPast = window.scrollY;
-
-  if ( direction === 'down' && factor < maximalTopMinus ) {
-      move(factor, direction);
-      return;
-  }
-  
-  if ( direction === 'up' && factor < maximalTopMinus ) {
-      move(factor, direction)
-  }
-});
 
 
 ////////////////
 var current = 0;
+var tolerance = 400
+
+bar.style.height = px(outerHeight(article[current]));
+bar.style.overflow = 'hidden';
+
+window.addEventListener('resize', function () {
+  bar.style.height = px(outerHeight(article[current]));
+})
+
+function moveTo (i) {
+  
+  if ( moveTo.moving ) return;
+  
+  var axis = getAxis();
+  
+  moveTo.moving = true;
+
+  articleList.style.marginTop = px( axis[i]*-1 );
+  bar.style.height = px( outerHeight( article[i] ) );
+  current = i;
+}
+
+moveTo.moving = false;
+articleList.addEventListener( 'transitionend', function () { moveTo.moving = false; });
+
+
+
+function showAll () {
+    unbind(true);
+    articleList.style.marginTop = 0;
+    bar.style.height = px(getSumHeight());
+}
+
+function showSingle() {
+    bind(true);
+    moveTo(0); 
+}
+
+
+
+function bind (prevent) {
+  
+  // IE9, Chrome, Safari, Opera
+  window.addEventListener("mousewheel", MouseWheelHandler, false);
+	// Firefox
+	window.addEventListener("MozMousePixelScroll", MouseWheelHandler, false);
+  
+
+}
+
+
+
+
+function MouseWheelHandler ( e ) {
+  
+  if ( ! MouseWheelHandler.enabled ) return;
+ 
+  e.preventDefault();
+  
+  //if(  bar.offsetTop !== window.scrollY ) return;
+  if ( e.axis === 1 ) return;  // use only y-axis
+  if ( moveTo.moving ) return;
+  
+ 
+  
+  var delta = Math.max( -1, Math.min( 1, ( e.wheelDelta || -e.detail ) ) );
+  
+  if ( current + 1 === article.length && delta < 0 ) {
+    
+    MouseWheelHandler.enabled = false;
+    return;
+  }
+  
+  if ( current - 1 < 0 && delta > 0 ) {
+     
+     MouseWheelHandler.enabled = false;
+     return;
+   }
+  
+  if ( delta < 0  ) { moveTo( current + 1 ); } 
+  else {  moveTo( current - 1 ); }
+     
+}
+
+MouseWheelHandler.enabled = false;
+
+window.addEventListener( 'scroll', scrollHandler );
+
+
+function scrollHandler () { 
+ 
+  if ( MouseWheelHandler.enabled === true ) return;
+  
+  var direction = window.scrollY > scrollHandler.pastScrolling 
+                ? 'down'
+                : 'up'
+                ;
+  
+  scrollHandler.pastScrolling = window.scrollY
+  
+  // TAKE OVER SCROLLING
+  
+  if ( window.scrollY > bar.offsetTop-tolerance && direction === 'down'
+    || window.scrollY < bar.offsetTop-tolerance && direction === 'up'
+  ){
+
+    if ( direction === 'down' && current === article.length - 1 ) return;
+    if ( direction === 'up'   && current === 0 ) return;
+
+    MouseWheelHandler.enabled = true;
+    //window.scroll( 0, bar.offsetTop );
+  } 
+}
+scrollHandler.pastScrolling = 0;
 
 function getAxis () {
    var axis = [];
    var sum = 0;
-   Array.prototype.forEach.call(article, function(el, i){
-     axis.push( sum );
-     sum = sum + outerHeight(el);
-   });
    
+   Array.prototype.forEach.call(article, function( el, i ){
+     
+     axis.push( sum );
+     sum = sum + outerHeight( el );
+   });
+
    return axis;
 }
 
-function getSumHeight () {
-   var sum = 0;
-   Array.prototype.forEach.call(article, function(el, i) {
-      sum = sum + outerHeight(el);
-   });
-   
-   return sum;
-}
 
-function moveTo (i) {
-    axis = getAxis();
-    articleList.style.marginTop = px( axis[i]*-1 );
-    current = i;
-    bar.style.height = px( outerHeight( article[i] ) );
-}
-
-function showAll () {
-    articleList.style.marginTop = 0;
-    bar.style.height = px(getSumHeight());
-}
-/////////////////////
-
-var flag = false;
-var lastMove = 0;
-function smoothMoveToTrigger( val ) {
-
-   
-   if (  articleList.style.marginTop === '' )  articleList.style.marginTop = 0;
-   
-   var move =  parseInt( articleList.style.marginTop ) + val;  
-   var direction = move < lastMove ? 'down': 'up';
-   
-  console.log('>',direction   );
-   
-   
-   articleList.style.marginTop = px(move);
-  lastMove = move;
-   /*
-   setTimeout(  function () {
-     console.log('bls')
-     if ( direction === 'down' ) { moveTo(current+1); }
-     if ( direction === 'up' ) {   moveTo(current-1); } 
-   },200);**/
-}
-
+bind(true);
 
 
 ////////////////////
 
 
-
-
-
-// helper
+// helper to avoid jquery
 
 function outerHeight(el) {
   var height = el.offsetHeight;
@@ -384,6 +358,64 @@ function px (val) {
   return val + 'px';
 }
 
-  
+/*
+// OLD
+function getAxis () {
+   var axis = [];
+   var sum = 0;
+   Array.prototype.forEach.call(article, function(el, i){
+     axis.push( sum );
+     sum = sum + outerHeight(el);
+   });
+
+   return axis;
+}
+
+function getSumHeight () {
+   var sum = 0;
+   Array.prototype.forEach.call(article, function(el, i) {
+      sum = sum + outerHeight(el);
+   });
+
+   return sum;
+}
+
+
+function closest (num, arr) {
+  var mid;
+  var lo = 0;
+  var hi = arr.length - 1;
+  while (hi - lo > 1) {
+      mid = Math.floor ((lo + hi) / 2);
+      if (arr[mid] < num) {
+          lo = mid;
+      } else {
+          hi = mid;
+      }
+  }
+  if (num - arr[lo] <= arr[hi] - num) {
+      return lo;
+  }
+  return hi;
+}
+
+
+
+
+
+function getMaximalTopMinus (list) {
+  var sum = 0;
+
+  Array.prototype.forEach.call(article, function (el, i) {
+    if ( i  === list.length-2) return;
+
+    sum = sum + outerHeight(el);
+  });
+
+  return sum;
+}*/
+
+
+
 </script>
 </html>
