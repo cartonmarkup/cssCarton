@@ -3,7 +3,7 @@
 	@name: extract( @cn, @i );
 	@size: extract( @cs, @i );
 
-	.cell_.@{name}_,.slim_.@{name}_  {
+	.@{name}_  {
 
 		width: extract( @cs, @i );
 	}
@@ -15,7 +15,7 @@
 
 		@media ( max-width: @mobileBreak ) {
 
-			.cell_.@{name}_,.slim_.@{name}_ {
+			.@{name}_ {
 
 				width: 100%;
 			}

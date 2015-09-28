@@ -1,0 +1,15 @@
+._borrowColumnSize(@styleKey, @columnName) {
+	
+	._loopColumns();
+	
+	._loopColumns( @i: 0 ) when ( @i <= length(@columnNames) ) {
+		@currentColumn: extract(@columnNames, @i);
+		@currentColumnSize: extract(@columnSize, @i);
+		
+		& when(@columnName = @currentColumn ) {
+			@{styleKey}: @currentColumnSize;
+		}
+		
+		._loopColumns( @i + 1 );
+	}
+}
