@@ -231,7 +231,6 @@ table {
   color: #fff;
 }
 .slim_ {
-  test: 12;
   font-size: 12px;
   font-size: 1.2rem;
   position: relative;
@@ -254,7 +253,6 @@ table {
   color: #000;
 }
 .stretch_ {
-  test: 12;
   font-size: 12px;
   font-size: 1.2rem;
   position: relative;
@@ -277,7 +275,6 @@ table {
   color: #000;
 }
 .chopped_ {
-  test: 12;
   font-size: 12px;
   font-size: 1.2rem;
   position: relative;
@@ -299,7 +296,6 @@ table {
   color: #000;
 }
 .sticker_ {
-  test: 12;
   font-size: 12px;
   font-size: 1.2rem;
   position: absolute;
@@ -320,7 +316,6 @@ table {
   color: #000;
 }
 .fixed_ {
-  test: 12;
   font-size: 12px;
   font-size: 1.2rem;
   position: fixed;
@@ -341,7 +336,6 @@ table {
   color: #000;
 }
 .fit_ {
-  test: 12;
   font-size: 12px;
   font-size: 1.2rem;
   position: absolute;
@@ -420,7 +414,6 @@ button:focus {
   outline: none;
 }
 .label_ {
-  test: 12;
   font-size: 12px;
   font-size: 1.2rem;
 }
@@ -429,7 +422,6 @@ button:focus {
 button.btn_,
 input[type=button].btn_,
 .select_ {
-  test: 12;
   font-size: 12px;
   font-size: 1.2rem;
   box-sizing: border-box;
@@ -490,7 +482,6 @@ input.radio_[type=radio][checked=true] + .label_.radio_:before {
 .btn_ {
   background-color: #404040;
   color: #ccc;
-  test: 3;
   border-radius: 3px;
   border-radius: 0.3rem;
 }
@@ -499,16 +490,13 @@ input.radio_[type=radio][checked=true] + .label_.radio_:before {
   color: #404040;
   border-color: #404040;
   border-style: solid;
-  test: 3;
   border-radius: 3px;
   border-radius: 0.3rem;
-  test: 36;
   border-left-width: 36px;
   border-left-width: 3.6rem;
 }
 .label_.checkbox_,
 .label_.radio_ {
-  test: 30;
   text-indent: 30px;
   text-indent: 3rem;
 }
@@ -518,18 +506,14 @@ input.radio_[type=radio][checked=true] + .label_.radio_:before {
   text-indent: 0;
   color: #ccc;
   left: 0;
-  test: 18;
   height: 18px;
   height: 1.8rem;
   padding-top: 6px;
   padding-top: 0.6rem;
-  test: 6;
   padding-bottom: 6px;
   padding-bottom: 0.6rem;
-  test: 3;
   border-radius: 3px;
   border-radius: 0.3rem;
-  test: 30;
   width: 30px;
   width: 3rem;
 }
@@ -539,21 +523,18 @@ input.radio_[type=radio][checked=true] + .label_.radio_:before {
 .label_.file_:before {
   background-color: #404040;
   color: #ccc;
-  test: 18;
   height: 18px;
   height: 1.8rem;
   padding-top: 6px;
   padding-top: 0.6rem;
   padding-bottom: 6px;
   padding-bottom: 0.6rem;
-  test: 3;
   border-radius: 3px;
   border-radius: 0.3rem;
   padding-right: 6px;
   padding-right: 0.6rem;
   padding-left: 6px;
   padding-left: 0.6rem;
-  test: 12;
   font-size: 12px;
   font-size: 1.2rem;
   position: relative;
@@ -561,10 +542,8 @@ input.radio_[type=radio][checked=true] + .label_.radio_:before {
   vertical-align: top;
   letter-spacing: normal;
   box-shadow: inset 0px 0px 0px 1px #ffa500;
-  test: 6;
   margin-right: 6px;
   margin-right: 0.6rem;
-  test: -6;
   margin-top: -6px;
   margin-top: -0.6rem;
 }
@@ -588,7 +567,6 @@ input.radio_[type=radio][checked=true] + .label_.radio_:before {
 .checkbox_.size1x,
 .radio_.size1x,
 .file_.size1x {
-  test: 18;
   line-height: 18px;
   line-height: 1.8rem;
   padding-top: 6px;
@@ -597,12 +575,10 @@ input.radio_[type=radio][checked=true] + .label_.radio_:before {
   padding-bottom: 0.6rem;
   margin-bottom: 6px;
   margin-bottom: 0.6rem;
-  test: 12;
   font-size: 12px;
   font-size: 1.2rem;
   padding-right: 6px;
   padding-right: 0.6rem;
-  test: 6;
   padding-left: 6px;
   padding-left: 0.6rem;
 }
@@ -611,15 +587,12 @@ input.radio_[type=radio][checked=true] + .label_.radio_:before {
   height: 3rem;
   margin-bottom: 6px;
   margin-bottom: 0.6rem;
-  test: 30;
   line-height: 30px;
   line-height: 3rem;
-  test: 12;
   font-size: 12px;
   font-size: 1.2rem;
   padding-right: 6px;
   padding-right: 0.6rem;
-  test: 6;
   padding-left: 6px;
   padding-left: 0.6rem;
 }
@@ -660,16 +633,13 @@ body {
   background-repeat: no-repeat;
   padding-top: 48px;
   padding-top: 4.8rem;
-  test: 48;
   padding-bottom: 48px;
   padding-bottom: 4.8rem;
 }
 .page {
   background-color: #A6A6A6;
-  test: 6;
   padding: 6px;
   padding: 0.6rem;
-  test: 144;
   min-height: 144px;
   min-height: 14.4rem;
 }
@@ -684,12 +654,10 @@ body {
   padding-right: 1.2rem;
   line-height: 12px;
   line-height: 1.2rem;
-  test: 24;
   min-height: 24px;
   min-height: 2.4rem;
   padding-top: 12px;
   padding-top: 1.2rem;
-  test: 12;
   padding-bottom: 12px;
   padding-bottom: 1.2rem;
 }
@@ -702,22 +670,18 @@ body {
   padding-left: 1.2rem;
   padding-right: 12px;
   padding-right: 1.2rem;
-  test: 48;
   line-height: 48px;
   line-height: 4.8rem;
   padding-top: 12px;
   padding-top: 1.2rem;
-  test: 12;
   padding-bottom: 12px;
   padding-bottom: 1.2rem;
 }
 .carton--sticker {
   top: -12px;
   top: -1.2rem;
-  test: -12;
   right: -12px;
   right: -1.2rem;
-  test: 24;
   line-height: 24px;
   line-height: 2.4rem;
 }
@@ -725,19 +689,15 @@ body {
   left: 50%;
   bottom: 24px;
   bottom: 2.4rem;
-  test: 168;
   width: 168px;
   width: 16.8rem;
-  test: -84;
   margin-left: -84px;
   margin-left: -8.4rem;
-  test: 24;
   line-height: 24px;
   line-height: 2.4rem;
 }
 .cell-fit {
   color: pink;
-  test: 48;
   min-height: 48px;
   min-height: 4.8rem;
 }
@@ -748,10 +708,8 @@ body {
   font-size: 1.2rem;
   padding-left: 12px;
   padding-left: 1.2rem;
-  test: 12;
   padding-right: 12px;
   padding-right: 1.2rem;
-  test: 48;
   line-height: 48px;
   line-height: 4.8rem;
 }
@@ -763,7 +721,6 @@ em {
   font-style: italic;
 }
 .stretch_slim_stretch_slim_stretch_ {
-  test: 12;
   font-size: 12px;
   font-size: 1.2rem;
   position: relative;
@@ -787,7 +744,6 @@ em {
 }
 @media (max-width: 768px) {
   .stretch_slim_stretch_slim_stretch_ {
-    test: 12;
     font-size: 12px;
     font-size: 1.2rem;
     position: relative;
@@ -812,7 +768,6 @@ em {
 }
 @media (max-width: 320px) {
   .stretch_slim_stretch_slim_stretch_ {
-    test: 12;
     font-size: 12px;
     font-size: 1.2rem;
     position: relative;
@@ -837,7 +792,6 @@ em {
 }
 @media (min-width: 1200px) {
   .stretch_slim_stretch_slim_stretch_ {
-    test: 12;
     font-size: 12px;
     font-size: 1.2rem;
     position: relative;
@@ -862,7 +816,6 @@ em {
 }
 @media (min-width: 1400px) {
   .stretch_slim_stretch_slim_stretch_ {
-    test: 12;
     font-size: 12px;
     font-size: 1.2rem;
     position: relative;
@@ -908,219 +861,6 @@ em {
     text-align: left;
   }
 }
-.responsiveCarton {
-  transform: rotate(90deg);
-  test: 21;
-  font-size: 21px;
-  font-size: 2.1rem;
-  test: 36;
-  min-height: 36px;
-  min-height: 3.6rem;
-}
-@media (max-width: 768px) {
-  .responsiveCarton {
-    transform: rotate(45deg);
-    test: 14;
-    font-size: 14px;
-    font-size: 1.4rem;
-    test: 24;
-    min-height: 24px;
-    min-height: 2.4rem;
-  }
-}
-@media (max-width: 320px) {
-  .responsiveCarton {
-    transform: rotate(0deg);
-    test: 7;
-    font-size: 7px;
-    font-size: 0.7rem;
-    test: 12;
-    min-height: 12px;
-    min-height: 1.2rem;
-  }
-}
-@media (min-width: 1200px) {
-  .responsiveCarton {
-    transform: rotate(135deg);
-    test: 27;
-    font-size: 27px;
-    font-size: 2.7rem;
-    test: 48;
-    min-height: 48px;
-    min-height: 4.8rem;
-  }
-}
-@media (min-width: 1400px) {
-  .responsiveCarton {
-    transform: rotate(180deg);
-    test: 34;
-    font-size: 34px;
-    font-size: 3.4rem;
-    test: 60;
-    min-height: 60px;
-    min-height: 6rem;
-  }
-}
-.carton--row {
-  background-color: #404040;
-  color: #ccc;
-  padding-left: 12px;
-  padding-left: 1.2rem;
-  test: 12;
-  padding-right: 12px;
-  padding-right: 1.2rem;
-}
-.row05x {
-  height: 6px;
-  height: 0.6rem;
-  test: 6;
-  font-size: 6px;
-  font-size: 0.6rem;
-}
-.row1x {
-  height: 12px;
-  height: 1.2rem;
-  test: 12;
-  font-size: 12px;
-  font-size: 1.2rem;
-}
-.row2x {
-  height: 24px;
-  height: 2.4rem;
-  test: 24;
-  font-size: 24px;
-  font-size: 2.4rem;
-}
-.row3x {
-  height: 36px;
-  height: 3.6rem;
-  test: 36;
-  font-size: 36px;
-  font-size: 3.6rem;
-}
-.row05x--padding {
-  height: 6px;
-  height: 0.6rem;
-  padding-top: 3px;
-  padding-top: 0.3rem;
-  test: 3;
-  padding-bottom: 3px;
-  padding-bottom: 0.3rem;
-  test: 6;
-  font-size: 6px;
-  font-size: 0.6rem;
-}
-.row05x--margin {
-  height: 6px;
-  height: 0.6rem;
-  margin-top: 6px;
-  margin-top: 0.6rem;
-  margin-bottom: 6px;
-  margin-bottom: 0.6rem;
-  test: 6;
-  font-size: 6px;
-  font-size: 0.6rem;
-}
-.row05x--lineHeight {
-  line-height: 6px;
-  line-height: 0.6rem;
-  test: 6;
-  font-size: 6px;
-  font-size: 0.6rem;
-}
-.row1x--padding {
-  height: 12px;
-  height: 1.2rem;
-  padding-top: 6px;
-  padding-top: 0.6rem;
-  test: 6;
-  padding-bottom: 6px;
-  padding-bottom: 0.6rem;
-  test: 12;
-  font-size: 12px;
-  font-size: 1.2rem;
-}
-.row1x--margin {
-  height: 12px;
-  height: 1.2rem;
-  margin-top: 6px;
-  margin-top: 0.6rem;
-  test: 6;
-  margin-bottom: 6px;
-  margin-bottom: 0.6rem;
-  test: 12;
-  font-size: 12px;
-  font-size: 1.2rem;
-}
-.row1x--lineHeight {
-  line-height: 12px;
-  line-height: 1.2rem;
-  test: 12;
-  font-size: 12px;
-  font-size: 1.2rem;
-}
-.row2x--padding {
-  height: 24px;
-  height: 2.4rem;
-  padding-top: 12px;
-  padding-top: 1.2rem;
-  test: 12;
-  padding-bottom: 12px;
-  padding-bottom: 1.2rem;
-  test: 24;
-  font-size: 24px;
-  font-size: 2.4rem;
-}
-.row2x--margin {
-  height: 24px;
-  height: 2.4rem;
-  margin-top: 12px;
-  margin-top: 1.2rem;
-  test: 12;
-  margin-bottom: 12px;
-  margin-bottom: 1.2rem;
-  test: 24;
-  font-size: 24px;
-  font-size: 2.4rem;
-}
-.row2x--lineHeight {
-  line-height: 24px;
-  line-height: 2.4rem;
-  test: 24;
-  font-size: 24px;
-  font-size: 2.4rem;
-}
-.row3x--padding {
-  height: 36px;
-  height: 3.6rem;
-  padding-top: 18px;
-  padding-top: 1.8rem;
-  test: 18;
-  padding-bottom: 18px;
-  padding-bottom: 1.8rem;
-  test: 36;
-  font-size: 36px;
-  font-size: 3.6rem;
-}
-.row3x--margin {
-  height: 36px;
-  height: 3.6rem;
-  margin-top: 18px;
-  margin-top: 1.8rem;
-  test: 18;
-  margin-bottom: 18px;
-  margin-bottom: 1.8rem;
-  test: 36;
-  font-size: 36px;
-  font-size: 3.6rem;
-}
-.row3x--lineHeight {
-  line-height: 36px;
-  line-height: 3.6rem;
-  test: 36;
-  font-size: 36px;
-  font-size: 3.6rem;
-}
 .full_twoThirds_half_third_fourth_ {
   width: 50%;
 }
@@ -1143,4 +883,183 @@ em {
   .full_twoThirds_half_third_fourth_ {
     width: 25%;
   }
+}
+.responsiveCarton {
+  transform: rotate(90deg);
+  font-size: 21px;
+  font-size: 2.1rem;
+  min-height: 36px;
+  min-height: 3.6rem;
+}
+@media (max-width: 768px) {
+  .responsiveCarton {
+    transform: rotate(45deg);
+    font-size: 14px;
+    font-size: 1.4rem;
+    min-height: 24px;
+    min-height: 2.4rem;
+  }
+}
+@media (max-width: 320px) {
+  .responsiveCarton {
+    transform: rotate(0deg);
+    font-size: 7px;
+    font-size: 0.7rem;
+    min-height: 12px;
+    min-height: 1.2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .responsiveCarton {
+    transform: rotate(135deg);
+    font-size: 27px;
+    font-size: 2.7rem;
+    min-height: 48px;
+    min-height: 4.8rem;
+  }
+}
+@media (min-width: 1400px) {
+  .responsiveCarton {
+    transform: rotate(180deg);
+    font-size: 34px;
+    font-size: 3.4rem;
+    min-height: 60px;
+    min-height: 6rem;
+  }
+}
+.carton--row {
+  background-color: #404040;
+  color: #ccc;
+  padding-left: 12px;
+  padding-left: 1.2rem;
+  padding-right: 12px;
+  padding-right: 1.2rem;
+}
+.row05x {
+  height: 6px;
+  height: 0.6rem;
+  font-size: 6px;
+  font-size: 0.6rem;
+}
+.row1x {
+  height: 12px;
+  height: 1.2rem;
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+.row2x {
+  height: 24px;
+  height: 2.4rem;
+  font-size: 24px;
+  font-size: 2.4rem;
+}
+.row3x {
+  height: 36px;
+  height: 3.6rem;
+  font-size: 36px;
+  font-size: 3.6rem;
+}
+.row05x--padding {
+  height: 6px;
+  height: 0.6rem;
+  padding-top: 3px;
+  padding-top: 0.3rem;
+  padding-bottom: 3px;
+  padding-bottom: 0.3rem;
+  font-size: 6px;
+  font-size: 0.6rem;
+}
+.row05x--margin {
+  height: 6px;
+  height: 0.6rem;
+  margin-top: 6px;
+  margin-top: 0.6rem;
+  margin-bottom: 6px;
+  margin-bottom: 0.6rem;
+  font-size: 6px;
+  font-size: 0.6rem;
+}
+.row05x--lineHeight {
+  line-height: 6px;
+  line-height: 0.6rem;
+  font-size: 6px;
+  font-size: 0.6rem;
+}
+.row1x--padding {
+  height: 12px;
+  height: 1.2rem;
+  padding-top: 6px;
+  padding-top: 0.6rem;
+  padding-bottom: 6px;
+  padding-bottom: 0.6rem;
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+.row1x--margin {
+  height: 12px;
+  height: 1.2rem;
+  margin-top: 6px;
+  margin-top: 0.6rem;
+  margin-bottom: 6px;
+  margin-bottom: 0.6rem;
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+.row1x--lineHeight {
+  line-height: 12px;
+  line-height: 1.2rem;
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+.row2x--padding {
+  height: 24px;
+  height: 2.4rem;
+  padding-top: 12px;
+  padding-top: 1.2rem;
+  padding-bottom: 12px;
+  padding-bottom: 1.2rem;
+  font-size: 24px;
+  font-size: 2.4rem;
+}
+.row2x--margin {
+  height: 24px;
+  height: 2.4rem;
+  margin-top: 12px;
+  margin-top: 1.2rem;
+  margin-bottom: 12px;
+  margin-bottom: 1.2rem;
+  font-size: 24px;
+  font-size: 2.4rem;
+}
+.row2x--lineHeight {
+  line-height: 24px;
+  line-height: 2.4rem;
+  font-size: 24px;
+  font-size: 2.4rem;
+}
+.row3x--padding {
+  height: 36px;
+  height: 3.6rem;
+  padding-top: 18px;
+  padding-top: 1.8rem;
+  padding-bottom: 18px;
+  padding-bottom: 1.8rem;
+  font-size: 36px;
+  font-size: 3.6rem;
+}
+.row3x--margin {
+  height: 36px;
+  height: 3.6rem;
+  margin-top: 18px;
+  margin-top: 1.8rem;
+  margin-bottom: 18px;
+  margin-bottom: 1.8rem;
+  font-size: 36px;
+  font-size: 3.6rem;
+}
+.row3x--lineHeight {
+  line-height: 36px;
+  line-height: 3.6rem;
+  font-size: 36px;
+  font-size: 3.6rem;
 }
