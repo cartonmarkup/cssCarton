@@ -1,0 +1,25 @@
+{
+  "name": "cssCarton",
+  "homepage": "https://github.com/cartonmarkup/cssCarton",
+  "authors": [
+    "Mathias Prinz <mathias_prinz@me.com>"
+  ],
+  "description": "cssCarton is a lightweight less framework that offers a simple way to transfer your page layout into responsive CSS and HTML",
+  "main": "carton.less",
+  "moduleType": [],
+  "keywords": [
+    "less",
+    "css",
+    "respnsive"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "carton.css"
+  ]
+}
