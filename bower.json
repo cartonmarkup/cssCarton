@@ -10,7 +10,7 @@
   "keywords": [
     "less",
     "css",
-    "respnsive"
+    "responsive"
   ],
   "license": "MIT",
   "private": true,
@@ -20,6 +20,6 @@
     "bower_components",
     "test",
     "tests",
-    "carton.css"
+    "samples"
   ]
 }

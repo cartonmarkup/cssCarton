@@ -1,0 +1,165 @@
+
+
+html {
+	font-family: @fontFamily;
+	font-weight: 400;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	width: 100%;
+}
+
+body {
+	background-color: #404040;
+	background-image: url(bg_css_carton_logo.png);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	.rem(
+		padding-top @row*4, 
+		padding-bottom @row*4
+	);
+	
+};
+
+.page {
+	
+	background-color: #A6A6A6;
+	.rem( padding @row/2 );
+	.rows( min-height 12 );
+}
+
+.carton {
+	background-color: #404040;
+	color: #ccc;
+	.rem( 
+		font-size @fontSize, 
+		padding-left @row,
+		padding-right @row 
+	);
+	.rows( 
+		line-height 1;
+		min-height 2; 
+		padding-top 1; 
+		padding-bottom 1
+	);
+}
+
+.carton--chopped {
+	background-color: #404040;
+	color: #ccc;
+	.rem( 
+		font-size @fontSize, 
+		padding-left @row, 
+		padding-right @row 
+	);
+	.rows(
+		line-height 4; 
+		padding-top 1; 
+		padding-bottom 1 
+		);
+}
+
+.carton--sticker {
+	.rem( 
+		top -1 * @row, 
+		right -1 * @row 
+	);
+	.rows( line-height 2 );
+}
+
+.carton--fixed {
+	@width: 14 * @row;
+	left: 50%;
+	.rem(
+		bottom @row*2,
+		width  @width,
+		margin-left -1 * @width/2
+	);
+	.rows( line-height 2 );
+}
+
+.cell-fit {
+	color: pink;
+	.rows(min-height 4;);
+}
+
+.carton-fit {
+	background-color: #404040;
+	color: #ccc;
+	.rem( 
+		font-size @fontSize, 
+		padding-left @row, 
+		padding-right @row
+	);
+	.rows( line-height 4 );
+}
+
+strong { 
+	font-weight: bold;
+	color: #fff;
+}
+
+em {
+	font-style: italic;
+}
+
+
+// Responsive example
+
+.responsiveTypes( stretch slim stretch slim stretch );
+.responsiveTypes( alignRight alignLeft alignCenter alignRight alignLeft );
+.responsiveColumns( full twoThirds half third fourth );
+.responsiveCarton {
+	.responsive( 
+		transform; 
+			rotate(0deg),
+			rotate(45deg),
+			rotate(90deg),
+			rotate(135deg),
+			rotate(180deg);
+		
+		rem font-size;  
+			7 
+			14 
+			21 
+			27 
+			34;
+			
+		rows min-height;
+			1,
+			2,
+			3,
+			4,
+			5
+	);
+}
+
+// Row example
+.carton--row {
+	background-color: #404040;
+	color: #ccc;
+	.rem( 
+		padding-left @row,  
+		padding-right @row 
+	);
+}
+
+.row05x { .rows( height 0.5 ); .rem( font-size, @fontSize/2 );  }
+.row1x {  .rows( height 1 );   .rem( font-size, @fontSize );    }
+.row2x {  .rows( height 2 );   .rem( font-size, @fontSize*2 ); }
+.row3x {  .rows( height 3 );   .rem( font-size, @fontSize*3 ); }
+
+.row05x--padding { .rows( height 0.5; padding-top 0.25; padding-bottom 0.25 ); .rem( font-size, @fontSize/2 ); }
+.row05x--margin {  .rows( height 0.5; margin-top 0.5; margin-bottom 0.5 ); .rem( font-size, @fontSize/2 ); }
+.row05x--lineHeight { .rows( line-height 0.5 ); .rem( font-size, @fontSize/2 ); }
+
+.row1x--padding {  .rows( height 1, padding-top 0.5, padding-bottom 0.5 ); .rem( font-size, @fontSize ); }
+.row1x--margin {   .rows( height 1, margin-top 0.5, margin-bottom 0.5  ); .rem( font-size, @fontSize ); }
+.row1x--lineHeight { .rows( line-height 1 ); .rem( font-size, @fontSize ); }
+
+.row2x--padding { .rows( height 2, padding-top 1, padding-bottom 1 ); .rem( font-size, @fontSize*2 ); }
+.row2x--margin {  .rows( height 2, margin-top 1, margin-bottom 1 ); .rem( font-size, @fontSize*2 ); }
+.row2x--lineHeight { .rows( line-height 2  ); .rem( font-size, @fontSize*2); }
+
+.row3x--padding { .rows( height 3, padding-top 1.5, padding-bottom 1.5 ); .rem( font-size, @fontSize*3 );  }
+.row3x--margin { .rows( height 3, margin-top 1.5, margin-bottom 1.5 ); .rem( font-size, @fontSize*3 ); }
+.row3x--lineHeight { .rows( line-height 3 ); .rem( font-size, @fontSize*3 ); }
