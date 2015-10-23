@@ -1,9 +1,6 @@
-// CSS CARTON v1.0.6
-// Autor: Mathias Prinz, Tobias Schlömer
 
-@import ( less ) "settings.less";
 @import ( less ) "reset.less";
-
+@import ( less ) "settings.less";
 @import ( less ) "mixins/showoutlines.less";
 @import ( less ) "mixins/ie_displayinline.less";
 @import ( less ) "mixins/ie_unsupported.less";
@@ -19,15 +16,13 @@
 @import ( less ) "mixins/columns.borrowcolumnsize.less";
 @import ( less ) "mixins/type.definition.less";
 
+@import ( less ) "forms.reset.less";
+@import ( less ) "forms.elements.less";
+
 ._types( @alignment );
 ._types( @types );
 ._types( @extraTypes );
 
-
-@import ( less ) "kit_forms/forms.less";
-//@import ( less ) "kit_interface/interface.less";
-
-html { .remFactors(); }
-
-@import ( less ) "custom.less";
-
+html { 
+	.remFactors(); 
+}
