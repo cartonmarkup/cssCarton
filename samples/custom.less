@@ -143,6 +143,37 @@ em {
 	);
 }
 
+
+.carton--animated {
+	animation-duration: 4s;
+    animation-iteration-count: infinite;
+	.animate( 
+		0% 
+		50% 
+		100%;
+		
+		opacity; 
+		0.5, 
+		1,
+		0.5;
+		
+		background-color; 
+		pink, 
+		black,
+	    pink;
+		
+		color;
+		black,
+		pink,
+		black;
+		
+		margin-left;
+		0,
+		50%,
+		80% 
+	);
+}
+
 .row05x { .rows( height 0.5 ); .rem( font-size, @fontSize/2 );  }
 .row1x {  .rows( height 1 );   .rem( font-size, @fontSize );    }
 .row2x {  .rows( height 2 );   .rem( font-size, @fontSize*2 ); }

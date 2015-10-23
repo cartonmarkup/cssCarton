@@ -1,0 +1,44 @@
+
+
+
+
+
+.animate(...) {
+	/* test*/
+	
+	@frames:  extract( @arguments, 1 );
+	@bla: @arguments;
+	@x: ~'animation-@{currentTime}';
+	  @currentTime: `new Date().getTime()`;
+	  
+	animation-name:@x;
+	
+	
+	._loopAnimateArgs( @args, @i: 2, @frame ) when ( @i <= length( @args ) )  {
+		@key:  extract(@args, @i );
+		@val: extract( extract(@args, @i+1 ), @frame ) ;
+		@{key}:@val;
+		
+		
+		._loopAnimateArgs(@args,@i+2,@frame)
+	}
+	
+	._createKeyframe ( @keys, @i:1, @args ) when (@i <= length( @keys )) {
+		@key: extract( @keys, @i );
+		
+		
+			@{key} { 
+				
+				._loopAnimateArgs( @args, 2, @i);
+			
+			}
+			
+		
+	 	._createKeyframe(@keys, @i+1, @args);	
+	}
+	
+	
+	@keyframes @x { 
+		
+		._createKeyframe(@frames,1,@arguments); }
+}
