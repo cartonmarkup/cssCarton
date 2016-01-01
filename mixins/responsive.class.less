@@ -38,9 +38,17 @@
                 & when ( @i < @defaultBreakPoint ) {
 
                     @media ( max-width: @breakPoint )  {
-
-                        width: @val;
+                        
                         .displayInline();
+                        
+                        & when ( ispercentage(@val) = true ),( ispixel(@val) = true ),( isem(@val) = true ) {
+					       width: @val;
+				        }
+				
+				        & when not ( ispercentage(@val) = true ) and not (ispixel(@val) = true) and not (isem(@val) = true) {
+					       .rem( width, @val );
+				        }
+                        
                     }
                 }
 
@@ -50,8 +58,15 @@
 
                     @media ( min-width: @breakPoint )  {
 
-                        width: @val;
                         .displayInline();
+                        
+                        & when ( ispercentage(@val) = true ),( ispixel(@val) = true ),( isem(@val) = true ) {
+					       width: @val;
+				        }
+				
+				        & when not ( ispercentage(@val) = true ) and not (ispixel(@val) = true) and not (isem(@val) = true) {
+					       .rem( width, @val );
+				        }
                     }
                 }
             
