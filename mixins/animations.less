@@ -1,15 +1,8 @@
-
-
-
-
-
 .animate(...) {
-	/* test*/
-	
 	@frames:  extract( @arguments, 1 );
 	@bla: @arguments;
 	@x: ~'animation-@{currentTime}';
-	  @currentTime: `new Date().getTime()`;
+	@currentTime: `new Date().getTime()`;
 	  
 	animation-name:@x;
 	

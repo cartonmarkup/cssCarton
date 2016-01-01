@@ -1,5 +1,5 @@
 ._generateColumns( @cn, @cs, @i: 1 ) when ( @i =< length( @cn ) ) {
-	@mobileBreak: extract( @breakPoints, 1 );
+	@mobileBreak: extract( @breakPoints, @mobileGridBreak );
 	@name: extract( @cn, @i );
 	@size: extract( @cs, @i );
 
@@ -9,9 +9,9 @@
 	}
 
 	// set cell_ to width 100% when window width
-	// smaller than @mobileBreak
+	// smaller or equal to @mobileBreak
 
-	& when (@mobileGridBreak = true) and  ( @responsiveEnabled = true ){
+	& when ( @mobileGridBreak > 0 ) and  ( @responsiveEnabled = true ){
 
 		@media ( max-width: @mobileBreak ) {
 

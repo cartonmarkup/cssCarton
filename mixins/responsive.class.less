@@ -19,31 +19,71 @@
 		._mq( @i: 1 ) when ( @i <= length( @breakPoints ) ) {
 
 			@breakPoint: extract( @breakPoints, @i );
-			@val: extract( @breakPoints, @i );
+			@val: extract( @responsiveClassWidth, @i );
 
 			// width of the responsive_ wrapper
 			// is equal to window width.
+            
+            & when not ( @val = auto ) {
+                
+                & when ( @i < @defaultBreakPoint ) {
 
-			& when ( @i <= @defaultBreakPoint ) {
+                    @media ( max-width: @breakPoint )  {
 
-				@media ( max-width: @breakPoint )  {
+                        width: @val;
+                    }
+                }
 
-					width: auto;
-					display: block;
-				}
-			}
+                // take width from @breakPoint
 
-			// take width from @breakPoint
+                & when (  @i > @defaultBreakPoint ) {
 
-			& when (  @i > @defaultBreakPoint ) {
+                    @media ( min-width: @breakPoint )  {
 
-				@media ( min-width: @breakPoint )  {
-
-					width: @val;
-				}
-			}
+                        width: @val;
+                    }
+                }
+            
+            }
 
 			._mq( @i + 1 );
+		}
+        
+        ._mqAuto();
+		._mqAuto( @i: 1 ) when ( @i <= length( @breakPoints ) ) {
+
+			@breakPoint: extract( @breakPoints, @i );
+			@val: extract( @responsiveClassWidth, @i );
+            
+            & when ( @val = auto ) {
+            
+                // width of the responsive_ wrapper
+                // is equal to window width.
+
+                & when ( @i < @defaultBreakPoint ) {
+
+                    @media ( max-width: @breakPoint )  {
+
+                        width: @val;
+                        display: block;
+                    
+                    }
+                }
+
+                // take width from @breakPoint
+
+                & when (  @i > @defaultBreakPoint ) {
+
+                    @media ( min-width: @breakPoint )  {
+
+                        width: @val;
+                        display: block;
+                    }
+                }
+            
+            }
+
+			._mqAuto( @i + 1 );
 		}
 	}
 }
