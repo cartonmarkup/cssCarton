@@ -2,17 +2,26 @@
 
 	// fallback for media-query free
 	// browsers
-
-	position: relative;
-	.displayInline();
-	vertical-align: top;
+    
+    vertical-align: top;
 	font-size: 0;
-	._showOutline( responsive );
-
-	width: extract( @breakPoints, @defaultBreakPoint );
+	position: relative;
+    ._showOutline( responsive );
+    width: extract( @responsiveClassWidth, @defaultBreakPoint );
+  
+    & when not ( extract( @responsiveClassWidth, @defaultBreakPoint ) = auto ) {
+	
+	   .displayInline();
+	}
+	 
+    & when ( extract( @responsiveClassWidth, @defaultBreakPoint ) = auto ) {
+        
+         display: block;
+    }
 
 	& when ( @responsiveEnabled ) {
-		// loop through @breakPoints and build
+		
+        // loop through @breakPoints and build
 		// .responsive_ classes
 
 		._mq();
@@ -31,16 +40,18 @@
                     @media ( max-width: @breakPoint )  {
 
                         width: @val;
+                        .displayInline();
                     }
                 }
 
                 // take width from @breakPoint
 
-                & when (  @i > @defaultBreakPoint ) {
+                & when (  @i >= @defaultBreakPoint ) {
 
                     @media ( min-width: @breakPoint )  {
 
                         width: @val;
+                        .displayInline();
                     }
                 }
             
