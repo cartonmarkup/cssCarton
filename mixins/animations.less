@@ -10,7 +10,46 @@
 	._loopAnimateArgs( @args, @i: 2, @frame ) when ( @i <= length( @args ) )  {
 		@key:  extract(@args, @i );
 		@val: extract( extract(@args, @i+1 ), @frame ) ;
-		@{key}:@val;
+		
+        // special treatment for for rem / rows mixin
+		 
+		 & when ( length( @key ) = 2 ) {
+			 
+			 
+			 & when (  extract(  @key, 1 ) = rem ) {
+				@remKey: extract(  @key, 2 );
+				
+				// if @val is explicit written with px, % or em unit it will ignore the rem call in the key. 
+				
+				& when ( ispercentage(@val) = true ),( ispixel(@val) = true ),( isem(@val) = true ) {
+					 
+					 @{remKey}: @val;
+				}
+				
+				& when not ( ispercentage(@val) = true ) and not (ispixel(@val) = true) and not (isem(@val) = true) {
+					.rem( @remKey, @val );
+				}
+			}
+			 
+			& when (  extract(  @key, 1 ) = rows ) { 
+				@rowKey: extract(  @key, 2 );
+				
+				& when ( length( @val ) = 1 ) {
+					.rows( @rowKey @val );
+				}
+				
+				& when ( length( @val ) = 2 ) {
+					.rows( @rowKey extract(@val,1) extract(@val,2) );
+				}
+			} 
+		}
+		
+		// regular css styles
+		
+		 & when  ( length(@key) = 1 ) {
+		
+			  @{key}: @val;
+		}
 		
 		
 		._loopAnimateArgs(@args,@i+2,@frame)
