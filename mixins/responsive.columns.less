@@ -10,7 +10,7 @@
 	// which is triggerd by media-queries based on
 	// @breakPoints
 
-	._responsiveColumns( @i: 1, @savedSelector: ~'' ) when ( @i <= length( @types ) ) {
+	._responsiveColumns( @i: 1, @savedSelector: ~'' ) when ( @i <= length( @columns ) ) {
 
 		@ext: extract( @columns, @i );
 		@selector: ~'@{savedSelector}@{ext}_';
