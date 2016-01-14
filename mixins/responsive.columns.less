@@ -15,8 +15,6 @@
 		@ext: extract( @columns, @i );
 		@selector: ~'@{savedSelector}@{ext}_';
 
-
-
 		& when (  @i = length( @columns ) ) {
 			._def( @selector );
 
@@ -38,10 +36,21 @@
 	._def( @selector;  @i: 0 ) when ( @i <= length( @breakPoints ) )  {
 
 		@currentColumn: extract( @columns, @defaultBreakPoint );
-
-		.@{selector} {
-			._borrowColumnSize(width, @currentColumn);
-		}
+        
+        & when ( @currentColumn = hidden ) {
+             .@{selector} {
+                
+                ._typeStyles(  @currentColumn );
+             }
+        }   
+        
+         & when not ( @currentColumn = hidden ) {
+            
+            .@{selector} {
+                
+                ._borrowColumnSize(width, @currentColumn);
+            }
+        }
 	}
 
 	// sets media-queries in reversed order
@@ -71,17 +80,27 @@
 
 	._mq( @selector, @i, @key ) {
 		
-				@breakPoint: extract( @breakPoints, @i );
+		    @breakPoint: extract( @breakPoints, @i );
 			@currentColumn: extract( @columns, @i);
 			
-			@media ( ~'@{key}: @{breakPoint}' )  {
-				
-				.@{selector} {
-				
-					._borrowColumnSize(width, @currentColumn);	
-				}
-			}
-		
+            @media ( ~'@{key}: @{breakPoint}' )  {
+
+                & when ( @currentColumn = hidden ) {
+
+                    .@{selector} {
+
+                        ._typeStyles(  @currentColumn );
+                    }
+                }   
+
+                & when not ( @currentColumn = hidden ) {
+
+                    .@{selector} {
+                        
+                        ._borrowColumnSize(width, @currentColumn);
+                    }
+                }
+            }
 	}
 }
 
