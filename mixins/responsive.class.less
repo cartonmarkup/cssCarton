@@ -1,112 +1,115 @@
-// Defines css-styles with different values 
-// based on which brekpoint form the @breakPoints
-// list has triggered 
+.responsive_ {
 
-.responsive(...) {
+	// fallback for media-query free
+	// browsers
+    
+    vertical-align: top;
+	font-size: 0;
+	position: relative;
+    ._showOutline( responsive );
+    width: extract( @responsiveClassWidth, @defaultBreakPoint );
+  
+    & when not ( extract( @responsiveClassWidth, @defaultBreakPoint ) = auto ) {
 	
-	._loopResponsiveArgs(@arguments,  @defaultBreakPoint);
-	
+	   .displayInline();
+	}
+	 
+    & when ( extract( @responsiveClassWidth, @defaultBreakPoint ) = auto ) {
+        
+         display: block;
+    }
+
 	& when ( @responsiveEnabled ) {
-		._max(@arguments);
-		._min(@arguments);
-	}
-
-	// sets media-queries in reversed order
-	// for all breakpoints in @breakPoints,
-	// but only before @defaultBreakpoint
-	// inside the list.
-
-	._max( @args, @i: @defaultBreakPoint - 1 ) when ( @i >= 1 ) {
-
-		._mq( @i, max-width );
-		._max( @args, @i - 1 );
-	}
-
-	// set media-queries for all
-	// breakpoints after the default breakpoint
-	// in default order
-
-	._min( @args, @i: @defaultBreakPoint + 1 ) when ( @i <= length( @breakPoints )  )  {
-
-		._mq(  @i, min-width );
-		._min(  @args, @i + 1 );
-	}
-
-	// builds media-query to trigger breakpoint
-	
-	._mq( @i, @mqKey ) {
-		@breakPoint: extract( @breakPoints, @i );
 		
-		@media ( ~'@{mqKey}: @{breakPoint}' )  {
-			
-			._loopResponsiveArgs( @args, @i );
+        // loop through @breakPoints and build
+		// .responsive_ classes
+
+		._mq();
+		._mq( @i: 1 ) when ( @i <= length( @breakPoints ) ) {
+
+			@breakPoint: extract( @breakPoints, @i );
+			@val: extract( @responsiveClassWidth, @i );
+
+			// width of the responsive_ wrapper
+			// is equal to window width.
+            
+            & when not ( @val = auto ) {
+                
+                & when ( @i < @defaultBreakPoint ) {
+
+                    @media ( max-width: @breakPoint )  {
+                        
+                        .displayInline();
+                        
+                        & when ( ispercentage(@val) = true ),( ispixel(@val) = true ),( isem(@val) = true ) {
+					       width: @val;
+				        }
+				
+				        & when not ( ispercentage(@val) = true ) and not (ispixel(@val) = true) and not (isem(@val) = true) {
+					       .rem( width, @val );
+				        }
+                        
+                    }
+                }
+
+                // take width from @breakPoint
+
+                & when (  @i >= @defaultBreakPoint ) {
+
+                    @media ( min-width: @breakPoint )  {
+
+                        .displayInline();
+                        
+                        & when ( ispercentage(@val) = true ),( ispixel(@val) = true ),( isem(@val) = true ) {
+					       width: @val;
+				        }
+				
+				        & when not ( ispercentage(@val) = true ) and not (ispixel(@val) = true) and not (isem(@val) = true) {
+					       .rem( width, @val );
+				        }
+                    }
+                }
+            
+            }
+
+			._mq( @i + 1 );
 		}
-	}
-	
-	// loops through the arguments passed to the mixin
-	// and builds css-styles
-	
-	._loopResponsiveArgs( @args, @breakPointPos, @i:1, @ii: 2 ) when ( @i <= length( @args ) ) {
-		 @key:  extract(  @args, @i );
-		 @list:  extract(  @args, @ii );
-		 @val: extract( @list, @breakPointPos );
-		 
-		 // special treatment for for rem / rows mixin
-		 
-		 & when ( length( @key ) = 2 ){
-			 
-			 
-			 & when (  extract(  @key, 1 ) = rem ) {
-				@remKey: extract(  @key, 2 );
-				
-				// if @val is explicit written with px, % or em unit or defined with auto it will ignore the rem call in the key. 
-				
-				& when ( ispercentage(@val) = true ),( ispixel(@val) = true ),( isem(@val) = true ), ( @val = auto ) {
-					 
-					 @{remKey}: @val;
-				}
-				
-				& when not ( ispercentage(@val) = true ) and not (ispixel(@val) = true) and not (isem(@val) = true) and not ( @val = auto  ) {
-					.rem( @remKey, @val );
-				}
-			}
-			 
-			& when (  extract(  @key, 1 ) = rows ) { 
-				@rowKey: extract(  @key, 2 );
-				
-				// if @val is explicit written with px, % or em unit or defined with auto it will ignore the rem call in the key. 
+        
+        ._mqAuto();
+		._mqAuto( @i: 1 ) when ( @i <= length( @breakPoints ) ) {
 
-				& when ( ispercentage(@val) = true ),( ispixel(@val) = true ),( isem(@val) = true ), ( @val = auto ) {
-					 
-					 @{rowKey}: @val;
-				}
-				
-				& when not ( ispercentage(@val) = true ) and not (ispixel(@val) = true) and not (isem(@val) = true) and not ( @val = auto  ) {
-					
-					& when ( length( @val ) = 1 ) {
-						.rows( @rowKey @val );
-					}
-				
-					& when ( length( @val ) = 2 ) {
-						.rows( @rowKey extract(@val,1) extract(@val,2) );
-					}
-				}			
-			} 
-		}
-		
-		// regular css styles
-		
-		 & when  ( length(@key) = 1 )  {
-		
-			  @{key}: @val;
-		}
+			@breakPoint: extract( @breakPoints, @i );
+			@val: extract( @responsiveClassWidth, @i );
+            
+            & when ( @val = auto ) {
+            
+                // width of the responsive_ wrapper
+                // is equal to window width.
 
-		
-		._loopResponsiveArgs( @args, @breakPointPos, @i+2, @ii+2 );
+                & when ( @i < @defaultBreakPoint ) {
+
+                    @media ( max-width: @breakPoint )  {
+
+                        width: @val;
+                        display: block;
+                    
+                    }
+                }
+
+                // take width from @breakPoint
+
+                & when (  @i > @defaultBreakPoint ) {
+
+                    @media ( min-width: @breakPoint )  {
+
+                        width: @val;
+                        display: block;
+                    }
+                }
+            
+            }
+
+			._mqAuto( @i + 1 );
+		}
 	}
 }
-
-
-
-
-	 
