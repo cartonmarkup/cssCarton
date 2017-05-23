@@ -53,20 +53,20 @@
 		 
 		 // special treatment for for rem / rows mixin
 		 
-		 & when ( length( @key ) = 2 ) {
+		 & when ( length( @key ) = 2 ){
 			 
 			 
 			 & when (  extract(  @key, 1 ) = rem ) {
 				@remKey: extract(  @key, 2 );
 				
-				// if @val is explicit written with px, % or em unit it will ignore the rem call in the key. 
+				// if @val is explicit written with px, % or em unit or defined with auto it will ignore the rem call in the key. 
 				
-				& when ( ispercentage(@val) = true ),( ispixel(@val) = true ),( isem(@val) = true ) {
+				& when ( ispercentage(@val) = true ),( ispixel(@val) = true ),( isem(@val) = true ), ( @val = auto ) {
 					 
 					 @{remKey}: @val;
 				}
 				
-				& when not ( ispercentage(@val) = true ) and not (ispixel(@val) = true) and not (isem(@val) = true) {
+				& when not ( ispercentage(@val) = true ) and not (ispixel(@val) = true) and not (isem(@val) = true) and not ( @val = auto  ) {
 					.rem( @remKey, @val );
 				}
 			}
@@ -74,22 +74,33 @@
 			& when (  extract(  @key, 1 ) = rows ) { 
 				@rowKey: extract(  @key, 2 );
 				
-				& when ( length( @val ) = 1 ) {
-					.rows( @rowKey @val );
+				// if @val is explicit written with px, % or em unit or defined with auto it will ignore the rem call in the key. 
+
+				& when ( ispercentage(@val) = true ),( ispixel(@val) = true ),( isem(@val) = true ), ( @val = auto ) {
+					 
+					 @{rowKey}: @val;
 				}
 				
-				& when ( length( @val ) = 2 ) {
-					.rows( @rowKey extract(@val,1) extract(@val,2) );
-				}
+				& when not ( ispercentage(@val) = true ) and not (ispixel(@val) = true) and not (isem(@val) = true) and not ( @val = auto  ) {
+					
+					& when ( length( @val ) = 1 ) {
+						.rows( @rowKey @val );
+					}
+				
+					& when ( length( @val ) = 2 ) {
+						.rows( @rowKey extract(@val,1) extract(@val,2) );
+					}
+				}			
 			} 
 		}
 		
 		// regular css styles
 		
-		 & when  ( length(@key) = 1 ) {
+		 & when  ( length(@key) = 1 )  {
 		
 			  @{key}: @val;
 		}
+
 		
 		._loopResponsiveArgs( @args, @breakPointPos, @i+2, @ii+2 );
 	}
